@@ -41,31 +41,8 @@ With these instructions:
     cd ~/Source/Repos/DipIT-SaaS/ICT50120-SaaS-Library
    ```
 4) Duplicate and rename the `.env.example` file to `.env`
-5) Execute the following (single line) command:
-```shell
-docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v $(pwd):/var/www/html \
-    -w /var/www/html \
-    laravelsail/php81-composer:latest \
-    composer install --ignore-platform-reqs
-```
-6) execute the Laravel Sail command to bring the Docker development environment up: 
-```shell 
-sail up
-```
-7) Create a second terminal instance, and when the sail up is complete, run:
-```shell
-   sail npm install && sail npm run dev
-```
-8) Create a third terminal instance and execute the following command: 
-```shell
-sail artisan key:generate
-```
-
-## Database Settings: `.env`
-One issue you will have is that the settings for the `.env` file DB configuration will need tweaking. Below is a 
-configuration that functioned correctly for Adrian when testing:
+5) Edit the new .env file as there is an issue with the DB configuration. You will have to change the host to be `mariadb` 
+   rather than `localhost`. Below is the configuration section for the `DB_` that functioned correctly for Adrian when testing:
 ```dotenv
 DB_CONNECTION=mysql
 DB_HOST=mariadb
@@ -73,6 +50,31 @@ DB_PORT=3306
 DB_DATABASE=library
 DB_USERNAME=root
 DB_PASSWORD=
+```
+6) Execute the following (single line) command, and wait for it to complete:
+```shell
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+```
+6) In this same shell, now execute the Laravel Sail command to bring the Docker development environment up: 
+```shell 
+sail up
+```
+7) Next, create a second terminal instance, and when the sail up is complete, run:
+```shell
+   sail npm install && sail npm run dev
+```
+8) Create a third terminal instance and execute the following command: 
+```shell
+sail artisan key:generate
+```
+9) Finally, in the third terminal instance and execute the following command:
+```shell
+sail artisan migrate:fresh --step --seed
 ```
 
 You are now ready to continue with your development.
