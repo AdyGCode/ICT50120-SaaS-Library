@@ -11,7 +11,7 @@ These steps aim to give you a guide to re-creating the deployment with the code 
 (formerly known as `master`) repo.
 
 With these instructions:
-- *We presume that the Windows environmetn is set up using WSL2, Docker-Desktop and Ubuntu Linux.*
+- *We presume that the Windows environment is set up using WSL2, Docker-Desktop and Ubuntu Linux.*
 - *We are presuming you store the repository on your primary HDD/SSD drive, which will be `C` on a Windows system.*
 - *We presume you have a folder named `Source/Repos` where your repositories are stored.*
 - *Replace `USERNAME` with the username on your host (eg Windows) operating system, **not** the name used in the WSL2 Linux 
@@ -22,7 +22,7 @@ With these instructions:
 1) Run Docker-Desktop
 2) Open your terminal application (**Windows Terminal** or **iTerm** on Mac).
    <br>**IMPORTANT:** If you are using Windows you will 
-   need to start a WSL2 terminal instance.
+   need to start a WSL2 Ubuntu (or preferred Linux) terminal instance.
 3) Change into the repository folder:
    <br>PC: 
    ```shell

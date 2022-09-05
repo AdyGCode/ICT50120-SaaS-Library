@@ -1,17 +1,17 @@
 # Making an API
 
-Before we start on the proces, let's get the obligatory terminology out of the way...
+Before we start on the process, let's get the obligatory terminology out of the way...
 
-| Term              | Definition                                                                                                              |
-|-------------------|-------------------------------------------------------------------------------------------------------------------------|
-| API               | Application Programming Interface                                                                                       |
-| REST              | **Re**presentational **S**tate **T**ransfer                                                                             |
-| Endpoint          | This is the "URI" that is used to make a call to an API                                                                 |
-| aRoute            | How an API endpoint request is directed to the relevant controller method                                               |
-| Resourceful Route | A resourceful route automatically determines the controller and method to use based on the conventions of the framework |
-| JSON | JavaScript Object Notation                                                                                              |
-| XML | eXtensible Markup Language                                                                                              |
-| SOAP | Simple Object Access Protocol                                                                                           |
+| Term              | Definition                                                                                                               |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------|
+| API               | Application Programming Interface                                                                                        |
+| REST              | **Re**presentational **S**tate **T**ransfer                                                                              |
+| Endpoint          | This is the "URI" that is used to make a call to an API                                                                  |
+| aRoute            | How an API endpoint request is directed to the relevant controller method                                                |
+| Resourceful Route | A resourceful route automatically determines the controller and method to use based on the conventions of the framework  |
+| JSON              | JavaScript Object Notation                                                                                               |
+| XML               | eXtensible Markup Language                                                                                               |
+| SOAP              | Simple Object Access Protocol                                                                                            |
 
 ## REST and JSON
 As we are creating a RESTful API, we will be returning JSON based results to any request. As against a SOAP based API which 
@@ -73,9 +73,9 @@ specific methods. We only have _five_ to deal with:
 
 Let's start by creating the required API call for the `http://DOMAIN/api/authors` endpoint. 
 
-| Request | Response                                  |
-|---------|-------------------------------------------|
-| http://DOMAIN/api/authors | JSON list of Authors and request result code |
+| Request                    | Response                                      |
+|----------------------------|-----------------------------------------------|
+| http://DOMAIN/api/authors  | JSON list of Authors and request result code  |
 
 Edit the AuthorAPIController and add the following to the index method:
 
