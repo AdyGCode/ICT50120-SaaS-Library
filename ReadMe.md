@@ -275,6 +275,7 @@ foreach ($seedBooks as $book) {
       author is empty or the author has just one name, then we are able
       to deal with the situation and add the required information. */
    $author = $book['author'];
+   $authorGiven = null;
    $authorFamily = $author;
    if ($comma = mb_strpos($author, ",")) {
        $authorGiven = mb_substr($author, 0, $comma);
