@@ -15,6 +15,11 @@ class Author extends Model
         'is_company',
     ];
 
+    /**
+     * Create the author may have MANY books relationship
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function books() {
         return $this->hasMany(Books::class);
     }

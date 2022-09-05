@@ -21,6 +21,11 @@ class Book extends Model
         'sub_genre',
     ];
 
+    /**
+     * Return the Authors of a book (Many-to-many)
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function authors()
     {
         return $this->belongsToMany(Author::class);

@@ -96,25 +96,15 @@ Edit the AuthorAPIController and add the following to the index method:
   - The list of authors
   - Response code of 200, OK.
 
-## Quick "Brute Force" Test (Not to be used normally)
+### Retrieving / Testing API calls
 
-A quick test of the API so far may be done using a browser window and going to `http://localhost/api/authors` which will show 
-a JSON structure with all the authors.
+There are a number of possible free and commercial products that may be used to test (and document) your API.
 
-## Exercises
+Some of these include:
+- Postman [https://www.postman.com](https://www.postman.com)
+- Katalon [https://katalon.com](https://katalon.com)
+- RapidAPI [https://rapidapi.com/products/api-testing/](https://rapidapi.com/products/api-testing/)
+- Paw [https://paw.cloud](https://paw.cloud)
+- ... []()
 
-### TODO: Create skeleton for Books API
-- Create the resourceful controller skeleton for the Books API
-- Create the resourceful route for the Books API
-
-Remember that the Books API will be API/BooksAPIController.
-
-### TODO: Create Books Index API method
-- Edit the API/BooksAPIController and have the index method return ALL books
-- Do a "brute force" Test using (`http://localhost/api/books`)[http://localhost/api/books]
-
-### TODO: Create Show One Book API endpoint
-- Edit the BooksAPIController and the show method for the Books API
-- Make the methods return a single book given the `id` for the book
-- Brute force test using (`http://localhost/api/books/45`)[http://localhost/api/books/45]
-
+Run the Postman Application []()

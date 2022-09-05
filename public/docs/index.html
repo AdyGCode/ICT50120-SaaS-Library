@@ -1,0 +1,1938 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.37.0.js"></script>
+
+    <script src="../docs/js/theme-default-3.37.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-authors">
+                        <a href="#endpoints-GETapi-authors">Display a listing of the resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-authors">
+                        <a href="#endpoints-POSTapi-authors">Store a newly created resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-authors--id-">
+                        <a href="#endpoints-GETapi-authors--id-">Display the specified resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-authors--id-">
+                        <a href="#endpoints-PUTapi-authors--id-">Update the specified resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-authors--id-">
+                        <a href="#endpoints-DELETEapi-authors--id-">Remove the specified resource from storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                        <a href="#endpoints-GETapi-user">GET api/user</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-healthcheck">
+                        <a href="#endpoints-GETapi-healthcheck">Healthcheck</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: September 5 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-authors">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-authors">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/authors" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/authors"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-authors">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Retrieved successfully.&quot;,
+    &quot;authors&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;given_name&quot;: &quot;UNKNOWN&quot;,
+            &quot;family_name&quot;: &quot;AUTHOR&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;given_name&quot;: &quot;UNKNOWN&quot;,
+            &quot;family_name&quot;: &quot;CORPORATE AUTHOR&quot;,
+            &quot;is_company&quot;: 1,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;given_name&quot;: &quot;Kevin&quot;,
+            &quot;family_name&quot;: &quot;Yank&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;given_name&quot;: &quot;Mark&quot;,
+            &quot;family_name&quot;: &quot;Boulton&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;given_name&quot;: &quot;Robert&quot;,
+            &quot;family_name&quot;: &quot;Hoekman, jr.&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;given_name&quot;: &quot;Luke&quot;,
+            &quot;family_name&quot;: &quot;Wroblewski&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;given_name&quot;: &quot;Kevin&quot;,
+            &quot;family_name&quot;: &quot;Potts&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;given_name&quot;: &quot;Goswami&quot;,
+            &quot;family_name&quot;: &quot; Jaideva&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;given_name&quot;: &quot;Foreman&quot;,
+            &quot;family_name&quot;: &quot; John&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;given_name&quot;: &quot;Hawking&quot;,
+            &quot;family_name&quot;: &quot; Stephen&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;given_name&quot;: &quot;Dubner&quot;,
+            &quot;family_name&quot;: &quot; Stephen&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;given_name&quot;: &quot;Said&quot;,
+            &quot;family_name&quot;: &quot; Edward&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;given_name&quot;: &quot;Vapnik&quot;,
+            &quot;family_name&quot;: &quot; Vladimir&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 14,
+            &quot;given_name&quot;: &quot;Menon&quot;,
+            &quot;family_name&quot;: &quot; V P&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 15,
+            &quot;given_name&quot;: &quot;Mlodinow&quot;,
+            &quot;family_name&quot;: &quot; Leonard&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 16,
+            &quot;given_name&quot;: &quot;Shih&quot;,
+            &quot;family_name&quot;: &quot; Frank&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 17,
+            &quot;given_name&quot;: &quot;Konnikova&quot;,
+            &quot;family_name&quot;: &quot; Maria&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 18,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Sebastian Gutierrez&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 19,
+            &quot;given_name&quot;: &quot;Vonnegut&quot;,
+            &quot;family_name&quot;: &quot; Kurt&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 20,
+            &quot;given_name&quot;: &quot;Villani&quot;,
+            &quot;family_name&quot;: &quot; Cedric&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 21,
+            &quot;given_name&quot;: &quot;Sussman&quot;,
+            &quot;family_name&quot;: &quot; Gerald&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 22,
+            &quot;given_name&quot;: &quot;Eraly&quot;,
+            &quot;family_name&quot;: &quot; Abraham&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 23,
+            &quot;given_name&quot;: &quot;Kafka&quot;,
+            &quot;family_name&quot;: &quot; Frank&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 24,
+            &quot;given_name&quot;: &quot;Pratt&quot;,
+            &quot;family_name&quot;: &quot; John&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 25,
+            &quot;given_name&quot;: &quot;Nisbet&quot;,
+            &quot;family_name&quot;: &quot; Robert&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 26,
+            &quot;given_name&quot;: &quot;Wells&quot;,
+            &quot;family_name&quot;: &quot; H. G.&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 27,
+            &quot;given_name&quot;: &quot;Heisenberg&quot;,
+            &quot;family_name&quot;: &quot; Werner&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 28,
+            &quot;given_name&quot;: &quot;Oram&quot;,
+            &quot;family_name&quot;: &quot; Andy&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 29,
+            &quot;given_name&quot;: &quot;Tao&quot;,
+            &quot;family_name&quot;: &quot; Terence&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 30,
+            &quot;given_name&quot;: &quot;Conway&quot;,
+            &quot;family_name&quot;: &quot; Drew&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 31,
+            &quot;given_name&quot;: &quot;Silver&quot;,
+            &quot;family_name&quot;: &quot; Nate&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 32,
+            &quot;given_name&quot;: &quot;McKinney&quot;,
+            &quot;family_name&quot;: &quot; Wes&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 33,
+            &quot;given_name&quot;: &quot;Cormen&quot;,
+            &quot;family_name&quot;: &quot; Thomas&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 34,
+            &quot;given_name&quot;: &quot;Deb&quot;,
+            &quot;family_name&quot;: &quot; Siddhartha&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 35,
+            &quot;given_name&quot;: &quot;Camus&quot;,
+            &quot;family_name&quot;: &quot; Albert&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 36,
+            &quot;given_name&quot;: &quot;Doyle&quot;,
+            &quot;family_name&quot;: &quot; Arthur Conan&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 37,
+            &quot;given_name&quot;: &quot;Smith&quot;,
+            &quot;family_name&quot;: &quot; Adam&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 38,
+            &quot;given_name&quot;: &quot;Follett&quot;,
+            &quot;family_name&quot;: &quot; Ken&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 39,
+            &quot;given_name&quot;: &quot;Hitler&quot;,
+            &quot;family_name&quot;: &quot; Adolf&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 40,
+            &quot;given_name&quot;: &quot;Capra&quot;,
+            &quot;family_name&quot;: &quot; Fritjof&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 41,
+            &quot;given_name&quot;: &quot;Feynman&quot;,
+            &quot;family_name&quot;: &quot; Richard&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 42,
+            &quot;given_name&quot;: &quot;Hemingway&quot;,
+            &quot;family_name&quot;: &quot; Ernest&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 43,
+            &quot;given_name&quot;: &quot;Forsyth&quot;,
+            &quot;family_name&quot;: &quot; Frederick&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 44,
+            &quot;given_name&quot;: &quot;Archer&quot;,
+            &quot;family_name&quot;: &quot; Jeffery&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 45,
+            &quot;given_name&quot;: &quot;Pausch&quot;,
+            &quot;family_name&quot;: &quot; Randy&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 46,
+            &quot;given_name&quot;: &quot;Rand&quot;,
+            &quot;family_name&quot;: &quot; Ayn&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 47,
+            &quot;given_name&quot;: &quot;Crichton&quot;,
+            &quot;family_name&quot;: &quot; Michael&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 48,
+            &quot;given_name&quot;: &quot;Steinbeck&quot;,
+            &quot;family_name&quot;: &quot; John&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 49,
+            &quot;given_name&quot;: &quot;Poe&quot;,
+            &quot;family_name&quot;: &quot; Edgar Allen&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 50,
+            &quot;given_name&quot;: &quot;Durant&quot;,
+            &quot;family_name&quot;: &quot; Will&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 51,
+            &quot;given_name&quot;: &quot;Desh Pande&quot;,
+            &quot;family_name&quot;: &quot; P L&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 52,
+            &quot;given_name&quot;: &quot;Grisham&quot;,
+            &quot;family_name&quot;: &quot; John&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 53,
+            &quot;given_name&quot;: &quot;Naipaul&quot;,
+            &quot;family_name&quot;: &quot; V. S.&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 54,
+            &quot;given_name&quot;: &quot;Heller&quot;,
+            &quot;family_name&quot;: &quot; Joseph&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 55,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;BBC&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 56,
+            &quot;given_name&quot;: &quot;Dylan&quot;,
+            &quot;family_name&quot;: &quot; Bob&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 57,
+            &quot;given_name&quot;: &quot;Gupta&quot;,
+            &quot;family_name&quot;: &quot; Madan&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 58,
+            &quot;given_name&quot;: &quot;Stonier&quot;,
+            &quot;family_name&quot;: &quot; Alfred&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 59,
+            &quot;given_name&quot;: &quot;Greene&quot;,
+            &quot;family_name&quot;: &quot; W. H.&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 60,
+            &quot;given_name&quot;: &quot;Bradsky&quot;,
+            &quot;family_name&quot;: &quot; Gary&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 61,
+            &quot;given_name&quot;: &quot;Tanenbaum&quot;,
+            &quot;family_name&quot;: &quot; Andrew&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 62,
+            &quot;given_name&quot;: &quot;Forsyth&quot;,
+            &quot;family_name&quot;: &quot; David&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 63,
+            &quot;given_name&quot;: &quot;Taub&quot;,
+            &quot;family_name&quot;: &quot; Schilling&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 64,
+            &quot;given_name&quot;: &quot;Kanetkar&quot;,
+            &quot;family_name&quot;: &quot; Yashwant&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 65,
+            &quot;given_name&quot;: &quot;Stroud&quot;,
+            &quot;family_name&quot;: &quot; Jonathan&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 66,
+            &quot;given_name&quot;: &quot;Dostoevsky&quot;,
+            &quot;family_name&quot;: &quot; Fyodor&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 67,
+            &quot;given_name&quot;: &quot;Brown&quot;,
+            &quot;family_name&quot;: &quot; Dan&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 68,
+            &quot;given_name&quot;: &quot;Sen&quot;,
+            &quot;family_name&quot;: &quot; Amartya&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 69,
+            &quot;given_name&quot;: &quot;Ghosh&quot;,
+            &quot;family_name&quot;: &quot; Amitav&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 70,
+            &quot;given_name&quot;: &quot;Hansberry&quot;,
+            &quot;family_name&quot;: &quot; Lorraine&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 71,
+            &quot;given_name&quot;: &quot;Woodward&quot;,
+            &quot;family_name&quot;: &quot; Bob&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 72,
+            &quot;given_name&quot;: &quot;Nayar&quot;,
+            &quot;family_name&quot;: &quot; Kuldip&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 73,
+            &quot;given_name&quot;: &quot;Desh Pande&quot;,
+            &quot;family_name&quot;: &quot; Sunita&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 74,
+            &quot;given_name&quot;: &quot;Dalrymple&quot;,
+            &quot;family_name&quot;: &quot; William&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 75,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Various&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 76,
+            &quot;given_name&quot;: &quot;Garg&quot;,
+            &quot;family_name&quot;: &quot; Sanjay&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 77,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 78,
+            &quot;given_name&quot;: &quot;Kale&quot;,
+            &quot;family_name&quot;: &quot; V P&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 79,
+            &quot;given_name&quot;: &quot;Tharoor&quot;,
+            &quot;family_name&quot;: &quot; Shashi&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 80,
+            &quot;given_name&quot;: &quot;Lapierre&quot;,
+            &quot;family_name&quot;: &quot; Dominique&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 81,
+            &quot;given_name&quot;: &quot;Russell&quot;,
+            &quot;family_name&quot;: &quot; Bertrand&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 82,
+            &quot;given_name&quot;: &quot;Harris&quot;,
+            &quot;family_name&quot;: &quot; Sam&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 83,
+            &quot;given_name&quot;: &quot;Gardner&quot;,
+            &quot;family_name&quot;: &quot; Earle Stanley&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 84,
+            &quot;given_name&quot;: &quot;Drucker&quot;,
+            &quot;family_name&quot;: &quot; Peter&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 85,
+            &quot;given_name&quot;: &quot;Bodanis&quot;,
+            &quot;family_name&quot;: &quot; David&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 86,
+            &quot;given_name&quot;: &quot;Hugo&quot;,
+            &quot;family_name&quot;: &quot; Victor&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 87,
+            &quot;given_name&quot;: &quot;Gordon&quot;,
+            &quot;family_name&quot;: &quot; Richard&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 88,
+            &quot;given_name&quot;: &quot;Orwell&quot;,
+            &quot;family_name&quot;: &quot; George&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 89,
+            &quot;given_name&quot;: &quot;Iacoca&quot;,
+            &quot;family_name&quot;: &quot; Lee&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 90,
+            &quot;given_name&quot;: &quot;Maugham&quot;,
+            &quot;family_name&quot;: &quot; William S&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 91,
+            &quot;given_name&quot;: &quot;Pirsig&quot;,
+            &quot;family_name&quot;: &quot; Robert&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 92,
+            &quot;given_name&quot;: &quot;Fisk&quot;,
+            &quot;family_name&quot;: &quot; Robert&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 93,
+            &quot;given_name&quot;: &quot;Aczel&quot;,
+            &quot;family_name&quot;: &quot; Amir&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 94,
+            &quot;given_name&quot;: &quot;Huntington&quot;,
+            &quot;family_name&quot;: &quot; Samuel&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 95,
+            &quot;given_name&quot;: &quot;Bach&quot;,
+            &quot;family_name&quot;: &quot; Richard&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 96,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Braithwaite&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 97,
+            &quot;given_name&quot;: &quot;Naipaul&quot;,
+            &quot;family_name&quot;: &quot; V S&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 98,
+            &quot;given_name&quot;: &quot;Nehru&quot;,
+            &quot;family_name&quot;: &quot; Jawaharlal&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 99,
+            &quot;given_name&quot;: &quot;Durrell&quot;,
+            &quot;family_name&quot;: &quot; Gerald&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 100,
+            &quot;given_name&quot;: &quot;Wells&quot;,
+            &quot;family_name&quot;: &quot; H G&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 101,
+            &quot;given_name&quot;: &quot;Singh&quot;,
+            &quot;family_name&quot;: &quot; Simon&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 102,
+            &quot;given_name&quot;: &quot;Duda&quot;,
+            &quot;family_name&quot;: &quot; Hart&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 103,
+            &quot;given_name&quot;: &quot;Friedman&quot;,
+            &quot;family_name&quot;: &quot; Thomas&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 104,
+            &quot;given_name&quot;: &quot;Devlin&quot;,
+            &quot;family_name&quot;: &quot; Keith&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 105,
+            &quot;given_name&quot;: &quot;Gleick&quot;,
+            &quot;family_name&quot;: &quot; James&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 106,
+            &quot;given_name&quot;: &quot;Thomas&quot;,
+            &quot;family_name&quot;: &quot; Joy&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 107,
+            &quot;given_name&quot;: &quot;Rashid&quot;,
+            &quot;family_name&quot;: &quot; Muhammad&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 108,
+            &quot;given_name&quot;: &quot;Mohan&quot;,
+            &quot;family_name&quot;: &quot; Ned&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 109,
+            &quot;given_name&quot;: &quot;Haykin&quot;,
+            &quot;family_name&quot;: &quot; Simon&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 110,
+            &quot;given_name&quot;: &quot;Rutherford&quot;,
+            &quot;family_name&quot;: &quot; Alex&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 111,
+            &quot;given_name&quot;: &quot;Baz-Zohar&quot;,
+            &quot;family_name&quot;: &quot; Michael&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 112,
+            &quot;given_name&quot;: &quot;Corbett&quot;,
+            &quot;family_name&quot;: &quot; Jim&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 113,
+            &quot;given_name&quot;: &quot;Verne&quot;,
+            &quot;family_name&quot;: &quot; Jules&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 114,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Desh Pande P L&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 115,
+            &quot;given_name&quot;: &quot;Raymond&quot;,
+            &quot;family_name&quot;: &quot; Eric&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 116,
+            &quot;given_name&quot;: &quot;Franco&quot;,
+            &quot;family_name&quot;: &quot; Sergio&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 117,
+            &quot;given_name&quot;: &quot;Downey&quot;,
+            &quot;family_name&quot;: &quot; Allen&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 118,
+            &quot;given_name&quot;: &quot;West&quot;,
+            &quot;family_name&quot;: &quot; Morris&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 119,
+            &quot;given_name&quot;: &quot;Janert&quot;,
+            &quot;family_name&quot;: &quot; Phillip&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 120,
+            &quot;given_name&quot;: &quot;Sagan&quot;,
+            &quot;family_name&quot;: &quot; Carl&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 121,
+            &quot;given_name&quot;: &quot;Bell&quot;,
+            &quot;family_name&quot;: &quot; E T&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 122,
+            &quot;given_name&quot;: &quot;Dawkins&quot;,
+            &quot;family_name&quot;: &quot; Richard&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 123,
+            &quot;given_name&quot;: &quot;Ranjan&quot;,
+            &quot;family_name&quot;: &quot; Sudhanshu&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 124,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Kautiyla    &quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 125,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;,Palkhivala&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 126,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Sorabjee   &quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 127,
+            &quot;given_name&quot;: &quot;Zaidi&quot;,
+            &quot;family_name&quot;: &quot; Hussain&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 128,
+            &quot;given_name&quot;: &quot;Ackroyd&quot;,
+            &quot;family_name&quot;: &quot; Peter&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 129,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Nariman&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 130,
+            &quot;given_name&quot;: &quot;Sassoon&quot;,
+            &quot;family_name&quot;: &quot; Jean&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 131,
+            &quot;given_name&quot;: &quot;Dickinson&quot;,
+            &quot;family_name&quot;: &quot; Peter&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 132,
+            &quot;given_name&quot;: null,
+            &quot;family_name&quot;: &quot;Machiavelli&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 133,
+            &quot;given_name&quot;: &quot;Huxley&quot;,
+            &quot;family_name&quot;: &quot; Aldous&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 134,
+            &quot;given_name&quot;: &quot;Rowling&quot;,
+            &quot;family_name&quot;: &quot; J K&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 135,
+            &quot;given_name&quot;: &quot;Larsson&quot;,
+            &quot;family_name&quot;: &quot; Steig&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 136,
+            &quot;given_name&quot;: &quot;Eddins&quot;,
+            &quot;family_name&quot;: &quot; Steve&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 137,
+            &quot;given_name&quot;: &quot;Dickens&quot;,
+            &quot;family_name&quot;: &quot; Charles&quot;,
+            &quot;is_company&quot;: 0,
+            &quot;created_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-05T05:03:00.000000Z&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-authors" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-authors"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-authors"></code></pre>
+</span>
+<span id="execution-error-GETapi-authors" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-authors"></code></pre>
+</span>
+<form id="form-GETapi-authors" data-method="GET"
+      data-path="api/authors"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-authors', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-authors"
+                    onclick="tryItOut('GETapi-authors');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-authors"
+                    onclick="cancelTryOut('GETapi-authors');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-authors" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/authors</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-authors">Store a newly created resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-authors">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/authors" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/authors"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-authors">
+</span>
+<span id="execution-results-POSTapi-authors" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-authors"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-authors"></code></pre>
+</span>
+<span id="execution-error-POSTapi-authors" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-authors"></code></pre>
+</span>
+<form id="form-POSTapi-authors" data-method="POST"
+      data-path="api/authors"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-authors', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-authors"
+                    onclick="tryItOut('POSTapi-authors');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-authors"
+                    onclick="cancelTryOut('POSTapi-authors');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-authors" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/authors</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-authors--id-">Display the specified resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-authors--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/authors/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/authors/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-authors--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Retrieved successfully.&quot;,
+    &quot;authors&quot;: {
+        &quot;id&quot;: 1,
+        &quot;given_name&quot;: &quot;UNKNOWN&quot;,
+        &quot;family_name&quot;: &quot;AUTHOR&quot;,
+        &quot;is_company&quot;: 0,
+        &quot;created_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-09-05T05:02:59.000000Z&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-authors--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-authors--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-authors--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-authors--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-authors--id-"></code></pre>
+</span>
+<form id="form-GETapi-authors--id-" data-method="GET"
+      data-path="api/authors/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-authors--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-authors--id-"
+                    onclick="tryItOut('GETapi-authors--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-authors--id-"
+                    onclick="cancelTryOut('GETapi-authors--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-authors--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/authors/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-authors--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the author.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-PUTapi-authors--id-">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-authors--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/authors/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/authors/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-authors--id-">
+</span>
+<span id="execution-results-PUTapi-authors--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-authors--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-authors--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-authors--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-authors--id-"></code></pre>
+</span>
+<form id="form-PUTapi-authors--id-" data-method="PUT"
+      data-path="api/authors/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-authors--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-authors--id-"
+                    onclick="tryItOut('PUTapi-authors--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-authors--id-"
+                    onclick="cancelTryOut('PUTapi-authors--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-authors--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/authors/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/authors/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-authors--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the author.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-DELETEapi-authors--id-">Remove the specified resource from storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-authors--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/authors/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/authors/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-authors--id-">
+</span>
+<span id="execution-results-DELETEapi-authors--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-authors--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-authors--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-authors--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-authors--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-authors--id-" data-method="DELETE"
+      data-path="api/authors/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-authors--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-authors--id-"
+                    onclick="tryItOut('DELETEapi-authors--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-authors--id-"
+                    onclick="cancelTryOut('DELETEapi-authors--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-authors--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/authors/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-authors--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the author.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user"
+                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user"
+                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-healthcheck">Healthcheck</h2>
+
+<p>
+</p>
+
+<p>Check that the service is up. If everything is okay, you'll get a 200 OK response.</p>
+<p>Otherwise, the request will fail with a 400 error, and a response listing the failed services.</p>
+
+<span id="example-requests-GETapi-healthcheck">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/healthcheck" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/healthcheck"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-healthcheck">
+            <blockquote>
+            <p>Example response (400, Service is unhealthy):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: &quot;down&quot;,
+    &quot;services&quot;: {
+        &quot;database&quot;: &quot;up&quot;,
+        &quot;redis&quot;: &quot;down&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 57
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;status&quot;: &quot;up&quot;,
+    &quot;services&quot;: {
+        &quot;database&quot;: &quot;up&quot;,
+        &quot;redis&quot;: &quot;up&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-healthcheck" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-healthcheck"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-healthcheck"></code></pre>
+</span>
+<span id="execution-error-GETapi-healthcheck" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-healthcheck"></code></pre>
+</span>
+<form id="form-GETapi-healthcheck" data-method="GET"
+      data-path="api/healthcheck"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-healthcheck', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-healthcheck"
+                    onclick="tryItOut('GETapi-healthcheck');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-healthcheck"
+                    onclick="cancelTryOut('GETapi-healthcheck');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-healthcheck" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/healthcheck</code></b>
+        </p>
+                    </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <p>
+            <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<br>
+<p>The status of this API (<code>up</code> or <code>down</code>).</p>
+        </p>
+            <p>
+            <b><code>services</code></b>&nbsp;&nbsp;<small>object</small>  &nbsp;
+<br>
+<p>Map of each downstream service and their status (<code>up</code> or <code>down</code>).</p>
+        </p>
+        
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
