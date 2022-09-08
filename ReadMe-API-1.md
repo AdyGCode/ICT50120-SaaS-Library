@@ -107,7 +107,7 @@ a JSON structure with all the authors.
 - Create the resourceful controller skeleton for the Books API
 - Create the resourceful route for the Books API
 
-Remember that the Books API will be API/BooksAPIController.
+> Remember that the Books API will be API/BooksAPIController.
 
 ### TODO: Create Books Index API method
 - Edit the API/BooksAPIController and have the index method return ALL books
