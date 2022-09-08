@@ -257,8 +257,8 @@ class BookSeeder extends Seeder
             $authorGiven = null;
             $authorFamily = $author;
             if ($comma = mb_strpos($author, ",")) {
-                $authorGiven = mb_substr($author, 0, $comma);
-                $authorFamily = mb_substr($author, $comma + 1, mb_strlen($author));
+                $authorGiven = trim(mb_substr($author, 0, $comma));
+                $authorFamily =trim(mb_substr($author, $comma + 1, mb_strlen($author)));
             }
 
             $author = Author::whereGivenName($authorGiven)->whereFamilyName($authorFamily)->first();

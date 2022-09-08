@@ -1,4 +1,25 @@
-# Post Clone Rebuild of Dependencies using Docker
+# Clone & Rebuild Project Dependencies using Docker
+
+## Clone using PhpStorm
+
+Close any existing project to return to the "home dialog" of PhpStorm.
+
+IMG
+
+Click on Clone from Repo
+
+![Clone From Repo in PhpStorm](_docs/phpstorm-clone-repo-1.png)
+
+Enter the URL into the required space, and locate where you want the repository to go:
+
+![](_docs/phpstorm-clone-repo-2.png)
+
+Click Clone
+
+This should open the project's folder after cloning is complete.
+
+
+## What about the missing Vendor and Node Modules?
 
 > #### Problem:
 > 
@@ -64,11 +85,15 @@ docker run --rm \
 ```shell 
 sail up
 ```
-7) Next, create a second terminal instance, and when the sail up is complete, run:
+7) Create a second terminal instance and execute the following command:
+```shell
+sail artisan key:generate
+```
+8) Next, in the same second terminal instance, and when the sail up is complete, run:
 ```shell
    sail npm install && sail npm run dev
 ```
-8) Create a third terminal instance and execute the following command: 
+9) Create a third terminal instance and execute the following command:
 ```shell
 sail artisan key:generate
 ```
