@@ -93,10 +93,7 @@ sail artisan key:generate
 ```shell
    sail npm install && sail npm run dev
 ```
-9) Create a third terminal instance and execute the following command:
-```shell
-sail artisan key:generate
-```
+
 9) Finally, in the third terminal instance and execute the following command:
 ```shell
 sail artisan migrate:fresh --step --seed
