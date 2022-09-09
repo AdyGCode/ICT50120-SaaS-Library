@@ -1,6 +1,7 @@
 # Making an API I - Reading Data
 
-This set of tutorials is on how to create an API using Laravel (v9 or later) and Postman (for testing).
+This set of tutorials is on how to create an API using Laravel (v9 or
+later) and Postman (for testing).
 
 You will also add a plugin to document your API dynamically.
 
@@ -22,7 +23,8 @@ or system.
 There are no guarantees on quality of presentation
 
 ### Postman
-- [Laravel 8 REST API With Sanctum Authentication](https://www.youtube.com/watch?v=MT-GJQIY3EU) includes Postman in the process
+- [Laravel 8 REST API With Sanctum Authentication](https://www.youtube.com/watch?v=MT-GJQIY3EU)
+  includes Postman in the process
 - [Learn Postman](https://www.youtube.com/playlist?list=PL6iUkDSEH9SvsgM4zyFrTnaewN65NZHAG) 
 - [The Basics of Using Postman for API Testing](https://www.youtube.com/watch?v=t5n07Ybz7yI&t=403s)
 - [Postman Beginner Tutorial 2022](https://www.youtube.com/playlist?list=PLhW3qG5bs-L9P22XSnRe4suiWL4acXG-g)
@@ -41,7 +43,8 @@ There are no guarantees on quality of presentation
 
 
 ### Docker
-For those who want to supplement the basics of docker that we use via Laravel's Sail package, the following may proove very useful:
+For those who want to supplement the basics of docker that we use via Laravel's Sail package, 
+the following may prove very useful:
 - [Docker Crash Course Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7)
 
 ### DNS
@@ -49,7 +52,8 @@ For those who want to supplement the basics of docker that we use via Laravel's 
 
 
 ### TailwindCSS
-Not for this particular tutorial, but help for other tutorials were a back-end admin interface is being developed:
+Not for this particular tutorial, but help for other tutorials were a back-end admin interface 
+is being developed:
 
 - [TailwindCSS Tutorial - The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gpXORlEHjc5bgnIi5HEGhw)
 - [TailwindCSS Tutorial - Code with Dary](https://www.youtube.com/playlist?list=PLFHz2csJcgk8lgiRDB7FdsXVr4xy6jE8K)
@@ -75,19 +79,19 @@ Postman is an applicaiton that will allow you to design and test APIs.
 
 There are a number of alternatives to Postman, including Paw (Mac).
 
-To use Postman you will need to download and install it from [https://www.postman.com/downloads/](https://www.postman.com/downloads/).
+To use Postman you will need to download and install it from:
+- [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
 
 To learn how to use Postman the following videos will be useful:
 
-- [The Basics of Using Postman for API Testing](https://www.youtube.com/watch?v=t5n07Ybz7yI) ([https://www.youtube.com/watch?v=t5n07Ybz7yI](https://www.youtube.com/watch?v=t5n07Ybz7yI))
-- []() ([]())
-- []() ([]())
-- []() ([]())
+- [The Basics of Using Postman for API Testing](https://www.youtube.com/watch?v=t5n07Ybz7yI) 
+  ([https://www.youtube.com/watch?v=t5n07Ybz7yI](https://www.youtube.com/watch?v=t5n07Ybz7yI))
+
 
 
 ## REST and JSON
-As we are creating a **REST**ful **API**, we will be returning JSON based results to any request. As against a SOAP based API which 
-communicates via XML.
+As we are creating a **REST**ful **API**, we will be returning **JSON** based results to any
+request, as against a **SOAP** based API which communicates via **XML**.
 
 # Author API
 
@@ -114,11 +118,11 @@ use Illuminate\Support\Facades\Route;
 
 ## Automatic API...
 
-The router will automatically filter the request for the `api` when you send it to the URL containing `api` immediately after 
-the domain name: `http://DOMAIN.NAME/api`
+The router will automatically filter the request for the `api` when you send it to the
+URL containing `api` immediately after the domain name: `http://DOMAIN.NAME/api`
 
-This means that to make a 'call' to the API for the authors, you will now prepend `authors` with `/api/` like this: 
-`http://DOMAIN.NAME/api/authors`.
+This means that to make a 'call' to the API for the authors, you will now prepend
+`authors` with `/api/` like this: `http://DOMAIN.NAME/api/authors`.
 
 > Remember that `DOMAIN.NAME` in the development environment is going to be `localhost`.
 
@@ -128,10 +132,11 @@ Create the API controller for the Author:
 ```shell
 sail artisan make:controller API/AuthorAPIController --api --resource
 ```
-This creates a new Controller in the `app/Http/Controllers/API` folder. The API folder was created automatically by `artisan`.
+This creates a new Controller in the `app/Http/Controllers/API` folder. The API folder 
+was created automatically by `artisan`.
 
-Because we selected the `--api` and `--resource` options we got a "resourceful controller" that removed the front end 
-specific methods. We only have _five_ to deal with:
+Because we selected the `--api` and `--resource` options we got a "resourceful controller"
+that removed the front end specific methods. We only have _five_ to deal with:
 
 ```php
     public function index(){}
@@ -164,13 +169,15 @@ return response()->json(
 
 - Get all the authors
 - return a JSON response with:
-  - A message - something to send to the caller that may be displayed as a message to the user
+  - A message - something to send to the caller that may be displayed as a message to 
+    the user
   - The list of authors
   - Response code of 200, OK.
 
 ### Show API Method
 
-Our next call is for the `api/authors/{author}` endpoint. This is the one we retrieve a single author.
+Our next call is for the `api/authors/{author}` endpoint. This is the one we retrieve 
+a single author.
 
 | Request                              | Response                                             |
 |--------------------------------------|------------------------------------------------------|
@@ -202,19 +209,21 @@ Edit the `AuthorAPIController` and add the following to the `show` method:
         }
         return $response;
 ```
-We `query()` the `Author` model, asking to retrieve the author `where` the `id` is the one passed in the URL.
+We `query()` the `Author` model, asking to retrieve the author `where` the `id` is the
+one passed in the URL.
 
-Next we set up a default response, this being a 404 ("not found") response, with a null for the author and a suitable error message .
+Next we set up a default response, this being a 404 ("not found") response, with a null
+for the author and a suitable error message .
 
-Then we check to see if the number of authors found was at least 1 (it should only give 1 or 0),
-if it was then the response will be 200 ("Ok") and the author that was found.
+Then we check to see if the number of authors found was at least 1 (it should only 
+give 1 or 0), if it was then the response will be 200 ("Ok") and the author that was found.
 
 
 
 ## Quick "Brute Force" Test (Not to be used normally)
 
-A quick test of the API so far may be done using a browser window and going to `http://localhost/api/authors` which will show 
-a JSON structure with all the authors.
+A quick test of the API so far may be done using a browser window and going to 
+`http://localhost/api/authors` which will show a JSON structure with all the authors.
 
 ## Exercises
 
@@ -233,3 +242,7 @@ a JSON structure with all the authors.
 - Make the methods return a single book given the `id` for the book
 - Brute force test using (`http://localhost/api/books/45`)[http://localhost/api/books/45]
 
+
+### TODO: Add suitable error results 
+- Update your Book Index and Show methods to ensure they have suitable error results
+- Update the Author index to also respond with a suitable error (when no authors in database)

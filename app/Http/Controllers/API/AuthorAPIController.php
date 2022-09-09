@@ -36,6 +36,16 @@ class AuthorAPIController extends Controller
     public function store(Request $request)
     {
         return response()->error(404);
+
+//    - Validate the author data
+//    - Store the new author
+//    - Return a JSON response with:
+//      - A message - something to send to the caller that may be displayed as
+//        a message to the user
+//      - The list of authors
+//      - Response code of 201, Created
+
+        $author = Author::create($request);
     }
 
     /**
