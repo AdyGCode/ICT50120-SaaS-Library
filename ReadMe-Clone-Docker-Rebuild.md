@@ -41,19 +41,22 @@ With these instructions:
 
 
 1) Run Docker-Desktop
+
 2) Open your terminal application (**Windows Terminal** or **iTerm** on Mac).
    <br>**IMPORTANT:** If you are using Windows you will 
    need to start a WSL2 Ubuntu (or preferred Linux) terminal instance.
+
 3) Change into the repository folder:
-   <br>PC: 
+
+   PC: 
    ```shell
-   cd cd /mnt/c/Users/USERNAME/Source/Repos/REPOFOLDER
+   cd /mnt/c/Users/USERNAME/Source/Repos/REPOFOLDER
    ```
    For example:
    ```shell
     cd  /mnt/c/Users/GouldA/Source/Repos/DipIT-SaaS/ICT50120-SaaS-Library
    ```
-   <br>MacOS: 
+   MacOS: 
    ```shell
    cd ~/Source/Repos/REPOFOLDER
    ```
@@ -62,6 +65,7 @@ With these instructions:
     cd ~/Source/Repos/DipIT-SaaS/ICT50120-SaaS-Library
    ```
 4) Duplicate and rename the `.env.example` file to `.env`
+
 5) Edit the new .env file as there is an issue with the DB configuration. You will have to change the host to be `mariadb` 
    rather than `localhost`. Below is the configuration section for the `DB_` that functioned correctly for Adrian when testing:
 ```dotenv
@@ -72,6 +76,7 @@ DB_DATABASE=library
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+
 6) Execute the following (single line) command, and wait for it to complete:
 ```shell
 docker run --rm \
@@ -81,20 +86,23 @@ docker run --rm \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
 ```
-6) In this same shell, now execute the Laravel Sail command to bring the Docker development environment up: 
+
+7) In this same shell, now execute the Laravel Sail command to bring the Docker development environment up: 
 ```shell 
 sail up
 ```
-7) Create a second terminal instance and execute the following command:
+
+8) Create a second terminal instance and execute the following command:
 ```shell
 sail artisan key:generate
 ```
-8) Next, in the same second terminal instance, and when the sail up is complete, run:
+
+9) Next, in the same second terminal instance, and when the sail up is complete, run:
 ```shell
    sail npm install && sail npm run dev
 ```
 
-9) Finally, in the third terminal instance and execute the following command:
+10) Finally, in the third terminal instance and execute the following command:
 ```shell
 sail artisan migrate:fresh --step --seed
 ```

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthorAPIController extends Controller
 {
@@ -18,6 +19,7 @@ class AuthorAPIController extends Controller
         $authors = Author::all();
         return response()->json(
             [
+                'status' => true,
                 'message' => "Retrieved successfully.",
                 'authors' => $authors
             ],
@@ -44,14 +46,28 @@ class AuthorAPIController extends Controller
      */
     public function show($id)
     {
-        $authors = Author::find($id);
-        return response()->json(
+        $author = Author::query()->where('id', $id)->get();
+
+        $response = response()->json(
             [
-                'message' => "Retrieved successfully.",
-                'authors' => $authors
+                'status' => false,
+                'message' => "Author Not Found",
+                'authors' => null
             ],
-            200
+            404  # Not Found
         );
+
+        if ($author->count() > 0) {
+            $response = response()->json(
+                [
+                    'status' => true,
+                    'message' => "Retrieved successfully.",
+                    'authors' => $author
+                ],
+                200  # Ok
+            );
+        }
+        return $response;
     }
 
     /**
@@ -61,7 +77,8 @@ class AuthorAPIController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public
+    function update(Request $request, $id)
     {
         //
         return response()->error(404);
@@ -74,7 +91,8 @@ class AuthorAPIController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public
+    function destroy($id)
     {
         //
         return response()->error(404);
