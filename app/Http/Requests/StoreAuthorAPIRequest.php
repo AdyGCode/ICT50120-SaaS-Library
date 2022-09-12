@@ -15,7 +15,7 @@ class StoreAuthorAPIRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,11 +27,12 @@ class StoreAuthorAPIRequest extends FormRequest
     {
         return [
             'given_name' => [
-                'max:64'
+                'max:64',
+                'min:0',
             ],
             'family_name' => [
                 'required_without:given_name',
-                'max:128'
+                'max:128',
             ],
         ];
     }

@@ -72,7 +72,7 @@ To create the Request Stub we use the command:
 sail artisan make:request StoreAuthorAPIRequest
 ```
 
-We now edit the StoreAuthorAPIRequest.php file and make the following
+We now edit the `StoreAuthorAPIRequest.php` file and make the following
 modifications...
 
 At the top of the file, add the two extra lines to import HTTP Response
@@ -83,21 +83,109 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 ```
 
-We are currently not checking to see if the user is logged in so change 
+### Allowing the Request
+We are currently not checking to see if the user is logged in so change
 the "authorised" method to return True.
 
+```php
+public function authorize()
+{
+    return true;
+}
+```
 
-Edit the AuthorAPIController and add the following to the store method:
+### Validation Rules
+Now we need to create the rules for the validation method:
+
+| Field        | Rules                                      |
+|--------------|--------------------------------------------|
+| Given Name   | max 64 chars                               |
+| Family Name  | required without given name, max 128 chars |
+
+To define a maximum length we use `max:LENGTH`.
+
+To define something as required when another field is missing, we use: `required_without:FIELD_NAME`.
+
+Replace LENGTH with a number, and FIELD_NAME with the field that may be blank.
 
 ```php
-        $authors = Author::all();
-        return response()->json(
-            [
-                'message' => "Retrieved successfully.",
-                'authors' => $authors
-            ],
-            200
-        );
+return [
+    'given_name' => [
+        'max:64',
+        'min:0',
+    ],
+    'family_name' => [
+        'required_without:given_name',
+        'max:128',
+    ],
+];
+```
+
+#### Response Structure
+Responses should have a common structure, be they successful or not.
+
+A reasonable structure could be:
+
+```json
+{
+    'success': TRUE/FALSE,
+    'message': 'MESSAGE TEXT',
+    'data': [ RETURNED_DATA ]
+}
+```
+
+### Failed Validation Response
+
+Because we want to send back a JSON response it is a good idea to 
+structure our response to failed validation in a manner that is usable.
+
+We do this by adding the `failedValidation` method.
+
+```php
+public function failedValidation(Validator $validator)
+{
+    throw new HttpResponseException(response()->json([
+        'success' => false,
+        'message' => 'Validation errors',
+        'data' => $validator->errors()
+    ]));
+}
+```
+
+### Response Messages
+
+To customise the response messages from the validator we add a `messages` method:
+
+```php
+public function messages()
+{
+    return [
+        'family_name.required' => 'A family name is required. This is also used for Corporate authors',
+    ];
+}
+```
+
+## AuthorAPIController updates
+
+Now we have the Response set up we modify the `AuthorAPIController` a little.
+
+Edit the `AuthorAPIController` and change the store signature to:
+
+```php
+public function store(StoreAuthorAPIRequest $request)
+```
+
+Next we can add the author to the database.
+
+```php
+$authors = Author::all();
+return response()->json(
+    [
+        'message' => "Retrieved successfully.",
+        'authors' => $authors
+    ],
+    200
+);
 ```
 
 ## Testing with Postman
@@ -112,7 +200,7 @@ We need to use Postman to do the testing.
 
 ## Exercises
 
-### TODO: Create the Books API create endpoint
+### TODO: Create the Books API cCreate endpoint
 
 - Add the `create` method to `BooksAPIController.php`.
 - Make sure you verify all the required data is submitted.
@@ -120,13 +208,13 @@ We need to use Postman to do the testing.
   this is ok, until we look at error responses in a later stage.
 - Store the new book in the database.
 
-### TODO: Test the create method
+### TODO: Test the Create method
 
 - Create a suitable test in Postman to verify that you create a record 
   using the API only.
 - Use the Unknown Author id (1) for the test.
 
-### TODO: Add the book - Author relationship
+### TODO: Add the Book-Author relationship
 
 - Update the book create API endpoint so that when a book is added, 
   its author is linked via the author-book model.
