@@ -1,49 +1,26 @@
 # Making an API II - Inserting Data
 
-In [API part I](ReadMe-API-1.md) we looked at how to query the data via 
-an API in the Index and Show methods.
+So far we have browsed (index), read (show) and added (create) authors. 
+Now we need to look at updating them.
 
-The Index is NOT paginated (a problem for a later step), so we retrieve 
-ALL the records (even if we had 1,000,000 of them)!
 
-# HTTP Response Codes Revisited
+# The Steps
 
-One part of an API is the response it gives to a request, be that for a 
-`GET`, `POST`, `DELETE`, `PUT` or `PATCH`.
+- [Introduction](ReadMe-API-0-introduction.md)  🔗
+- [Index and Show](ReadMe-API-1-index-show.md)  🔗
+- [Create](ReadMe-API-2-create.md)  🔗
+- [Update](ReadMe-API-3-update.md)  🔗
+- [Delete](Readme-API-4-delete.md)  🔗
+- [Exercises](Readme-API-5-exercises.md)  🔗
+- [Documenting API](ReadMe-API-6-documenting.md)  🔗
+- [Pagination](ReadMe-API-7-pagination.md)  🔗
+- [Authentication](ReadMe-API-8-authentication.md)  🔗
 
-The commonly used REST specific codes are shown below:
 
-| Code Number | Meaning                | Use? |
-|-------------|------------------------|------|
-| `200`       | Ok                     | Y    |
-| `201`       | Created                | Y    |
-| `202`       | Accepted               |      |
-| `204`       | No content             |      |
-| `301`       | Moved Permanently      |      |
-| `302`       | Found                  | Y    |
-| `303`       | See Other              |      |
-| `304`       | Not Modified           | Y    |
-| `307`       | Temporary Redirect     |      |
-| `400`       | Bad Request            | Y    |
-| `401`       | Unauthorised           | Y    |
-| `403`       | Forbidden              | Y    |
-| `404`       | Not Found              | Y    |
-| `405`       | Method Not Allowed     |      |
-| `406`       | Not Acceptable         |      |
-| `412`       | Precondition Failed    |      |
-| `415`       | Unsupported Media Type |      |
-| `500`       | Internal Server Error  |      |
-| `501`       | Not Implemented        |      |
-
-The "Use?" column is an indication of commonly used codes.
-
-More details may be found at:
-- [REST API Tutorial - HTTP Status Codes](https://restfulapi.net/http-status-codes/).
-
-# Author API - Create a New Author
+# Author API - Update an Author
 
 As we have employed Resourceful Routing, we do not need to create a
-specific route. :smile:
+specific route. 👍
 
 Our exising `routes/api.php` file has this:
 
@@ -143,11 +120,15 @@ We need to use Postman to do the testing.
 
 - Create a suitable test in Postman to verify that you create a record 
   using the API only.
+- Use the Unknown Author id (1) for the test.
 
 ### TODO: Add the book - Author relationship
 
 - Update the book create API endpoint so that when a book is added, 
   its author is linked via the author-book model.
+- The Author is passed as TWO text fields (family name(s) or corporate name, and an optional, null if omitted, given name(s)).
+- Use these two fields to check if the author exists (if so use that id)
+- If not create the author first, then use the new author's ID as the id.
 - Refer to the seeders for help on this one.
 
 
@@ -155,3 +136,9 @@ We need to use Postman to do the testing.
 
 - Create a suitable test in Postman to verify that you create a 
   record (and link the associated author) using the API only.
+
+### TODO: Add multiple authors to a book
+
+- When submitting the author details, allow for an 'array of authors' (with family name(s) or corporate name, and an 
+  optional, null if omitted,  given name(s) for each author)
+- Use this to add multiple authors, in a similar way to the previous problem.

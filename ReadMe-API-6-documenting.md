@@ -10,6 +10,21 @@ you, the developer, and, if the API is to be public, the marketing/UX developers
 - [RapidAPI]()
 and more
 
+
+# The Steps
+
+- [Introduction](ReadMe-API-0-introduction.md)  🔗
+- [Index and Show](ReadMe-API-1-index-show.md)  🔗
+- [Create](ReadMe-API-2-create.md)  🔗
+- [Update](ReadMe-API-3-update.md)  🔗
+- [Delete](Readme-API-4-delete.md)  🔗
+- [Exercises](Readme-API-5-exercises.md)  🔗
+- [Documenting API](ReadMe-API-6-documenting.md)  🔗
+- [Pagination](ReadMe-API-7-pagination.md)  🔗
+- [Authentication](ReadMe-API-8-authentication.md)  🔗
+
+
+
 ## Scribe
 
 To install and use Scribe, follow these steps: 
@@ -29,5 +44,13 @@ Generate the basic documentation:
 sail artisan scribe:generate
 ```
 
-Test the publication worked by visiting: `http://localhost/docs`.
+Test the publication worked by visiting: `http://localhost/docs`
 
+### Making the Documentation Better
+
+The basic docs do not give much information, and a well documented API is very important.
+
+---
+TODO: Finish this section
+
+---
