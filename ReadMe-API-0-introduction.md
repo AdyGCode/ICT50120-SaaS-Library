@@ -1,7 +1,7 @@
 # Making an API 0 - Introduction
 
-This set of tutorials is on how to create an API using Laravel (v9 or
-later) and Postman (for testing).
+This set of tutorials is on how to create an API using
+Laravel (v9 or later) and Postman (for testing).
 
 You will also add a plugin to document your API dynamically.
 

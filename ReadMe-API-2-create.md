@@ -35,7 +35,7 @@ You can also use the following:
 Route::resource('authors', AuthorAPIController::class);
 ```
 
-This means we can now concentrate on the `API/AuthorAPIController.php`
+This means we can now concentrate on the `API/AuthorAPIController.php` 
 file and the `store`method.
 
 ## Store API Method
@@ -82,6 +82,107 @@ use Illuminate\Contracts\Validation\Validator;
 
 We are currently not checking to see if the user is logged in so change
 the `authorised` method to return `true`.
+### Allowing the Request
+We are currently not checking to see if the user is logged in so change
+the "authorised" method to return True.
+
+```php
+public function authorize()
+{
+    return true;
+}
+```
+
+### Validation Rules
+Now we need to create the rules for the validation method:
+
+| Field        | Rules                                      |
+|--------------|--------------------------------------------|
+| Given Name   | max 64 chars                               |
+| Family Name  | required without given name, max 128 chars |
+
+To define a maximum length we use `max:LENGTH`.
+
+
+```php
+public function authorize()
+{
+    return true;
+}
+```
+
+To define something as required when another field is missing, we use: `required_without:FIELD_NAME`.
+
+Replace LENGTH with a number, and FIELD_NAME with the field that may be blank.
+
+```php
+return [
+    'given_name' => [
+        'max:64',
+        'min:0',
+    ],
+    'family_name' => [
+        'required_without:given_name',
+        'max:128',
+    ],
+];
+```
+
+#### Response Structure
+Responses should have a common structure, be they successful or not.
+
+A reasonable structure could be:
+
+```json
+{
+    'success': TRUE/FALSE,
+    'message': 'MESSAGE TEXT',
+    'data': [ RETURNED_DATA ]
+}
+```
+
+### Failed Validation Response
+
+Because we want to send back a JSON response it is a good idea to 
+structure our response to failed validation in a manner that is usable.
+
+We do this by adding the `failedValidation` method.
+
+```php
+public function failedValidation(Validator $validator)
+{
+    throw new HttpResponseException(response()->json([
+        'success' => false,
+        'message' => 'Validation errors',
+        'data' => $validator->errors()
+    ]));
+}
+```
+
+### Response Messages
+
+To customise the response messages from the validator we add a `messages` method:
+
+```php
+public function messages()
+{
+    return [
+        'family_name.required' => 'A family name is required. This is also used for Corporate authors',
+    ];
+}
+```
+
+## AuthorAPIController updates
+
+Now we have the Response set up we modify the `AuthorAPIController` a little.
+
+Edit the `AuthorAPIController` and change the store signature to:
+
+```php
+public function store(StoreAuthorAPIRequest $request)
+```
+
+Next we can add the author to the database.
 
 Next we add the validation code to the rules array:
 ```php
@@ -166,38 +267,35 @@ Complete each of these exercises:
 - Create a test to check that missing data provides the expected error
   messages in response.
 
-### TODO: Add the book - Author relationship
+### TODO: Add the Book-Author relationship
 
 - Update the book create API endpoint so that when a book is added,
   its author is linked via the author-book model.
-- The Author is passed as TWO text fields: family name(s) or corporate 
-  name, and an optional, null if omitted, given name(s).
-- Use these two fields to check if the author exists, and if so use
-  that id.
-- If author is missing, create the author first, then use the new 
-  author's ID as the id.
+- The Author is passed as TWO text fields (family name(s) or corporate name, and an optional, null if omitted, given name(s)).
+- Use these two fields to check if the author exists (if so use that id)
+- If not create the author first, then use the new author's ID as the id.
 - Refer to the seeders for help on this one.
 
 ### TODO: Test the updated create method
 
-- Create a suitable test in Postman to verify that you create a
+- Create a suitable test in Postman to verify that you create a 
   record (and link the associated author) using the API only.
 
 ### TODO: Add multiple authors to a book
 
-- When submitting the author details, allow for an 'array of authors' 
-  (with family name(s) or corporate name, and an optional, null if 
-  omitted, given name(s) for each author).
-- Use this to add multiple authors, in a similar way to the previous 
-  problem.
+- When submitting the author details, allow for an 'array of authors' (with family name(s) or corporate name, and an 
+  optional, null if omitted,  given name(s) for each author)
+- Use this to add multiple authors, in a similar way to the previous problem.
+
 
 ### TODO: Update Author Create Request
+
 Four improvements to be done with the author's create request:
 
 - Update the author create so that if the author already exists then
   the author is returned.
 - Ensure a suitable error message is given.
-- Provide a suitable response code of 202 to represent the author was 
+- Provide a suitable response code of 202 to represent the author was
   accepted but not created.
-- If the author's given name is provided, and the family name is 
+- If the author's given name is provided, and the family name is
   missing, move the given name into the family name.
