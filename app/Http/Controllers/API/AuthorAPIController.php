@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAuthorAPIRequest;
 use App\Models\Author;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,10 +34,8 @@ class AuthorAPIController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAuthorAPIRequest $request)
     {
-        return response()->error(404);
-
 //    - Validate the author data
 //    - Store the new author
 //    - Return a JSON response with:
@@ -44,8 +43,21 @@ class AuthorAPIController extends Controller
 //        a message to the user
 //      - The list of authors
 //      - Response code of 201, Created
+        $validated = $request->validated();
+        $validated['is_company'] = $validated['is_company'] ?? 0;
+        $author = Author::create($validated);
 
-        $author = Author::create($request);
+        return response()->json(
+            [
+                'success' => true,
+                'message' => "Created successfully.",
+                'data' => [
+                    'authors' => $author,
+                ],
+            ],
+            200
+        );
+
     }
 
     /**

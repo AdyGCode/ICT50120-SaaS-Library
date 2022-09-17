@@ -102,8 +102,11 @@ Edit the `AuthorAPIController` and add the following to the `index` method:
 $authors = Author::all();
 return response()->json(
     [
+        'status' => true,
         'message' => "Retrieved successfully.",
-        'authors' => $authors
+        'data' => [
+            'authors' => $author,
+        ],    
     ],
     200
 );
@@ -113,8 +116,8 @@ return response()->json(
 - Return a JSON response with:
   - A message - something to send to the caller that may be displayed as a message to 
     the user
-  - The list of authors
-  - Response code of 200, OK.
+  - The list of authors (in the `data` section)
+  - Response code of `200`, OK.
 
 ## Show API Method
 
@@ -136,7 +139,9 @@ $response = response()->json(
     [
         'status' => false,
         'message' => "Author Not Found",
-        'authors' => null
+        'data' => [
+            'authors' => null,
+        ],
     ],
     404  # Not Found
 );
@@ -146,13 +151,16 @@ if ($author->count() > 0) {
         [
             'status' => true,
             'message' => "Retrieved successfully.",
-            'authors' => $author
+            'data' => [
+                'authors' => $author,
+            ],
         ],
         200  # Ok
     );
 }
 return $response;
 ```
+
 We `query()` the `Author` model, asking to retrieve the author `where` 
 the `id` is the one passed in the URL.
 
@@ -163,7 +171,8 @@ Then we check to see if the number of authors found was at least 1 (it
 should only give 1 or 0), if it was then the response will be 
 200 ("Ok") and the author that was found.
 
-A review of HTTP response codes may be found in
+A review of HTTP response codes may be found in:
+
 - [ReadMe-API-0-introduction.md](ReadMe-API-0-introduction.md) 🔗
 
 ## Quick "Brute Force" Test (Not to be used normally)
@@ -174,24 +183,32 @@ with all the authors.
 
 # Exercises
 
+Complete each of these exercises:
+
 ## TODO: Create skeleton for Books API
+
 - Create the resourceful controller skeleton for the Books API
 - Create the resourceful route for the Books API
 
 > Remember that the Books API will be `API/BooksAPIController`
 
 ## TODO: Create Books Index API method
+
 - Edit the API/BooksAPIController and have the index method return 
   **all the books**
 - Do a "brute force" Test using (`http://localhost/api/books`)[http://localhost/api/books]
+- Create a Postman request to test using same URI
 
 ## TODO: Create Show One Book API endpoint
+
 - Edit the BooksAPIController and the show method for the Books API
 - Make the methods return a single book given the `id` for the book
 - Brute force test using (`http://localhost/api/books/45`)[http://localhost/api/books/45]
-
+- Create a Postman request to test for an existing book
+- Create a Postman request to test for a non-existent book
 
 ## TODO: Add suitable error results 
+
 - Update your Book Index and Show methods to ensure they have suitable 
   error results
 - Update the Author index to also respond with a suitable error (when 

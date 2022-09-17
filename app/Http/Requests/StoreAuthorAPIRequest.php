@@ -15,7 +15,7 @@ class StoreAuthorAPIRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,12 +27,15 @@ class StoreAuthorAPIRequest extends FormRequest
     {
         return [
             'given_name' => [
-                'max:64'
+                'max:64',
             ],
             'family_name' => [
                 'required_without:given_name',
-                'max:128'
+                'max:128',
             ],
+            'is_company' => [
+                'boolean',
+            ]
         ];
     }
 
@@ -50,7 +53,8 @@ class StoreAuthorAPIRequest extends FormRequest
     public function messages()
     {
         return [
-            'family_name.required' => 'A family name is required. This is also used for Corporate authors',
+            'family_name.required_without' => 'A family name is required. This is also used for Corporate authors',
+            'is_company' => 'Is Company must be set to True or False',
         ];
     }
 }
