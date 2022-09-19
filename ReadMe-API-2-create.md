@@ -80,11 +80,11 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 ```
 
-We are currently not checking to see if the user is logged in so change
-the `authorised` method to return `true`.
+
 ### Allowing the Request
+
 We are currently not checking to see if the user is logged in so change
-the "authorised" method to return True.
+the `authorized` method to return `true`.
 
 ```php
 public function authorize()
@@ -94,6 +94,7 @@ public function authorize()
 ```
 
 ### Validation Rules
+
 Now we need to create the rules for the validation method:
 
 | Field        | Rules                                      |
@@ -103,15 +104,8 @@ Now we need to create the rules for the validation method:
 
 To define a maximum length we use `max:LENGTH`.
 
-
-```php
-public function authorize()
-{
-    return true;
-}
-```
-
-To define something as required when another field is missing, we use: `required_without:FIELD_NAME`.
+To define something as required when another field is missing, we use:
+`required_without:FIELD_NAME`.
 
 Replace LENGTH with a number, and FIELD_NAME with the field that may be blank.
 
@@ -119,27 +113,37 @@ Replace LENGTH with a number, and FIELD_NAME with the field that may be blank.
 return [
     'given_name' => [
         'max:64',
-        'min:0',
     ],
     'family_name' => [
         'required_without:given_name',
         'max:128',
     ],
+    'is_company' => [
+        'boolean',
+    ]
 ];
 ```
 
 #### Response Structure
+
 Responses should have a common structure, be they successful or not.
 
 A reasonable structure could be:
 
 ```json
 {
-    'success': TRUE/FALSE,
-    'message': 'MESSAGE TEXT',
-    'data': [ RETURNED_DATA ]
+    "success": true,
+    "message": "MESSAGE TEXT",
+    "data": [ { } ]
 }
 ```
+
+- `success` will be a yes or no (aka true and false) situation. So
+  we return true or false.
+- `message` will be some text to give immediate feedback to the caller. 
+  This could be further presented to the end user if appropriate.
+- `data` will contain an array of any returned data, be that data 
+  from queries or error messages, or similar.
 
 ### Failed Validation Response
 
@@ -167,7 +171,8 @@ To customise the response messages from the validator we add a `messages` method
 public function messages()
 {
     return [
-        'family_name.required' => 'A family name is required. This is also used for Corporate authors',
+        'family_name.required_without' => 'A family name is required. This is also used for Corporate authors',
+        'is_company' => 'Company must be set to True or False',
     ];
 }
 ```
@@ -178,30 +183,19 @@ Now we have the Response set up we modify the `AuthorAPIController` a little.
 
 Edit the `AuthorAPIController` and change the store signature to:
 
+
 ```php
 public function store(StoreAuthorAPIRequest $request)
 ```
 
 Next we can add the author to the database.
 
-Next we add the validation code to the rules array:
-```php
-'given_name' => [
-    'max:64'
-],
-'family_name' => [
-    'required_without:given_name',
-    'max:128'
-],
-```
-
-
 Edit the `AuthorAPIController` and add the following to the store method:
 
 ```php
-$validated = $request->validated();  // get validated data
-$validated['is_company'] = $validated['is_company'] ?? 0;  // Default to false
-$author = Author::create($validated); // create the author
+$validated = $request->validated();                       // Get validated data
+$validated['is_company'] = $validated['is_company'] ?? 0; // Default to false
+$author = Author::create($validated);                     // Create the author
 
 return response()->json(
     [

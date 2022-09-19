@@ -12,7 +12,7 @@ Click on Clone from Repo
 
 Enter the URL into the required space, and locate where you want the repository to go:
 
-![](_docs/phpstorm-clone-repo-2.png)
+![Repository URL](_docs/phpstorm-clone-repo-2.png)
 
 Click Clone
 

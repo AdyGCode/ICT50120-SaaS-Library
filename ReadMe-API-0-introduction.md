@@ -28,6 +28,7 @@ We are presuming you are using:
 
 All code will use PHP 8.1 or later.
 
+
 ## Before you Begin - Postman for API Testing & Development
 
 Postman is an application that will allow you to design and test APIs.
@@ -35,7 +36,6 @@ Postman is an application that will allow you to design and test APIs.
 There are a number of alternatives to Postman, including Paw (Mac).
 
 To use Postman you will need to download and install it from:
-
 - [https://www.postman.com/downloads/](https://www.postman.com/downloads/)
 
 To learn how to use Postman the following videos will be useful:
@@ -45,10 +45,11 @@ To learn how to use Postman the following videos will be useful:
 
 > We recommend you use one or both of these video tutorials to learn the basics of Postman.
 
+
 # Video Tutorials
 
-The following video tutorials should be used to complement these notes.
-Some should be used to learn how to use a particular method, application
+The following video tutorials should be used to complement these notes. 
+Some should be used to learn how to use a particular method, application 
 or system.
 
 There are no guarantees on quality of presentation

@@ -5,17 +5,17 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAuthorAPIRequest;
 use App\Models\Author;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AuthorAPIController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $authors = Author::all();
         return response()->json(
@@ -31,18 +31,12 @@ class AuthorAPIController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param StoreAuthorAPIRequest $request
+     * @return JsonResponse
      */
-    public function store(StoreAuthorAPIRequest $request)
+    public function store(StoreAuthorAPIRequest $request): JsonResponse
     {
-//    - Validate the author data
-//    - Store the new author
-//    - Return a JSON response with:
-//      - A message - something to send to the caller that may be displayed as
-//        a message to the user
-//      - The list of authors
-//      - Response code of 201, Created
+
         $validated = $request->validated();
         $validated['is_company'] = $validated['is_company'] ?? 0;
         $author = Author::create($validated);
@@ -57,16 +51,15 @@ class AuthorAPIController extends Controller
             ],
             200
         );
-
     }
 
     /**
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function show($id)
+    public function show(int $id): JsonResponse
     {
         $author = Author::query()->where('id', $id)->get();
 
@@ -95,7 +88,7 @@ class AuthorAPIController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param int $id
      * @return \Illuminate\Http\Response
      */

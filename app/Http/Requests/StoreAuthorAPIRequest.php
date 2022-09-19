@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Contracts\Validation\Validator;
 
 class StoreAuthorAPIRequest extends FormRequest
 {
@@ -42,11 +42,13 @@ class StoreAuthorAPIRequest extends FormRequest
 
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json([
-            'success' => false,
-            'message' => 'Validation errors',
-            'data' => $validator->errors()
-        ]));
+        throw new HttpResponseException(
+            response()->json([
+                'success' => false,
+                'message' => 'Validation errors',
+                'data' => $validator->errors(),
+            ])
+        );
     }
 
 
@@ -54,7 +56,7 @@ class StoreAuthorAPIRequest extends FormRequest
     {
         return [
             'family_name.required_without' => 'A family name is required. This is also used for Corporate authors',
-            'is_company' => 'Is Company must be set to True or False',
+            'is_company' => 'Company must be set to True or False',
         ];
     }
 }
