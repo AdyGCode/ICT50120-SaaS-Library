@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateAuthorAPIRequest;
 use App\Models\Author;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 
 class AuthorAPIController extends Controller
@@ -38,7 +40,6 @@ class AuthorAPIController extends Controller
      */
     public function store(StoreAuthorAPIRequest $request): JsonResponse
     {
-
         $validated = $request->validated();
         $validated['is_company'] = $validated['is_company'] ?? 0;
 
@@ -112,12 +113,11 @@ class AuthorAPIController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param UpdateAuthorAPIRequest $request
      * @param int $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public
-    function update(UpdateAuthorAPIRequest $request, int $id): JsonResponse
+    public function update(UpdateAuthorAPIRequest $request, int $id): JsonResponse
     {
         $validated = $request->validated();
         $author = Author::query()->where('id', $id)->first();
@@ -159,13 +159,12 @@ class AuthorAPIController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public
-    function destroy($id)
+    function destroy(int $id)
     {
         //
         return response()->error(404);
-
     }
 }
