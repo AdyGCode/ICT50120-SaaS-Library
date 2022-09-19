@@ -6,7 +6,7 @@ an API in the Index and Show methods.
 The Index is NOT paginated (a problem for a later step), so we retrieve
 ALL the records (even if we had 1,000,000 of them)!
 
-# The Steps
+## Tutorial Index
 
 - [Introduction](ReadMe-API-0-introduction.md)  🔗
 - [Index and Show](ReadMe-API-1-index-show.md)  🔗
@@ -242,6 +242,38 @@ Responses with errors:
 
 ![Request response with errors](_docs/postman-create-5.png)
 
+## What about blank family names?
+
+One nice extension to the API could be to make sure that single name
+entries have the same location for the data.
+
+For example: if the given name is provided, but the family name is
+missing, then the given name could be moved into the family name.
+
+Alternatively we move the family name into the given name.
+
+Either is workable and equally useful.
+
+Here is the code to move the given name into the family name if 
+the family name is missing but a given name is provided:
+
+```php
+if (!isset($validated['family_name']) ) {
+    $validated['family_name'] = $validated['given_name'];
+    $validated['given_name'] = null;
+}
+```
+
+The alternative, family name into given name, is shown here:
+
+```php
+if (!isset($validated['given_name'])) {
+    $validated['given_name'] = $validated['family_name'];
+    $validated['family_name'] = null;
+}
+```
+
+
 ## Exercises
 
 Complete each of these exercises:
@@ -265,9 +297,10 @@ Complete each of these exercises:
 
 - Update the book create API endpoint so that when a book is added,
   its author is linked via the author-book model.
-- The Author is passed as TWO text fields (family name(s) or corporate name, and an optional, null if omitted, given name(s)).
-- Use these two fields to check if the author exists (if so use that id)
-- If not create the author first, then use the new author's ID as the id.
+- The Author is passed as TWO text fields (family name(s) or corporate
+  name, and an optional, null if omitted, given name(s)).
+- Using these two fields, check the author exists (if so use that id)
+- If not create the author first, then use the new ID as the id.
 - Refer to the seeders for help on this one.
 
 ### TODO: Test the updated create method
@@ -277,8 +310,9 @@ Complete each of these exercises:
 
 ### TODO: Add multiple authors to a book
 
-- When submitting the author details, allow for an 'array of authors' (with family name(s) or corporate name, and an 
-  optional, null if omitted,  given name(s) for each author)
+- When submitting the author details, allow for an 'array of 
+  authors' (with family name(s) or corporate name, and an 
+  optional, null if omitted, given name(s) for each author)
 - Use this to add multiple authors, in a similar way to the previous problem.
 
 

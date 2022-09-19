@@ -55,7 +55,7 @@ class StoreAuthorAPIRequest extends FormRequest
     public function messages()
     {
         return [
-            'family_name.required_without' => 'A family name is required. This is also used for Corporate authors',
+            'family_name.required_without' => 'Either a given or family name is required.',
             'is_company' => 'Company must be set to True or False',
         ];
     }

@@ -5,7 +5,7 @@ Laravel (v9 or later) and Postman (for testing).
 
 You will also add a plugin to document your API dynamically.
 
-# The Steps
+## Tutorial Index
 
 - [Introduction](ReadMe-API-0-introduction.md)  🔗
 - [Index and Show](ReadMe-API-1-index-show.md)  🔗
