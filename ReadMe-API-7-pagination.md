@@ -11,8 +11,8 @@ TODO: Write this section
 - [Create](ReadMe-API-2-create.md)  🔗
 - [Update](ReadMe-API-3-update.md)  🔗
 - [Delete](Readme-API-4-delete.md)  🔗
-- [Exercises](Readme-API-5-exercises.md)  🔗
-- [Documenting API](ReadMe-API-6-documenting.md)  🔗
+- [Documenting API](ReadMe-API-5-documenting.md)  🔗
+- [Exercises](Readme-API-6-exercises.md)  🔗
 - [Pagination](ReadMe-API-7-pagination.md)  🔗
 - [Authentication](ReadMe-API-8-authentication.md)  🔗
 
