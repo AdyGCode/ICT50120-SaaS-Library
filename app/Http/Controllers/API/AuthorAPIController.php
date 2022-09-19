@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateAuthorAPIRequest;
 use App\Models\Author;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class AuthorAPIController extends Controller
 {
@@ -113,36 +114,39 @@ class AuthorAPIController extends Controller
      *
      * @param Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public
-    function update(UpdateAuthorAPIRequest $request, int $id): \Illuminate\Http\Response
+    function update(UpdateAuthorAPIRequest $request, int $id): JsonResponse
     {
         $validated = $request->validated();
-        $author = Author::query()->where('id', $id)->get();
+        $author = Author::query()->where('id', $id)->first();
         $response = response()->json(
             [
                 'status' => false,
-                'message' => "Author Not Found",
+                'message' => "Unable to update: Author Not Found",
                 'authors' => null
             ],
             404  # Not Found
         );
 
-        if ($author->count() > 0) {
+        if (!is_null($author) && $author->count() > 0) {
             $validated['is_company'] = $validated['is_company'] ?? 0;
             if (!isset($validated['given_name'])) {
                 $validated['given_name'] = $validated['family_name'];
                 $validated['family_name'] = null;
             }
 
-            $author->update($validated);
+            $author['given_name'] = $validated['given_name'];
+            $author['family_name'] = $validated['family_name'];
+            $author['is_company'] = $validated['is_company'];
+            $author['updated_at'] = Carbon::now();
             $author->save();
 
             $response = response()->json(
                 [
                     'status' => true,
-                    'message' => "Retrieved successfully.",
+                    'message' => "Updated successfully.",
                     'authors' => $author
                 ],
                 200  # Ok
