@@ -42,12 +42,29 @@ To develop this application we are using:
 - [...](#)
 - [...](#)
 
+# Documentation
+
+You will find a set of 'tutorials' in the [documentation](./_docs) folder.
+
+These contain the following chapters (in development).
+
+- [Introduction](./_docs/ReadMe-10-API-introduction.md)  🔗
+- [Index and Show](./_docs/ReadMe-11-API-index-show.md)  🔗
+- [Create](./_docs/ReadMe-12-API-create.md)  🔗
+- [Update](./_docs/ReadMe-13-API-update.md)  🔗
+- [Delete](./_docs/ReadMe-14-API-delete.md)  🔗
+- [Documenting API](./_docs/ReadMe-15-API-documenting.md)  🔗
+- [Exercises](./_docs/ReadMe-30-API-exercises.md)  🔗
+- [Pagination](./_docs/ReadMe-16-API-pagination.md)  🔗
+- [Authentication](./_docs/ReadMe-20-API-authentication.md)  🔗
+
 ## Table of Contents
 
 - [About](#about)
-- [Getting Started](#getting_started)
-- [Installing](#installing)
-- [Usage](#usage)
+- [Documentation](#documentation)
+- [Getting Started](#getting-started)
+- [Installing](#installation)
+- [Usage](#how-to-use)
 - [Credits](#credits)
 - [Contributing](#contributing)
 
@@ -59,18 +76,30 @@ developing this project.
 
 Always fork a copy of this project to start your own development.
 
+## Installation
+
+TODO: How to install the base project to allow students to practice the development of an API (and management back end). 
+
 ## How to Use
 
 TODO: Instructions on how to use the project
 
-# Credits
-   
-This project is based on the following tutorial:
 
+# Credits
+
+TODO: add tutorials used to help create this project.
+
+This project is based on the following tutorial(s):
+
+- [Title](#)
+- [Title](#)
+
+# Contributing
 
 Contributors to this project are:
 - Adrian Gould (Lecturer, North Metropolitan TAFE, Perth, WA, AU)
 - ...
+
 
 ## License
 
