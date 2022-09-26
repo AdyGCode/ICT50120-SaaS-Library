@@ -71,10 +71,11 @@ These contain the following chapters (in development).
 
 ## Getting Started
 
-TODO: Details on getting started with testing and further
-developing this project.
+If you wish to short-cut the development then you MUST always fork a copy of this project.
 
-Always fork a copy of this project to start your own development.
+This short-cut will provide on a partial implementation, plus the [tutorial content](./_docs) for you to follow through.
+
+Pull requests should be for grammatical and code errors, not for the complete application.
 
 ## Installation
 
