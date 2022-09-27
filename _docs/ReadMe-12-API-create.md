@@ -14,9 +14,11 @@ ALL the records (even if we had 1,000,000 of them)!
 - [Update](ReadMe-13-API-update.md)  🔗
 - [Delete](ReadMe-14-API-delete.md)  🔗
 - [Documenting API](ReadMe-15-API-documenting.md)  🔗
-- [Exercises](ReadMe-30-API-exercises.md)  🔗
+- [Exercises](ReadMe-90-API-exercises.md)  🔗
 - [Pagination](ReadMe-16-API-pagination.md)  🔗
 - [Authentication](ReadMe-20-API-authentication.md)  🔗
+
+---
 
 # Author API - Create a New Author
 
@@ -219,28 +221,28 @@ authenticated access.
 
 A suitable postman request could be as shown below:
 
-![Postman Create Author request image](_docs/postman-create-1.png)
+![Postman Create Author request image](./images/postman-create-1.png)
 
 The second image shows a corporate author being added:
 
-![Postman Create Corporate Author request image](_docs/postman-create-3.png)
+![Postman Create Corporate Author request image](./images/postman-create-3.png)
 
 The resulting response from the request is:
 
-![Postman create corporate author response](_docs/postman-create-2.png)
+![Postman create corporate author response](./images/postman-create-2.png)
 
 If an incorrect request is made, for instance no values are sent then
 we get suitable errors.
 
 Requests with missing data:
 
-![Postman create author with errors request](_docs/postman-create-4.png)
+![Postman create author with errors request](./images/postman-create-4.png)
 
-![Request response with errors](_docs/postman-create-6.png)
+![Request response with errors](./images/postman-create-6.png)
 
 Responses with errors:
 
-![Request response with errors](_docs/postman-create-5.png)
+![Request response with errors](./images/postman-create-5.png)
 
 ## What about blank family names?
 
@@ -273,57 +275,9 @@ if (!isset($validated['given_name'])) {
 }
 ```
 
+# What's next?
 
-## Exercises
+Next it's onto [Update](ReadMe-13-API-update.md).
 
-Complete each of these exercises:
-
-### TODO: Create the Books API create endpoint
-
-- Add the `create` method to `BooksAPIController.php`.
-- Make sure you verify all the required data is submitted.
-- If the data is not submitted, it will return HTML for the time being,
-  this is ok, until we look at error responses in a later stage.
-- Store the new book in the database.
-
-### TODO: Test the create method
-
-- Create a suitable test in Postman to verify that you create a record
-  using the API only.
-- Create a test to check that missing data provides the expected error
-  messages in response.
-
-### TODO: Add the Book-Author relationship
-
-- Update the book create API endpoint so that when a book is added,
-  its author is linked via the author-book model.
-- The Author is passed as TWO text fields (family name(s) or corporate
-  name, and an optional, null if omitted, given name(s)).
-- Using these two fields, check the author exists (if so use that id)
-- If not create the author first, then use the new ID as the id.
-- Refer to the seeders for help on this one.
-
-### TODO: Test the updated create method
-
-- Create a suitable test in Postman to verify that you create a 
-  record (and link the associated author) using the API only.
-
-### TODO: Add multiple authors to a book
-
-- When submitting the author details, allow for an 'array of 
-  authors' (with family name(s) or corporate name, and an 
-  optional, null if omitted, given name(s) for each author)
-- Use this to add multiple authors, in a similar way to the previous problem.
-
-
-### TODO: Update Author Create Request
-
-Four improvements to be done with the author's create request:
-
-- Update the author create so that if the author already exists then
-  the author is returned.
-- Ensure a suitable error message is given.
-- Provide a suitable response code of 202 to represent the author was
-  accepted but not created.
-- If the author's given name is provided, and the family name is
-  missing, move the given name into the family name.
+Before that though, remember to 
+[complete the exercises](ReadMe-90-API-exercises.md).

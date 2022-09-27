@@ -13,20 +13,28 @@ You will also add a plugin to document your API dynamically.
 - [Update](ReadMe-13-API-update.md)  🔗
 - [Delete](ReadMe-14-API-delete.md)  🔗
 - [Documenting API](ReadMe-15-API-documenting.md)  🔗
-- [Exercises](ReadMe-30-API-exercises.md)  🔗
+- [Exercises](ReadMe-90-API-exercises.md)  🔗
 - [Pagination](ReadMe-16-API-pagination.md)  🔗
 - [Authentication](ReadMe-20-API-authentication.md)  🔗
 
-## Required Resources
+---
+
+# Required Resources
 
 We are presuming you are using:
 
-- Docker Desktop
-- Windows Terminal (or iTerm on Mac)
-- Windows Subsystem for Linux v2 (WSL2)
-- Ubuntu Linux on WSL2
+- PC/Mac
+    - Docker Desktop
+- PC
+    - Windows Terminal 
+    - Windows Subsystem for Linux v2 (WSL2)
+    - Ubuntu Linux on WSL2
+- MacOS
+    - iTerm 2  
 
-All code will use PHP 8.1 or later.
+All code will use PHP 8.0 or later. Actual version used in 
+the tutorial is 8.1.x.
+
 
 ## Links
 
@@ -50,7 +58,7 @@ Before we start on the process, let's get the obligatory terminology out of the 
 | Route             | How an API endpoint request is directed to the relevant controller method.                                         |
 | SOAP              | **S**imple **O**bject **A**ccess **P**rotocol.                                                                     |
 | URI               | **U**niform **R**esource **I**dentifier.                                                                           |
-| URN              | **U**niform **R**esource **N**ame/**N**umber.                                                                      |
+| URN               | **U**niform **R**esource **N**ame/**N**umber.                                                                      |
 | URL               | **U**niform **R**esource **L**ocator.                                                                              |
 | XML               | e**X**tensible **M**arkup **L**anguage. Used by the SOAP API structure.                                            |
 
@@ -123,4 +131,8 @@ The "Use?" column is an indication of commonly used codes.
 More details may be found at:
 
 - [REST API Tutorial - HTTP Status Codes](https://restfulapi.net/http-status-codes/).
+
+# What's next?
+
+Next it's onto [Retrieve - aka Index/Show](ReadMe-11-API-index-show.md).
 

@@ -92,8 +92,8 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                         <a href="#endpoints-GETapi-user">GET api/user</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-healthcheck">
-                        <a href="#endpoints-GETapi-healthcheck">Healthcheck</a>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-health">
+                        <a href="#endpoints-GETapi-health">GET api/health</a>
                     </li>
                                                     </ul>
                             </ul>
@@ -107,7 +107,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 17 2022</li>
+        <li>Last updated: September 27 2022</li>
     </ul>
 </div>
 
@@ -198,14 +198,6 @@ access-control-allow-origin: *
             &quot;given_name&quot;: &quot;UNKNOWN&quot;,
             &quot;family_name&quot;: &quot;CORPORATE AUTHOR&quot;,
             &quot;is_company&quot;: 1,
-            &quot;created_at&quot;: &quot;2022-09-10T14:45:22.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2022-09-10T14:45:22.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;given_name&quot;: &quot;Kevin&quot;,
-            &quot;family_name&quot;: &quot;Yank&quot;,
-            &quot;is_company&quot;: 0,
             &quot;created_at&quot;: &quot;2022-09-10T14:45:22.000000Z&quot;,
             &quot;updated_at&quot;: &quot;2022-09-10T14:45:22.000000Z&quot;
         },
@@ -1368,6 +1360,22 @@ access-control-allow-origin: *
             &quot;is_company&quot;: 0,
             &quot;created_at&quot;: &quot;2022-09-17T08:45:33.000000Z&quot;,
             &quot;updated_at&quot;: &quot;2022-09-17T08:45:33.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 149,
+            &quot;given_name&quot;: &quot;jwcnbmhilsbwnvfovgflninyseccwbplzbcupncgm&quot;,
+            &quot;family_name&quot;: &quot;gbtjdrgpnlpylutoqsxdkiiwzeibeesisnfbtzddruelzakqcpxobeghalaumspfllnfihyrhhbagwagqmtpabpiswjmcvjmflgdaehfpkghhfysztkwwwqs&quot;,
+            &quot;is_company&quot;: 1,
+            &quot;created_at&quot;: &quot;2022-09-17T08:55:36.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-17T08:55:36.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 150,
+            &quot;given_name&quot;: &quot;sdsd&quot;,
+            &quot;family_name&quot;: null,
+            &quot;is_company&quot;: 1,
+            &quot;created_at&quot;: &quot;2022-09-17T08:55:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-17T08:55:52.000000Z&quot;
         }
     ]
 }</code>
@@ -1431,8 +1439,8 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"given_name\": \"jwcnbmhilsbwnvfovgflninyseccwbplzbcupncgm\",
-    \"family_name\": \"gbtjdrgpnlpylutoqsxdkiiwzeibeesisnfbtzddruelzakqcpxobeghalaumspfllnfihyrhhbagwagqmtpabpiswjmcvjmflgdaehfpkghhfysztkwwwqs\",
+    \"given_name\": \"xhrfmmrlvadvjpijxafqcxuizyxtldhwfb\",
+    \"family_name\": \"sumvgxoayijewbwxqctnauprwpbbljunwdvroacyedcrbozfbynrsnbluyfyuuahlfvh\",
     \"is_company\": false
 }"
 </code></pre></div>
@@ -1449,8 +1457,8 @@ const headers = {
 };
 
 let body = {
-    "given_name": "jwcnbmhilsbwnvfovgflninyseccwbplzbcupncgm",
-    "family_name": "gbtjdrgpnlpylutoqsxdkiiwzeibeesisnfbtzddruelzakqcpxobeghalaumspfllnfihyrhhbagwagqmtpabpiswjmcvjmflgdaehfpkghhfysztkwwwqs",
+    "given_name": "xhrfmmrlvadvjpijxafqcxuizyxtldhwfb",
+    "family_name": "sumvgxoayijewbwxqctnauprwpbbljunwdvroacyedcrbozfbynrsnbluyfyuuahlfvh",
     "is_company": false
 };
 
@@ -1509,7 +1517,7 @@ fetch(url, {
                 <input type="text"
                name="given_name"
                data-endpoint="POSTapi-authors"
-               value="jwcnbmhilsbwnvfovgflninyseccwbplzbcupncgm"
+               value="xhrfmmrlvadvjpijxafqcxuizyxtldhwfb"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 64 characters.</p>
@@ -1519,7 +1527,7 @@ fetch(url, {
                 <input type="text"
                name="family_name"
                data-endpoint="POSTapi-authors"
-               value="gbtjdrgpnlpylutoqsxdkiiwzeibeesisnfbtzddruelzakqcpxobeghalaumspfllnfihyrhhbagwagqmtpabpiswjmcvjmflgdaehfpkghhfysztkwwwqs"
+               value="sumvgxoayijewbwxqctnauprwpbbljunwdvroacyedcrbozfbynrsnbluyfyuuahlfvh"
                data-component="body" hidden>
     <br>
 <p>This field is required when <code>given_name</code> is not present. Must not be greater than 128 characters.</p>
@@ -1681,7 +1689,13 @@ access-control-allow-origin: *
     <pre><code class="language-bash">curl --request PUT \
     "http://localhost/api/authors/1" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"given_name\": \"dmwrnuijzdfgzjuuxbocupazadwqztvkbckqv\",
+    \"family_name\": \"xqgsb\",
+    \"is_company\": false
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1694,9 +1708,16 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "given_name": "dmwrnuijzdfgzjuuxbocupazadwqztvkbckqv",
+    "family_name": "xqgsb",
+    "is_company": false
+};
+
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -1757,7 +1778,49 @@ fetch(url, {
     <br>
 <p>The ID of the author.</p>
             </p>
-                    </form>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>given_name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="given_name"
+               data-endpoint="PUTapi-authors--id-"
+               value="dmwrnuijzdfgzjuuxbocupazadwqztvkbckqv"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 64 characters.</p>
+        </p>
+                <p>
+            <b><code>family_name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="family_name"
+               data-endpoint="PUTapi-authors--id-"
+               value="xqgsb"
+               data-component="body" hidden>
+    <br>
+<p>This field is required when <code>given_name</code> is not present. Must not be greater than 128 characters.</p>
+        </p>
+                <p>
+            <b><code>is_company</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+                <label data-endpoint="PUTapi-authors--id-" hidden>
+            <input type="radio" name="is_company"
+                   value="true"
+                   data-endpoint="PUTapi-authors--id-"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-authors--id-" hidden>
+            <input type="radio" name="is_company"
+                   value="false"
+                   data-endpoint="PUTapi-authors--id-"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+        </form>
 
             <h2 id="endpoints-DELETEapi-authors--id-">Remove the specified resource from storage.</h2>
 
@@ -1943,28 +2006,27 @@ access-control-allow-origin: *
         </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-healthcheck">Healthcheck</h2>
+            <h2 id="endpoints-GETapi-health">GET api/health</h2>
 
 <p>
 </p>
 
-<p>Check that the service is up. If everything is okay, you'll get a 200 OK response.</p>
-<p>Otherwise, the request will fail with a 400 error, and a response listing the failed services.</p>
 
-<span id="example-requests-GETapi-healthcheck">
+
+<span id="example-requests-GETapi-health">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/healthcheck" \
+    --get "http://localhost/api/health" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/healthcheck"
+    "http://localhost/api/health"
 );
 
 const headers = {
@@ -1979,20 +2041,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-healthcheck">
-            <blockquote>
-            <p>Example response (400, Service is unhealthy):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;status&quot;: &quot;down&quot;,
-    &quot;services&quot;: {
-        &quot;database&quot;: &quot;up&quot;,
-        &quot;redis&quot;: &quot;down&quot;
-    }
-}</code>
- </pre>
+<span id="example-responses-GETapi-health">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -2000,7 +2049,7 @@ fetch(url, {
             <summary>
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
+            <pre><code class="language-http">cache-control: must-revalidate, no-cache, no-store, post-check=0, pre-check=0, private
 content-type: application/json
 x-ratelimit-limit: 60
 x-ratelimit-remaining: 57
@@ -2009,68 +2058,132 @@ access-control-allow-origin: *
         </details>         <pre>
 
 <code class="language-json">{
-    &quot;status&quot;: &quot;up&quot;,
-    &quot;services&quot;: {
-        &quot;database&quot;: &quot;up&quot;,
-        &quot;redis&quot;: &quot;up&quot;
-    }
+    &quot;finishedAt&quot;: 1664252917,
+    &quot;checkResults&quot;: [
+        {
+            &quot;name&quot;: &quot;UsedDiskSpace&quot;,
+            &quot;label&quot;: &quot;Used Disk Space&quot;,
+            &quot;notificationMessage&quot;: &quot;The disk is almost full (97% used).&quot;,
+            &quot;shortSummary&quot;: &quot;97%&quot;,
+            &quot;status&quot;: &quot;failed&quot;,
+            &quot;meta&quot;: {
+                &quot;disk_space_used_percentage&quot;: 97
+            }
+        },
+        {
+            &quot;name&quot;: &quot;OptimizedApp&quot;,
+            &quot;label&quot;: &quot;Optimized App&quot;,
+            &quot;notificationMessage&quot;: &quot;Configs are not cached.&quot;,
+            &quot;shortSummary&quot;: &quot;Failed&quot;,
+            &quot;status&quot;: &quot;failed&quot;,
+            &quot;meta&quot;: []
+        },
+        {
+            &quot;name&quot;: &quot;DebugMode&quot;,
+            &quot;label&quot;: &quot;Debug Mode&quot;,
+            &quot;notificationMessage&quot;: &quot;The debug mode was expected to be `false`, but actually was `true`&quot;,
+            &quot;shortSummary&quot;: &quot;true&quot;,
+            &quot;status&quot;: &quot;failed&quot;,
+            &quot;meta&quot;: {
+                &quot;actual&quot;: true,
+                &quot;expected&quot;: false
+            }
+        },
+        {
+            &quot;name&quot;: &quot;MeiliSearch&quot;,
+            &quot;label&quot;: &quot;MeiliSearch&quot;,
+            &quot;notificationMessage&quot;: &quot;Could not reach http://127.0.0.1:7700/health.&quot;,
+            &quot;shortSummary&quot;: &quot;Unreachable&quot;,
+            &quot;status&quot;: &quot;failed&quot;,
+            &quot;meta&quot;: []
+        },
+        {
+            &quot;name&quot;: &quot;Environment&quot;,
+            &quot;label&quot;: &quot;Environment&quot;,
+            &quot;notificationMessage&quot;: &quot;The environment was expected to be `production`, but actually was `local`&quot;,
+            &quot;shortSummary&quot;: &quot;local&quot;,
+            &quot;status&quot;: &quot;failed&quot;,
+            &quot;meta&quot;: {
+                &quot;actual&quot;: &quot;local&quot;,
+                &quot;expected&quot;: &quot;production&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Database&quot;,
+            &quot;label&quot;: &quot;Database&quot;,
+            &quot;notificationMessage&quot;: &quot;&quot;,
+            &quot;shortSummary&quot;: &quot;Ok&quot;,
+            &quot;status&quot;: &quot;ok&quot;,
+            &quot;meta&quot;: {
+                &quot;connection_name&quot;: &quot;mysql&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Horizon&quot;,
+            &quot;label&quot;: &quot;Horizon&quot;,
+            &quot;notificationMessage&quot;: &quot;Horizon does not seem to be installed correctly.&quot;,
+            &quot;shortSummary&quot;: &quot;Failed&quot;,
+            &quot;status&quot;: &quot;failed&quot;,
+            &quot;meta&quot;: []
+        },
+        {
+            &quot;name&quot;: &quot;CpuLoad&quot;,
+            &quot;label&quot;: &quot;Cpu Load&quot;,
+            &quot;notificationMessage&quot;: &quot;&quot;,
+            &quot;shortSummary&quot;: &quot;0.04248046875 0.115234375 0.05419921875&quot;,
+            &quot;status&quot;: &quot;ok&quot;,
+            &quot;meta&quot;: {
+                &quot;last_minute&quot;: 0.04248046875,
+                &quot;last_5_minutes&quot;: 0.115234375,
+                &quot;last_15_minutes&quot;: 0.05419921875
+            }
+        }
+    ]
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-healthcheck" hidden>
+<span id="execution-results-GETapi-health" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-healthcheck"></span>:
+                id="execution-response-status-GETapi-health"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-healthcheck"></code></pre>
+    <pre class="json"><code id="execution-response-content-GETapi-health"></code></pre>
 </span>
-<span id="execution-error-GETapi-healthcheck" hidden>
+<span id="execution-error-GETapi-health" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-healthcheck"></code></pre>
+    <pre><code id="execution-error-message-GETapi-health"></code></pre>
 </span>
-<form id="form-GETapi-healthcheck" data-method="GET"
-      data-path="api/healthcheck"
+<form id="form-GETapi-health" data-method="GET"
+      data-path="api/health"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-healthcheck', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-health', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-healthcheck"
-                    onclick="tryItOut('GETapi-healthcheck');">Try it out ⚡
+                    id="btn-tryout-GETapi-health"
+                    onclick="tryItOut('GETapi-health');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-healthcheck"
-                    onclick="cancelTryOut('GETapi-healthcheck');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-health"
+                    onclick="cancelTryOut('GETapi-health');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-healthcheck" hidden>Send Request 💥
+                    id="btn-executetryout-GETapi-health" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/healthcheck</code></b>
+            <b><code>api/health</code></b>
         </p>
                     </form>
 
-    <h3>Response</h3>
-    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
-            <p>
-            <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<br>
-<p>The status of this API (<code>up</code> or <code>down</code>).</p>
-        </p>
-            <p>
-            <b><code>services</code></b>&nbsp;&nbsp;<small>object</small>  &nbsp;
-<br>
-<p>Map of each downstream service and their status (<code>up</code> or <code>down</code>).</p>
-        </p>
-        
+    
 
         
     </div>

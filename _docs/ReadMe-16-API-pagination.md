@@ -1,7 +1,10 @@
 # Making an API - Pagination
 
-TODO: Write this section
+Pagination is a way of sending chunks of data to the caller, be they an
+API request or a web page.
 
+There are different ways to do pagination, for now we will use the 
+built-in pagination for Laravel.
 
 
 ## Tutorial Index
@@ -12,11 +15,20 @@ TODO: Write this section
 - [Update](ReadMe-13-API-update.md)  🔗
 - [Delete](ReadMe-14-API-delete.md)  🔗
 - [Documenting API](ReadMe-15-API-documenting.md)  🔗
-- [Exercises](ReadMe-30-API-exercises.md)  🔗
+- [Exercises](ReadMe-90-API-exercises.md)  🔗
 - [Pagination](ReadMe-16-API-pagination.md)  🔗
 - [Authentication](ReadMe-20-API-authentication.md)  🔗
 
 ---
-TODO: Finish this section
 
----
+
+
+
+
+
+
+# What's next?
+
+Next it's onto [Authentication](ReadMe-20-API-authentication.md).
+
+Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).

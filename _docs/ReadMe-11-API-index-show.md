@@ -16,10 +16,11 @@ This is Part 1 - the Index and Show methods.
 - [Update](ReadMe-13-API-update.md)  🔗
 - [Delete](ReadMe-14-API-delete.md)  🔗
 - [Documenting API](ReadMe-15-API-documenting.md)  🔗
-- [Exercises](ReadMe-30-API-exercises.md)  🔗
+- [Exercises](ReadMe-90-API-exercises.md)  🔗
 - [Pagination](ReadMe-16-API-pagination.md)  🔗
 - [Authentication](ReadMe-20-API-authentication.md)  🔗
 
+---
 
 # Author API
 
@@ -114,8 +115,8 @@ return response()->json(
 
 - Get all the authors
 - Return a JSON response with:
-  - A message - something to send to the caller that may be displayed as a message to 
-    the user
+  - A `message` - something to send to the caller that may 
+  be displayed as a message to the user
   - The list of authors (in the `data` section)
   - Response code of `200`, OK.
 
@@ -161,55 +162,43 @@ if ($author->count() > 0) {
 return $response;
 ```
 
-We `query()` the `Author` model, asking to retrieve the author `where` 
-the `id` is the one passed in the URL.
+We `query()` the `Author` model, asking to retrieve the author
+`where` the `id` is the one passed in the URL.
 
 Next we set up a default response, this being a 404 ("not found") 
 response, with a null for the author and a suitable error message.
 
-Then we check to see if the number of authors found was at least 1 (it 
-should only give 1 or 0), if it was then the response will be 
+Then we check to see if the number of authors found was at least
+1 (it should only give 1 or 0), if it was then the response will be 
 200 ("Ok") and the author that was found.
 
 A review of HTTP response codes may be found in:
 
 - [ReadMe-API-0-introduction.md](ReadMe-10-API-introduction.md) 🔗
 
-## Quick "Brute Force" Test (Not to be used normally)
+## Quick "Brute Force" Test 
+
+> This testing should not be used under normal circumstances as it
+> will only work for the index and show methods.
 
 A quick test of the API so far may be done using a browser window and 
-going to `http://localhost/api/authors` which will show a JSON structure
-with all the authors.
+going to `http://localhost/api/authors` which will show a 
+JSON structure with all the authors.
 
-# Exercises
+## Postman Test: Browse
 
-Complete each of these exercises:
+The Postman configuration for the Browse/Index/Retrieve is:
 
-## TODO: Create skeleton for Books API
+![GET request for Authors](images/postman-retrieve-1.png)
 
-- Create the resourceful controller skeleton for the Books API
-- Create the resourceful route for the Books API
+## Postman Test: Read
 
-> Remember that the Books API will be `API/BooksAPIController`
+When you send the GET request you will obtain results similar to:
 
-## TODO: Create Books Index API method
+![GET Results for Authors](images/postman-retrieve-2.png)
 
-- Edit the API/BooksAPIController and have the index method return 
-  **all the books**
-- Do a "brute force" Test using (`http://localhost/api/books`)[http://localhost/api/books]
-- Create a Postman request to test using same URI
+# What's next?
 
-## TODO: Create Show One Book API endpoint
+Next it's onto [Create](ReadMe-12-API-create.md).
 
-- Edit the BooksAPIController and the show method for the Books API
-- Make the methods return a single book given the `id` for the book
-- Brute force test using (`http://localhost/api/books/45`)[http://localhost/api/books/45]
-- Create a Postman request to test for an existing book
-- Create a Postman request to test for a non-existent book
-
-## TODO: Add suitable error results 
-
-- Update your Book Index and Show methods to ensure they have suitable 
-  error results
-- Update the Author index to also respond with a suitable error (when 
-  no authors in database)
+Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).

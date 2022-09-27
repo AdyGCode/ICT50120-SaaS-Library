@@ -19,7 +19,7 @@ and more
 - [Update](ReadMe-13-API-update.md)  🔗
 - [Delete](ReadMe-14-API-delete.md)  🔗
 - [Documenting API](ReadMe-15-API-documenting.md)  🔗
-- [Exercises](ReadMe-30-API-exercises.md)  🔗
+- [Exercises](ReadMe-90-API-exercises.md)  🔗
 - [Pagination](ReadMe-16-API-pagination.md)  🔗
 - [Authentication](ReadMe-20-API-authentication.md)  🔗
 
@@ -54,3 +54,10 @@ The basic docs do not give much information, and a well documented API is very i
 TODO: Finish this section
 
 ---
+
+
+# What's next?
+
+Next it's onto [Pagination](ReadMe-16-API-pagination.md).
+
+Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).

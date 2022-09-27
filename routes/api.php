@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthorAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 /**
- * Healthcheck
+ * Dummy Healthcheck
  *
  * Check that the service is up. If everything is okay, you'll get a 200 OK response.
  *
@@ -33,12 +34,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  * @responseField status The status of this API (`up` or `down`).
  * @responseField services Map of each downstream service and their status (`up` or `down`).
  */
-Route::get('/healthcheck', function () {
-    return [
-        'status' => 'up',
-        'services' => [
-            'database' => 'up',
-            'redis' => 'up',
-        ],
-    ];
-});
+//Route::get('/healthcheck', function () {
+//    return [
+//        'status' => 'up',
+//        'services' => [
+//            'database' => 'up',
+//            'redis' => 'up',
+//        ],
+//    ];
+//});
+
+
+/**
+ * Using Spatie's Health package
+ */
+Route::get('health', HealthCheckJsonResultsController::class);

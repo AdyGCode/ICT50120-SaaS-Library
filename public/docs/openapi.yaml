@@ -52,13 +52,6 @@ paths:
                       created_at: '2022-09-10T14:45:22.000000Z'
                       updated_at: '2022-09-10T14:45:22.000000Z'
                     -
-                      id: 3
-                      given_name: Kevin
-                      family_name: Yank
-                      is_company: 0
-                      created_at: '2022-09-10T14:45:22.000000Z'
-                      updated_at: '2022-09-10T14:45:22.000000Z'
-                    -
                       id: 4
                       given_name: Mark
                       family_name: Boulton
@@ -1073,6 +1066,20 @@ paths:
                       is_company: 0
                       created_at: '2022-09-17T08:45:33.000000Z'
                       updated_at: '2022-09-17T08:45:33.000000Z'
+                    -
+                      id: 149
+                      given_name: jwcnbmhilsbwnvfovgflninyseccwbplzbcupncgm
+                      family_name: gbtjdrgpnlpylutoqsxdkiiwzeibeesisnfbtzddruelzakqcpxobeghalaumspfllnfihyrhhbagwagqmtpabpiswjmcvjmflgdaehfpkghhfysztkwwwqs
+                      is_company: 1
+                      created_at: '2022-09-17T08:55:36.000000Z'
+                      updated_at: '2022-09-17T08:55:36.000000Z'
+                    -
+                      id: 150
+                      given_name: sdsd
+                      family_name: null
+                      is_company: 1
+                      created_at: '2022-09-17T08:55:52.000000Z'
+                      updated_at: '2022-09-17T08:55:52.000000Z'
                 properties:
                   status:
                     type: boolean
@@ -1095,13 +1102,6 @@ paths:
                         given_name: UNKNOWN
                         family_name: 'CORPORATE AUTHOR'
                         is_company: 1
-                        created_at: '2022-09-10T14:45:22.000000Z'
-                        updated_at: '2022-09-10T14:45:22.000000Z'
-                      -
-                        id: 3
-                        given_name: Kevin
-                        family_name: Yank
-                        is_company: 0
                         created_at: '2022-09-10T14:45:22.000000Z'
                         updated_at: '2022-09-10T14:45:22.000000Z'
                       -
@@ -2119,6 +2119,20 @@ paths:
                         is_company: 0
                         created_at: '2022-09-17T08:45:33.000000Z'
                         updated_at: '2022-09-17T08:45:33.000000Z'
+                      -
+                        id: 149
+                        given_name: jwcnbmhilsbwnvfovgflninyseccwbplzbcupncgm
+                        family_name: gbtjdrgpnlpylutoqsxdkiiwzeibeesisnfbtzddruelzakqcpxobeghalaumspfllnfihyrhhbagwagqmtpabpiswjmcvjmflgdaehfpkghhfysztkwwwqs
+                        is_company: 1
+                        created_at: '2022-09-17T08:55:36.000000Z'
+                        updated_at: '2022-09-17T08:55:36.000000Z'
+                      -
+                        id: 150
+                        given_name: sdsd
+                        family_name: null
+                        is_company: 1
+                        created_at: '2022-09-17T08:55:52.000000Z'
+                        updated_at: '2022-09-17T08:55:52.000000Z'
                     items:
                       type: object
       tags:
@@ -2155,11 +2169,11 @@ paths:
                 given_name:
                   type: string
                   description: 'Must not be greater than 64 characters.'
-                  example: jwcnbmhilsbwnvfovgflninyseccwbplzbcupncgm
+                  example: xhrfmmrlvadvjpijxafqcxuizyxtldhwfb
                 family_name:
                   type: string
                   description: 'This field is required when <code>given_name</code> is not present. Must not be greater than 128 characters.'
-                  example: gbtjdrgpnlpylutoqsxdkiiwzeibeesisnfbtzddruelzakqcpxobeghalaumspfllnfihyrhhbagwagqmtpabpiswjmcvjmflgdaehfpkghhfysztkwwwqs
+                  example: sumvgxoayijewbwxqctnauprwpbbljunwdvroacyedcrbozfbynrsnbluyfyuuahlfvh
                 is_company:
                   type: boolean
                   description: ''
@@ -2245,6 +2259,25 @@ paths:
       responses: {  }
       tags:
         - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                given_name:
+                  type: string
+                  description: 'Must not be greater than 64 characters.'
+                  example: dmwrnuijzdfgzjuuxbocupazadwqztvkbckqv
+                family_name:
+                  type: string
+                  description: 'This field is required when <code>given_name</code> is not present. Must not be greater than 128 characters.'
+                  example: xqgsb
+                is_company:
+                  type: boolean
+                  description: ''
+                  example: false
       security: []
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -2312,10 +2345,10 @@ paths:
       tags:
         - Endpoints
       security: []
-  /api/healthcheck:
+  /api/health:
     get:
-      summary: Healthcheck
-      description: "Check that the service is up. If everything is okay, you'll get a 200 OK response.\n\nOtherwise, the request will fail with a 400 error, and a response listing the failed services."
+      summary: ''
+      description: ''
       parameters:
         -
           in: header
@@ -2332,28 +2365,6 @@ paths:
           schema:
             type: string
       responses:
-        400:
-          description: 'Service is unhealthy'
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  status: down
-                  services:
-                    database: up
-                    redis: down
-                properties:
-                  status:
-                    type: string
-                    example: down
-                    description: 'The status of this API (`up` or `down`).'
-                  services:
-                    type: object
-                    example:
-                      database: up
-                      redis: down
-                    description: 'Map of each downstream service and their status (`up` or `down`).'
         200:
           description: ''
           content:
@@ -2361,21 +2372,147 @@ paths:
               schema:
                 type: object
                 example:
-                  status: up
-                  services:
-                    database: up
-                    redis: up
+                  finishedAt: 1664252917
+                  checkResults:
+                    -
+                      name: UsedDiskSpace
+                      label: 'Used Disk Space'
+                      notificationMessage: 'The disk is almost full (97% used).'
+                      shortSummary: 97%
+                      status: failed
+                      meta:
+                        disk_space_used_percentage: 97
+                    -
+                      name: OptimizedApp
+                      label: 'Optimized App'
+                      notificationMessage: 'Configs are not cached.'
+                      shortSummary: Failed
+                      status: failed
+                      meta: []
+                    -
+                      name: DebugMode
+                      label: 'Debug Mode'
+                      notificationMessage: 'The debug mode was expected to be `false`, but actually was `true`'
+                      shortSummary: 'true'
+                      status: failed
+                      meta:
+                        actual: true
+                        expected: false
+                    -
+                      name: MeiliSearch
+                      label: MeiliSearch
+                      notificationMessage: 'Could not reach http://127.0.0.1:7700/health.'
+                      shortSummary: Unreachable
+                      status: failed
+                      meta: []
+                    -
+                      name: Environment
+                      label: Environment
+                      notificationMessage: 'The environment was expected to be `production`, but actually was `local`'
+                      shortSummary: local
+                      status: failed
+                      meta:
+                        actual: local
+                        expected: production
+                    -
+                      name: Database
+                      label: Database
+                      notificationMessage: ''
+                      shortSummary: Ok
+                      status: ok
+                      meta:
+                        connection_name: mysql
+                    -
+                      name: Horizon
+                      label: Horizon
+                      notificationMessage: 'Horizon does not seem to be installed correctly.'
+                      shortSummary: Failed
+                      status: failed
+                      meta: []
+                    -
+                      name: CpuLoad
+                      label: 'Cpu Load'
+                      notificationMessage: ''
+                      shortSummary: '0.04248046875 0.115234375 0.05419921875'
+                      status: ok
+                      meta:
+                        last_minute: 0.04248046875
+                        last_5_minutes: 0.115234375
+                        last_15_minutes: 0.05419921875
                 properties:
-                  status:
-                    type: string
-                    example: up
-                    description: 'The status of this API (`up` or `down`).'
-                  services:
-                    type: object
+                  finishedAt:
+                    type: integer
+                    example: 1664252917
+                  checkResults:
+                    type: array
                     example:
-                      database: up
-                      redis: up
-                    description: 'Map of each downstream service and their status (`up` or `down`).'
+                      -
+                        name: UsedDiskSpace
+                        label: 'Used Disk Space'
+                        notificationMessage: 'The disk is almost full (97% used).'
+                        shortSummary: 97%
+                        status: failed
+                        meta:
+                          disk_space_used_percentage: 97
+                      -
+                        name: OptimizedApp
+                        label: 'Optimized App'
+                        notificationMessage: 'Configs are not cached.'
+                        shortSummary: Failed
+                        status: failed
+                        meta: []
+                      -
+                        name: DebugMode
+                        label: 'Debug Mode'
+                        notificationMessage: 'The debug mode was expected to be `false`, but actually was `true`'
+                        shortSummary: 'true'
+                        status: failed
+                        meta:
+                          actual: true
+                          expected: false
+                      -
+                        name: MeiliSearch
+                        label: MeiliSearch
+                        notificationMessage: 'Could not reach http://127.0.0.1:7700/health.'
+                        shortSummary: Unreachable
+                        status: failed
+                        meta: []
+                      -
+                        name: Environment
+                        label: Environment
+                        notificationMessage: 'The environment was expected to be `production`, but actually was `local`'
+                        shortSummary: local
+                        status: failed
+                        meta:
+                          actual: local
+                          expected: production
+                      -
+                        name: Database
+                        label: Database
+                        notificationMessage: ''
+                        shortSummary: Ok
+                        status: ok
+                        meta:
+                          connection_name: mysql
+                      -
+                        name: Horizon
+                        label: Horizon
+                        notificationMessage: 'Horizon does not seem to be installed correctly.'
+                        shortSummary: Failed
+                        status: failed
+                        meta: []
+                      -
+                        name: CpuLoad
+                        label: 'Cpu Load'
+                        notificationMessage: ''
+                        shortSummary: '0.04248046875 0.115234375 0.05419921875'
+                        status: ok
+                        meta:
+                          last_minute: 0.04248046875
+                          last_5_minutes: 0.115234375
+                          last_15_minutes: 0.05419921875
+                    items:
+                      type: object
       tags:
         - Endpoints
       security: []
