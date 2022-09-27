@@ -220,6 +220,11 @@ In teh `routes/api.php` file we can add a healthcheck to return results as JSON:
 Route::get('health', HealthCheckJsonResultsController::class);
 ```
 
+An example of the Health Check web output is shown below:
+
+![Screenshot: Laravel Health page](images/healthcheck-1.png)
+
+
 ## Customising the Health Dashboard
 
 You can customise the dashboard by first publishing the health views:

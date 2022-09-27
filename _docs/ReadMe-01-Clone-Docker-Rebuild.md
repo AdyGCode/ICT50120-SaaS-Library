@@ -1,5 +1,9 @@
 # Clone & Rebuild Project Dependencies using Docker
 
+Before you clone the repository to your local machine, we strongly 
+suggest that you FORK a copy into your own GitHub account.
+Then use this for cloning and working upon.
+
 ## Clone using PhpStorm
 
 Close any existing project to return to the "home dialog" of PhpStorm.
@@ -8,11 +12,11 @@ IMG
 
 Click on Clone from Repo
 
-![Clone From Repo in PhpStorm](_docs/phpstorm-clone-repo-1.png)
+![Clone From Repo in PhpStorm](images/phpstorm-clone-repo-1.png)
 
 Enter the URL into the required space, and locate where you want the repository to go:
 
-![Repository URL](_docs/phpstorm-clone-repo-2.png)
+![Repository URL](images/phpstorm-clone-repo-2.png)
 
 Click Clone
 

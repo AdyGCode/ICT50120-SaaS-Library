@@ -159,12 +159,36 @@ class AuthorAPIController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return Response
+     * @return JsonResponse
      */
     public
     function destroy(int $id)
     {
-        //
-        return response()->error(404);
+        $author = Author::query()->where('id', $id)->first();
+
+        $destroyedAuthor = $author;
+        $response = response()->json(
+            [
+                'status' => false,
+                'message' => "Unable to delete: Author Not Found",
+                'authors' => null
+            ],
+            404  # Not Found
+        );
+
+        if (!is_null($author) && $author->count() > 0) {
+            $author->delete();
+
+            $response = response()->json(
+                [
+                    'status' => true,
+                    'message' => "Author deleted.",
+                    'authors' => $destroyedAuthor
+                ],
+                200  # Ok
+            );
+        }
+
+        return $response;
     }
 }

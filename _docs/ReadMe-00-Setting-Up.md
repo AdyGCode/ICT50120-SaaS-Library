@@ -314,7 +314,7 @@ foreach ($seedBooks as $book) {
 
 ```
 
-Full copy of the code is shown in [./database/seeders/BookSeeder.php](../database/seeders/BookSeeder.php).
+Full copy of the code is shown in [/database/seeders/BookSeeder.php](../database/seeders/BookSeeder.php).
 
 Finally, we add the Author and Book seeders to the DatabaseSeeder.
 
