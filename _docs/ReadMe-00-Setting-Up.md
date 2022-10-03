@@ -106,7 +106,7 @@ sail artisan make:model AuthorBook -m
 > Remember that Models are SINGULAR names, whereas the table names are pluralised.
 > For example, the `Author` model will have a table named `authors`.
 >
-> Never pluralise the Model name.
+> **Never** pluralise the Model name.
 
 ## Migrations and Models
 
@@ -199,11 +199,11 @@ Normally, we would perform the seeding in this order:
 - Books
 - Author Books
 
-This is because the Author is the highest priority for this data, followed by books, and then the Author-Books model that
-joins these two tables.
+This is because the Author is the highest priority for this data, followed by books, and then 
+the Author-Books model that joins these two tables.
 
-We will create a few authors without books, including an UNKNOWN author and corporate author, to act as a placeholder/error if
-needed.
+We will create a few authors without books, including an UNKNOWN author and corporate author, 
+to act as a placeholder/error if needed.
 
 Open the database/seeders/AuthorSeeder.php file and add the following to the `run` method:
 
