@@ -42,14 +42,14 @@ This will create a config file for Scribe that we can potentially use to customi
 ### Version 4 
 Now, one ting to check before continuing is, has Scribe v4 been installed or v3?
 
-Open the composer.json file in your root directory.
+Open the `composer.json` file in your root directory.
 
 locate the line that starts with `` and if it says something line `^3.xx.x` or such, then replace with `^4.0.0`...
 
 Now run:
 ```shell
 sail composer update
-sail artisan scribe:update
+sail artisan scribe:ugrade
 sail artisan vendor:publish --tag=scribe-views --tag=scribe-themes --tag=scribe-examples
 ```
 

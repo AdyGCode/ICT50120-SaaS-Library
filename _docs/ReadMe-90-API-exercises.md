@@ -161,7 +161,7 @@ the BREAD/CRUD actions.
 - Use this to add multiple authors, in a similar way to the previous problem.
 
 
-### Exercise 1-10: Update Author Create Request
+### Exercise 1-10: Modify Author Create Request
 
 Four improvements to be done with the author's create request:
 

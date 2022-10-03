@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PaginateAPIRequest;
 use App\Http\Requests\StoreAuthorAPIRequest;
 use App\Http\Requests\UpdateAuthorAPIRequest;
 use App\Models\Author;
@@ -43,9 +44,11 @@ class AuthorAPIController extends Controller
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(PaginateAPIRequest $request): JsonResponse
     {
-        $authors = Author::all();
+        // $authors = Author::all();
+        $authors = Author::paginate($request['per_page']);
+
         return response()->json(
             [
                 'status' => true,
