@@ -15,6 +15,12 @@ yarn-error.log
 /.idea
 /.vscode
 
+### Scribe template
+
+/.scribe/
+/.scribe/**
+/.scribe/**/*.*
+
 ### NotepadPP template
 # Notepad++ backups #
 *.bak
@@ -649,5 +655,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
-/.scribe/
