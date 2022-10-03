@@ -96,12 +96,14 @@ docker run --rm \
 sail up
 ```
 
-8) Create a second terminal instance and execute the following command:
+8) Create a second terminal instance and execute the following commands:
 ```shell
+sail composer install
+sail composer update
 sail artisan key:generate
 ```
 
-9) Next, in the same second terminal instance, and when the sail up is complete, run:
+09) Next, in the same second terminal instance, and when the sail up is complete, run:
 ```shell
    sail npm install && sail npm run dev
 ```
@@ -110,6 +112,7 @@ sail artisan key:generate
 ```shell
 sail artisan migrate:fresh --step --seed
 ```
+
 
 You are now ready to continue with your development.
 
