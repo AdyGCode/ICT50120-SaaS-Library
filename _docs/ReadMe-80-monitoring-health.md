@@ -31,11 +31,15 @@ Full documentation for the package is found at:
 
 ## Installation of Laravel Health
 
-Run the following command:
+Run the following commands:
 
 ```shell
+sail composer install
+sail composer update
 sail composer require spatie/laravel-health
 ```
+We make sure any missing packages are installed, then update the 
+packages before finally installing laravel health.
 
 Publish the configuration file:
 ```shell
@@ -52,7 +56,8 @@ sail artisan migrate
 
 In the `app/Console/Kernel.php` file we need to modify the `schedule` call.
 
-The default schedule contains a commented out call to 'inspire'. We are adding a new line as given below:
+The default schedule contains a commented out call to 'inspire'. We 
+are adding a new line as given below:
 
 ```php
 // $schedule->command('inspire')->hourly();
@@ -69,7 +74,8 @@ sail artisan make:provider HealthServiceProvider
 
 ## Add Service Provider to the Application
 
-Open the config/app.php file and scroll down to the Application Service Providers section:
+Open the config/app.php file and scroll down to the Application 
+Service Providers section:
 
 ```php
         /*
@@ -95,8 +101,8 @@ For this example, we will store the results of the health checks in the database
 
 Open the `config\health.php` file.
 
-By default the data is stored in the database, and expires
-after 5 days. In practice you may want to keep a longer period
+By default, the data is stored in the database, and expires
+after 5 days. In practice, you may want to keep a longer period
 of time, depending on what you are monitoring.
 
 You can enable multiple stores if you wish, including a JSON
