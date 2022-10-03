@@ -12,10 +12,34 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 
+
+/**
+ * @group Author API
+ *
+ * API endpoints for managing authors
+ */
 class AuthorAPIController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     * Browse the list of all authors
+     *
+     * @bodyParams
+     *
+     * @response {
+     *      "status": true,
+     *      "message": "Retrieved successfully",
+     *      "authors": "authors": [
+     *          {
+     *              "id": 1,
+     *              "given_name": "UNKNOWN",
+     *              "family_name": "AUTHOR",
+     *              "is_company": 0,
+     *              "created_at": "2022-09-10T14:45:22.000000Z",
+     *              "updated_at": "2022-09-10T14:45:22.000000Z"
+     *          }, ...
+     *      ]
+     * }
      *
      * @return JsonResponse
      */
@@ -31,6 +55,7 @@ class AuthorAPIController extends Controller
             200
         );
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -79,11 +104,20 @@ class AuthorAPIController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Retrieve an author
+     *
+     * Given a URL parameter of the ID of an Author, the author's details are returned with status 200
+     *
+     * If the Author ID is invalid then a status code of 404 is returned.
      *
      * @param int $id
      * @return JsonResponse
      */
+    #[UrlParam("id", "int", "The author's ID.", required: true, example: 7)]
+    #[Response('"authors": [{"id": 7,"given_name": "Kevin","family_name": "Potts","is_company": 0,"created_at": "2022-09-10T14:45:22.000000Z","updated_at": "2022-09-10T14:45:22.000000Z"}]', 200, "Retrieved successfully.")]
+    #[ResponseField("status", "Success or failure indicator.")]
+    #[ResponseField("message", "Accompanying message for the status result.")]
+    #[ResponseField("authors", "The author details.")]
     public function show(int $id): JsonResponse
     {
         $author = Author::query()->where('id', $id)->get();
