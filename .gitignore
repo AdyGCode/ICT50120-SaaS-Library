@@ -17,9 +17,11 @@ yarn-error.log
 
 ### Scribe template
 
-/.scribe
-/.scribe/**
-/.scribe/**/*.*
+.scribe/*.*
+.scribe
+.scribe/**
+.scribe/**/*.*
+.scribe/
 
 ### NotepadPP template
 # Notepad++ backups #
@@ -71,6 +73,8 @@ $RECYCLE.BIN/
 ### Laravel template
 /vendor/
 node_modules/
+storage/sessions
+storage/framework/sessions
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -86,6 +90,13 @@ public_html/hot
 
 storage/*.key
 /.vagrant
+npm-debug.log
+yarn-error.log
+.env
+Homestead.yaml
+Homestead.json
+.phpunit.result.cache
+
 
 ### SublimeText template
 # Cache files for Sublime Text
@@ -656,4 +667,3 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-/.scribe/
