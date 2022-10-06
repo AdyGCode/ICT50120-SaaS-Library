@@ -1,86 +1,70 @@
 # Library ER Diagram
 
-```plantuml
-@startuml
-
-    skinparam linetype ortho
-    !theme plain
-
-    entity "<color:#be3c12>**Loan**</color>" as ln {
-        * id:   long integer (unsigned)
-        --
-        * user_id:  long integer (unsigned)
-        * book_id: long integer (unsigned)
-        date_returned: date time (default null)
-
+```mermaid
+erDiagram
+    Author ||--o{ Author_Book : writes 
+    Book ||--o{ Author_Book : written_by
+    Publisher ||--o{ Book : publishes
+    Genre ||--o{ Book_Genre : classifies
+    Book_Genre }o--|| Book : classified_as
+    User ||--o{ Loan : makes
+    Loan }o--|| Book : has_many
+    
+    Loan {
+        long_integer id PK "Loan counter"
+        long_integer user_id FK "User who is borrowing the book"
+        long_integer book_id FK "The book being borrowed"
+        date_time date_returned "Date book returned"
     }
 
-    entity "<color:#047857>**User**</color>" as usr {
-        * id :  long integer (unsigned)
-        --
-        * name: string
-        * email: string
-        * password: string
-
+    User {
+        long_integer id PK "User ID"
+        string name "User's 'nickname'"
+        string email "User's email address"
+        string password "User's Hashed password"
+    }
+    
+    Author{
+        big_integer id PK "Author ID"
+        string given_name "Author's Given Name (Optional)"
+        string family_name "Author/Company Name"
+        boolean is_company "Indicates if corporate author, default False"
+    }
+    
+    Book{
+        big_integer id PK "Book ID"
+        string title "Book Title (Required)"
+        string subtitle "Book sub-title (Optional)"
+        small_integer year_published "(Optional)"
+        integer edition "By default every book is a first edition (Optional, unless > 1)"
+        string isbn_10 "ISBN 10 - for older books (Optional)"
+        string isbn_13 "ISBN 13 - for newer books (Optional)"
+        small_integer height "Of book in mm (Optional)"
+    }
+    
+    Publisher {
+        big_integer id PK 
+        string name "Publisher's name (Required)"
+        string city "Publisher's city (Required)"
+        string country "Publisher's country (Required)"
     }
 
-    entity "<color:#047857>**Author**</color>" as aut {
-        * id :  big integer <<unsigned>> <<generated>>
-        --
-        given_name : string <<nullable>>
-        * family_name : string
-        * is_company : boolean
+    Genre {
+        big_integer id PK "Genre ID"
+        string name "Genre's name (Required)"
+        string description "Description of the genre (Optional)"
     }
 
-    entity "<color:#0369a1>**Author Book**</color>" as ab {
-        * id :  big integer <<unsigned>> <<generated>>
-        --
-        * author_id :  big integer <<unsigned>> <<FK>>
-        * book_id :  big integer <<unsigned>> <<FK>>
+    Book_Genre {
+        big_integer id PK "Book-Genre ID"
+        big_integer book_id FK "Book which has the Genre"
+        big_integer genre_id FK "Genre applied to Book"
     }
-
-    entity "<color:#7e22ce>**Book**</color>" as bk {
-        * id : big integer <<unsigned>> <<generated>>
-        --
-        * title : string
-        subtitle : string <<nullable>>
-        year_published : small integer <<nullable>>
-        edition : integer <<nullable>>
-        isbn_10 : string <<nullable>>
-        isbn_13 : string <<nullable>>
-        height : small integer <<nullable>>
+        
+    Author_Book {
+        big_integer id PK "Author-Book ID"         
+        big_integer author_id FK "Author ID" 
+        big_integer book_id FK "Book ID" 
     }
-
-    entity "<color:#be123c>**Publisher**</color>" as pub {
-        * id : big integer <<unsigned>> <<generated>>
-        --
-        * name : string
-        city : string <<nullable>>
-    }
-
-    entity "<color:#123cbe>**Genre**</color>" as gen {
-        * id : big integer <<unsigned>> <<generated>>
-        --
-        * name : string
-        description : string <<nullable>>
-    }
-
-
-    entity "<color:#a16903>**Book Genre**</color>" as bg {
-        * id :  big integer <<unsigned>> <<generated>>
-        --
-        * book_id :  big integer <<unsigned>> <<FK>>
-        * genre_id :  big integer <<unsigned>> <<FK>>
-    }
-
-aut ||--o{ ab
-bk ||--o{ ab
-pub ||--o{ bk
-gen ||--o{ bg
-bg }o--|| bk
-usr ||--o{ ln
-ln }o--|| bk
-
-@enduml
-
+    
 ```
