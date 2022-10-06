@@ -33,56 +33,16 @@ Some key points to note from it are:
 - A book belongs to a publisher
 - A publisher has many books
 
-Due to the many authors to may books we needed to create a 'intermediatory' or 'simple pivot' table.
+Due to the many authors to many books we needed to create a 'pivot' table.
 
 This is the author-books table.
 
-```plantuml
-@startuml
-hide circle
-skinparam linetype ortho
-
-    entity "<color:#047857>**Author**</color>" as aut {
-        * id :  big integer <<unsigned>> <<generated>> 
-        --
-        given_name : string <<nullable>>
-        * family_name : string
-        * is_company : boolean 
-    }
-    
-    entity "<color:#0369a1>**Author Book**</color>" as ab {
-        * id :  big integer <<unsigned>> <<generated>> 
-        --
-        * author_id :  big integer <<unsigned>> <<FK>>
-        * book_id :  big integer <<unsigned>> <<FK>>
-    }
-    
-    entity "<color:#7e22ce>**Book**</color>" as bk {
-        * id : big integer <<unsigned>> <<generated>> 
-        --
-        * title : string
-        subtitle : string <<nullable>>
-        year_published : small integer <<nullable>>
-        edition : integer <<nullable>>
-        isbn_10 : string <<nullable>>
-        isbn_13 : string <<nullable>>
-        * genre : string
-        sub_genre : string <<nullable>>
-        height : small integer <<nullable>>
-    }
-    
-    entity "<color:#be123c>**Publisher**</color>" as pub {
-        * id : big integer <<unsigned>> <<generated>> 
-        --
-        * name : string
-        city : string <<nullable>>
-    }
-
-    aut ||..o{ ab
-    ab }|..|| bk
-    bk }o..|| pub
-@enduml
-```
+> ‼ **IMPORTANT** ‼
+>
+> Ensure you verify the most up-to-date version of the
+> database structure shown in the ERD in the document
+> [ReadMe-00-Library-ER.md](ReadMe-00-Library-ER.md) and update any
+> data structures as required.
 
 # Exercises
 

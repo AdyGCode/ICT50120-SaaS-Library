@@ -1,5 +1,8 @@
 # Library ER Diagram
 
+Mermaid version contains latest updates to the ERD.
+
+
 ```plantuml
 @startuml
 

@@ -2,6 +2,7 @@
 
 Steps to set up this application from scratch (as in build it yourself).
 
+
 ## Getting the Terminal Set Up
 
 Open Windows Terminal (or iTerm on the Mac).
@@ -109,6 +110,13 @@ sail artisan make:model AuthorBook -m
 > **Never** pluralise the Model name.
 
 ## Migrations and Models
+
+> ‼ **IMPORTANT** ‼
+> 
+> Ensure you verify the most up-to-date version of the 
+> database structure shown in the ERD in the document 
+> [ReadMe-00-Library-ER.md](ReadMe-00-Library-ER.md) and update any 
+> data structures as required.
 
 Edit the migrations, and models for the Author, Book and Author Book tables.
 
@@ -314,7 +322,7 @@ foreach ($seedBooks as $book) {
 
 ```
 
-Full copy of the code is shown in [/database/seeders/BookSeeder.php](../database/seeders/BookSeeder.php).
+Full copy of the code is shown in [/database/seeders/BookSeeder.php](/database/seeders/BookSeeder.php).
 
 Finally, we add the Author and Book seeders to the DatabaseSeeder.
 
