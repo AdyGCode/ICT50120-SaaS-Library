@@ -4,6 +4,8 @@
 - Field Sizes are shown in the comments. 
 
 ```mermaid
+%%{init: {'theme': 'forest'}}%%
+
 erDiagram
     Loan {
         long_integer id PK "Loan counter (Unsigned)"
@@ -22,7 +24,7 @@ erDiagram
     Author{
         big_integer id PK "Author ID (Unsigned)"
         string given_name "Author's Given Name (Optional)"
-        string family_name "Author/Company Name"
+        string family_name "Author's Family/Company Name"
         boolean is_company "Indicates if corporate author (default False)"
     }
     
