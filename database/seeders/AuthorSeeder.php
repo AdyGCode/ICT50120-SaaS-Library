@@ -15,6 +15,26 @@ class AuthorSeeder extends Seeder
      */
     public function run()
     {
+
+        $unknownAuthors = [
+            [
+                'id' => 1,
+                'given_name' => 'UNKNOWN',
+                'family_name' => 'AUTHOR',
+                'is_company' => False,
+            ],
+            [
+                'id' => 2 ,
+                'given_name' => 'UNKNOWN',
+                'family_name' => 'CORPORATE AUTHOR',
+                'is_company' => True,
+            ],
+        ];
+
+        foreach ($unknownAuthors as $seedAuthor) {
+            Author::create($seedAuthor);
+        }
+
         $seedAuthors = [
             [ 'given_name' => 'UNKNOWN', 'family_name' => 'AUTHOR',           'is_company' => False, ],
             [ 'given_name' => 'UNKNOWN', 'family_name' => 'CORPORATE AUTHOR', 'is_company' => True,  ],
