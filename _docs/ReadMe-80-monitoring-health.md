@@ -49,6 +49,7 @@ sail artisan vendor:publish --tag="health-config"
 Run the migrations:
 ```shell
 sail artisan vendor:publish --tag="health-migrations"
+sail artisan vendor:publish --tag="laravel-health-components"
 sail artisan migrate
 ```
 

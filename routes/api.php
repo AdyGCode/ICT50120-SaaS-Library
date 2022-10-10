@@ -18,8 +18,7 @@ use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 */
 
 
-
-Route::post('register',[AuthAPIController::class,'register']);
+Route::post('register', [AuthAPIController::class, 'register']);
 Route::post('login', [AuthAPIController::class, 'login']);
 
 Route::resource('authors', AuthorAPIController::class);
@@ -27,7 +26,6 @@ Route::resource('authors', AuthorAPIController::class);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 
 
 /**
