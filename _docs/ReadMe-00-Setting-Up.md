@@ -162,7 +162,7 @@ protected $fillable = [
 ];
 
 public function books() {
-    return $this->hasMany(Books::class);
+    return $this->hasMany(Book::class);
 }
 ```
 
@@ -207,25 +207,46 @@ Normally, we would perform the seeding in this order:
 - Books
 - Author Books
 
-This is because the Author is the highest priority for this data, followed by books, and then 
-the Author-Books model that joins these two tables.
+This is because the Author is the highest priority for this data, 
+followed by Books, and then the Author-Books model that joins 
+these two tables.
 
-We will create a few authors without books, including an UNKNOWN author and corporate author, 
-to act as a placeholder/error if needed.
+In fact, we do not create an Author-Books migration as we will fill it
+from the Books seeder.
 
-Open the database/seeders/AuthorSeeder.php file and add the following to the `run` method:
+Also, we will create a few authors without books, including an UNKNOWN 
+author and corporate author, to act as a placeholder/error if needed.
+
+Open the `database/seeders/AuthorSeeder.php` file and add the 
+following to the `run` method:
 
 ```php
+
+        $unknownAuthors = [
+            [ 
+                'id' => 1, 
+                'given_name' => 'UNKNOWN', 
+                'family_name' => 'AUTHOR',
+                'is_company' => False, 
+            ],
+            [  
+                'id' => 2 ,
+                'given_name' => 'UNKNOWN', 
+                'family_name' => 'CORPORATE AUTHOR',
+                'is_company' => True,  
+            ],
+        ];
+        
+        foreach ($unknownAuthors as $seedAuthor) {
+            Author::create($seedAuthor);
+        }
+        
         $seedAuthors = [
-            [ 'given_name' => 'UNKNOWN', 'family_name' => 'AUTHOR',
-              'is_company' => False, ],
-            [ 'given_name' => 'UNKNOWN', 'family_name' => 'CORPORATE AUTHOR',
-              'is_company' => True,  ],
             [ 'given_name' => 'Kevin',   'family_name' => 'Yank',
               'is_company' => False, ],
             [ 'given_name' => 'Mark',    'family_name' => 'Boulton',
               'is_company' => False, ],
-            [ 'given_name' => 'Robert',  'family_name' => 'Hoekman, jr.',
+            [ 'given_name' => 'Robert',  'family_name' => 'Hoekman jr.',
               'is_company' => False, ],
             [ 'given_name' => 'Luke',    'family_name' => 'Wroblewski',
               'is_company' => False, ],
@@ -239,7 +260,7 @@ Open the database/seeders/AuthorSeeder.php file and add the following to the `ru
 
 ```
 
-Now we are going to construct the BNook seeding, but this time we are
+Now we are going to construct the Book seeding, but this time we are
 going to employ a bit of trickery by listing our books with all the 
 required data, and then going through each book, adding missing authors 
 and then books as needed, plus finally linking the book to the author 
@@ -260,16 +281,32 @@ We do this, starting with an Unknown book.
         Book::create($unknownBook);
 ```
 
-Now we add the actual seed books, and in this example we are giving just _**one**_ book.
+Now we add the actual seed books, and in this example we are giving just _**two**_ books.
 
 ```php
         $seedBooks = [
-            ["title" => "Fundamentals of Wavelets", 
-            "author" => "Goswami, Jaideva", 
-            "genre" => "tech",  
-            "sub_genre" => "signal processing", 
-            "height" => 228, 
-            "publisher" => "Wiley",
+            [
+                "title" => "Fifty Quick Ideas to Improve your Tests", 
+                "authors" => [
+                    "Adzic, Gojko", 
+                    "Evans, David", 
+                    "Roden, Tom"
+                ],
+                "genre" => "technology", 
+                "sub_genre" => "programming", 
+                "height" => 291, 
+                "publisher" => "Leanpub",
+            ],
+        
+            [
+                "title" => "Fundamentals of Wavelets", 
+                "authors" => [
+                    "Goswami, Jaideva",
+                ], 
+                "genre" => "tech",  
+                "sub_genre" => "signal processing", 
+                "height" => 228, 
+                "publisher" => "Wiley",
             ],
         ];
 ```
@@ -278,48 +315,56 @@ Next we run through the books in the `$seedBooks` array, one at a time:
 
 ```php
 foreach ($seedBooks as $book) {
-   /* Get the author from the book data and extract the author's family
-      name (using the whole author field as a precaution), so if the 
-      author is empty or the author has just one name, then we are able
-      to deal with the situation and add the required information. */
-   $author = $book['author'];
-   $authorGiven = null;
-   $authorFamily = $author;
-   if ($comma = mb_strpos($author, ",")) {
-       $authorGiven = mb_substr($author, 0, $comma);
-       $authorFamily = mb_substr($author, $comma + 1, mb_strlen($author));
-   }
-   
-   /* Now search the authors table to see if the author exists */
-   $author = Author::whereGivenName($authorGiven)->whereFamilyName($authorFamily)->first();
-   
-   /* if the author not found, then create a new author and create! */
-   if (is_null($author)) {
-       $newAuthor = [
-           "given_name" => $authorGiven,
-           "family_name" => $authorFamily,
-       ];
-       $author = Author::create($newAuthor);
-   }
-   
-   #create book record
-   $newBook = [
-       'title' => $book['title'] ?? null,
-       'subtitle' => $book['subtitle'] ?? null,
-       'year_published' => $book['year_published'] ?? null,
-       'edition' => $book['edition'] ?? null,
-       'isbn_10' => $book['isbn_10'] ?? null,
-       'isbn_13' => $book['isbn_13'] ?? null,
-       'height' => $book['height'] ?? null,
-       'genre' => $book['genre'] ?? null,
-       'sub_genre' => $book['sub_genre'] ?? null,
-   ];
-   $theBook = Book::create($newBook);
-   
-   /* attach the book to the author */
-   $theBook->authors()->attach($author);
-}
 
+    $authors = $book['authors'];    // Get the list of authors for the book
+    $author_list = [];  // create an empty list of authors
+
+    // Go through the authors one by one
+    foreach ($authors as $author) {
+
+        // Expand the author name (family name, given name) into Given and Family names
+        $authorGiven = null;
+        $authorFamily = $author;
+        if ($comma = mb_strpos($author, ",")) {
+            $authorGiven = trim(mb_substr($author, 0, $comma));
+            $authorFamily = trim(mb_substr($author, $comma + 1, mb_strlen($author)));
+        }
+
+        // Check to see if we have the author in the table (yes => author, no => null)
+        // if null then we create the new author
+        $author = Author::whereGivenName($authorGiven)->whereFamilyName($authorFamily)->first();
+        if (is_null($author)) {
+            $newAuthor = [
+                "given_name" => $authorGiven,
+                "family_name" => $authorFamily,
+            ];
+            // The author wasn't found so we create them
+            $author = Author::create($newAuthor);
+        }
+        // add the existing, or new author's id to the author list
+        $author_list[] = $author->id;
+    }
+```
+
+We are now ready to add the new book, and then link the authors to the book, automatically populating the Author-Book table.
+   
+```php
+# Create book record
+$newBook = [
+    'title' => $book['title'] ?? null,
+    'subtitle' => $book['subtitle'] ?? null,
+    'year_published' => $book['year_published'] ?? null,
+    'edition' => $book['edition'] ?? null,
+    'isbn_10' => $book['isbn_10'] ?? null,
+    'isbn_13' => $book['isbn_13'] ?? null,
+    'height' => $book['height'] ?? null,
+    'genre' => $book['genre'] ?? null,
+    'sub_genre' => $book['sub_genre'] ?? null,
+];
+$theBook = Book::create($newBook);
+
+# Link the authors to the book
+$theBook->authors()->attach($author_list);
 ```
 
 Full copy of the code is shown in [/database/seeders/BookSeeder.php](/database/seeders/BookSeeder.php).
@@ -329,6 +374,7 @@ Finally, we add the Author and Book seeders to the DatabaseSeeder.
 ```php
 $this->call([
    AuthorSeeder::class,
+   // We will add Genre Seeder and publisher seeder BEFORE we seed the books
    BookSeeder::class,
 ]);
 ```
