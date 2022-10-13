@@ -261,6 +261,11 @@ the family name is missing but a given name is provided:
 
 ```php
 if (!isset($validated['family_name']) ) {
+    // This will only work if the migration for the author has
+    // one of these two options:
+    // - the family_name's length is greater than the given_name length
+    // - the family_name's length is the same as the given_name's length
+    // if not you will need to shorten the given_name.
     $validated['family_name'] = $validated['given_name'];
     $validated['given_name'] = null;
 }
@@ -270,10 +275,23 @@ The alternative, family name into given name, is shown here:
 
 ```php
 if (!isset($validated['given_name'])) {
-    $validated['given_name'] = $validated['family_name'];
+    // This will only work if the migration for the author has
+    // one of these two options:
+    // - the given_name's length is greater than the family_name length
+    // - the given_name's length is the same as the family_name's length
+    // if not you will need to shorten the family_name
+    $validated['given_name'] = $validated['family_name']; 
     $validated['family_name'] = null;
 }
 ```
+
+One of these two options will appear immediately before the store method's line:
+
+```php
+$author = Author::create($validated);
+```
+
+
 
 # What's next?
 
