@@ -99,7 +99,7 @@ Switch to the third window, and run the following commands:
 ```shell
 sail artisan make:model Book -ars
 sail artisan make:model Author -ars
-sail artisan make:model AuthorBook -m
+sail artisan make:migration create_author_book_table
 ```
 
 > ### Important:
@@ -131,6 +131,8 @@ Schema::create('books', function (Blueprint $table) {
     $table->integer('edition')->nullable();
     $table->string('isbn_10',10)->nullable();
     $table->string('isbn_13',13)->nullable();
+    $table->string('genre')->nullable();
+    $table->string('sub_genre')->nullable();
     $table->timestamps();
 });
 ```
@@ -145,6 +147,8 @@ protected $fillable = [
     'edition',
     'isbn_10',
     'isbn_13',
+    'genre',
+    'sub_genre'
 ];
 
 public function authors(){
@@ -162,7 +166,7 @@ protected $fillable = [
 ];
 
 public function books() {
-    return $this->hasMany(Book::class);
+    return $this->belongsToMany(Book::class);
 }
 ```
 
@@ -178,10 +182,10 @@ Schema::create('authors', function (Blueprint $table) {
 });
 ```
 
-The Author Books migration requires:
+The Author Books migration requires the following (make sure the table is `author_book`):
 
 ```php
-Schema::create('author_books', function (Blueprint $table) {
+Schema::create('author_book', function (Blueprint $table) {
     $table->id();
     $table->unsignedBigInteger('author_id')->default(1);
     $table->unsignedBigInteger('book_id')->default(1);
@@ -308,6 +312,7 @@ Now we add the actual seed books, and in this example we are giving just _**two*
                 "height" => 228, 
                 "publisher" => "Wiley",
             ],
+            ],
         ];
 ```
 
@@ -349,22 +354,23 @@ foreach ($seedBooks as $book) {
 We are now ready to add the new book, and then link the authors to the book, automatically populating the Author-Book table.
    
 ```php
-# Create book record
-$newBook = [
-    'title' => $book['title'] ?? null,
-    'subtitle' => $book['subtitle'] ?? null,
-    'year_published' => $book['year_published'] ?? null,
-    'edition' => $book['edition'] ?? null,
-    'isbn_10' => $book['isbn_10'] ?? null,
-    'isbn_13' => $book['isbn_13'] ?? null,
-    'height' => $book['height'] ?? null,
-    'genre' => $book['genre'] ?? null,
-    'sub_genre' => $book['sub_genre'] ?? null,
-];
-$theBook = Book::create($newBook);
+    # Create book record
+    $newBook = [
+        'title' => $book['title'] ?? null,
+        'subtitle' => $book['subtitle'] ?? null,
+        'year_published' => $book['year_published'] ?? null,
+        'edition' => $book['edition'] ?? null,
+        'isbn_10' => $book['isbn_10'] ?? null,
+        'isbn_13' => $book['isbn_13'] ?? null,
+        'height' => $book['height'] ?? null,
+        'genre' => $book['genre'] ?? null,
+        'sub_genre' => $book['sub_genre'] ?? null,
+    ];
+    $theBook = Book::create($newBook);
 
-# Link the authors to the book
-$theBook->authors()->attach($author_list);
+    # Link the authors to the book
+    $theBook->authors()->attach($author_list);
+}
 ```
 
 Full copy of the code is shown in [/database/seeders/BookSeeder.php](/database/seeders/BookSeeder.php).
