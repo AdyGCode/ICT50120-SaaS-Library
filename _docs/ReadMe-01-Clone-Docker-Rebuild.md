@@ -4,6 +4,20 @@ Before you clone the repository to your local machine, we strongly
 suggest that you FORK a copy into your own GitHub account.
 Then use this for cloning and working upon.
 
+## Forking a copy of the repository
+
+Go to GitHub and log into the system.
+
+Open a new tab and go to:
+- [https://github.com/AdyGCode/ICT50120-SaaS-Library/](https://github.
+com/AdyGCode/ICT50120-SaaS-Library/)
+
+At the top right you will see "Fork". Click this to create a new fork of the project in your own GitHub account.
+
+![Forking a copy](images/fork-01.png)
+
+Once you have done this, you are now able to go back to your repository and clone this as needed.
+
 ## Clone using PhpStorm
 
 Close any existing project to return to the "home dialog" of PhpStorm.
@@ -14,7 +28,8 @@ Click on Clone from Repo
 
 ![Clone From Repo in PhpStorm](images/phpstorm-clone-repo-1.png)
 
-Enter the URL into the required space, and locate where you want the repository to go:
+Enter the URL into the required space, and locate where you want the 
+repository to go:
 
 ![Repository URL](images/phpstorm-clone-repo-2.png)
 
@@ -22,17 +37,27 @@ Click Clone
 
 This should open the project's folder after cloning is complete.
 
+## What about updates to my Forked copy?
+
+If the repository is updated then you are able to pull the changes into your 
+copy from the original.
+
+> Details on this process to come.
+
+
 
 ## What about the missing Vendor and Node Modules?
 
 > #### Problem:
 > 
-> A Laravel application repository that was built using the Docker based "`curl` ... `sail`" combination, requires the `vendor` 
+> A Laravel application repository that was built using the Docker 
+> based "`curl` ... `sail`" combination, requires the `vendor` 
 > and `node_modules` folders to be rebuilt. 
 > 
 > How do you do this on your local docker based development?
 
-These steps aim to give you a guide to re-creating the deployment with the code at the stage you cloned it from the `main` 
+These steps aim to give you a guide to re-creating the deployment with the 
+code at the stage you cloned it from the `main` 
 (formerly known as `master`) repo.
 
 With these instructions:
@@ -43,6 +68,7 @@ With these instructions:
   installation.*
 - *Replace `REPOFOLDER` with the folder path to your repository.*
 
+### Running up the forked & cloned copy
 
 1) Run Docker-Desktop
 
@@ -70,7 +96,7 @@ With these instructions:
    ```
 4) Duplicate and rename the `.env.example` file to `.env`
 
-5) Edit the new .env file as there is an issue with the DB configuration. You will have to change the host to be `mariadb` 
+5) Edit the new `.env` file as there is an issue with the DB configuration. You will have to change the host to be `mariadb` 
    rather than `localhost`. Below is the configuration section for the `DB_` that functioned correctly for Adrian when testing:
 ```dotenv
 DB_CONNECTION=mysql

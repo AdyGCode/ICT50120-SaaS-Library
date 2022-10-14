@@ -25,8 +25,7 @@ class AuthorSeeder extends Seeder
             ],
             [
                 'id' => 2 ,
-                'given_name' => 'UNKNOWN',
-                'family_name' => 'CORPORATE AUTHOR',
+                'family_name' => 'UNKNOWN CORPORATE AUTHOR',
                 'is_company' => True,
             ],
         ];

@@ -99,7 +99,13 @@ Switch to the third window, and run the following commands:
 ```shell
 sail artisan make:model Book -ars
 sail artisan make:model Author -ars
-sail artisan make:migration create_author_book_table
+```
+
+The next command creates the pivot table migrations for `author_book`. We specify the table name as, by default, Laravel will 
+attempt to pluralise the table name it deduces from the "`create_author_name_table`" migration name.
+
+```shell
+sail artisan make:migration create_author_book_table --table=author_book
 ```
 
 > ### Important:
@@ -136,6 +142,16 @@ Schema::create('books', function (Blueprint $table) {
     $table->timestamps();
 });
 ```
+The genre and sub-genre fields are really a repetition of a 'genre' field, 
+so we should really move these into a separate table with a many-to-many
+relationship using a pivot table.
+
+> **Note:**
+> 
+> We will remove the genre and subgenre in a later migration as we create a genre 
+> model, and the related book-genre pivot. This will then require us to update the book
+> migration to perform the attaching of the genres to the book using a many-to-many
+> relationship defined in the book and genre models.
 
 The Book model class will contain these additional lines:
 
@@ -182,7 +198,7 @@ Schema::create('authors', function (Blueprint $table) {
 });
 ```
 
-The Author Books migration requires the following (make sure the table is `author_book`):
+The Author-Books migration requires the following (make sure the table is `author_book`):
 
 ```php
 Schema::create('author_book', function (Blueprint $table) {
@@ -193,7 +209,7 @@ Schema::create('author_book', function (Blueprint $table) {
 });
 ```
 
-We do not need to add anything to the Model for the Author Books.
+We do not need an Author-Book Model as the middle table is a simple pivot.
 
 Run these migrations to verify code is correct.
 
@@ -235,8 +251,7 @@ following to the `run` method:
             ],
             [  
                 'id' => 2 ,
-                'given_name' => 'UNKNOWN', 
-                'family_name' => 'CORPORATE AUTHOR',
+                'family_name' => 'UNKNOWN CORPORATE AUTHOR',
                 'is_company' => True,  
             ],
         ];
@@ -270,10 +285,11 @@ required data, and then going through each book, adding missing authors
 and then books as needed, plus finally linking the book to the author 
 via Laravel's attach method.
 
-We do this, starting with an Unknown book.
+We do this, starting with an `Unknown` book which will have the `id` of `1`.
 
 ```php
        $unknownBook = [
+            'id'=>1
             'title' => 'UNKNOWN TITLE',
             'subtitle' => null,
             'year_published' => null,
@@ -383,6 +399,15 @@ $this->call([
    // We will add Genre Seeder and publisher seeder BEFORE we seed the books
    BookSeeder::class,
 ]);
+```
+
+
+## Run your fresh migration
+
+Remember to run a fresh from the start migration and seed:
+
+```shell
+sail artisan migrate:fresh --seed --step
 ```
 
 ## Done!

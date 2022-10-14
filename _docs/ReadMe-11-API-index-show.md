@@ -106,7 +106,7 @@ return response()->json(
         'status' => true,
         'message' => "Retrieved successfully.",
         'data' => [
-            'authors' => $author,
+            'authors' => $authors,
         ],    
     ],
     200
