@@ -36,12 +36,12 @@ referring to the books.
 Open the `routes/api.php` file and add the following:
 
 ```php
-Route::resource('authors', \App\Http\Controllers\API\AuthorAPIController::class);
+Route::apiResource('authors', \App\Http\Controllers\API\AuthorAPIController::class);
 ```
 
 You can also use the following:
 ```php
-Route::resource('authors', AuthorAPIController::class);
+Route::apiResource('authors', AuthorAPIController::class);
 ```
 Remember then to include the class with the other "imports":
 ```php
@@ -127,7 +127,7 @@ a single author.
 
 | Request                              | Response                                             |
 |--------------------------------------|------------------------------------------------------|
-| `http://DOMAIN/api/authors/{author}` | JSON for the single Authors and request result code  |
+| `http://DOMAIN/api/authors/{author}` | JSON for the single Author and request result code  |
 
 Edit the `AuthorAPIController` and add the following to the `show` method:
 

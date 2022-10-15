@@ -21,10 +21,10 @@ use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 Route::post('register', [AuthAPIController::class, 'register']);
 Route::post('login', [AuthAPIController::class, 'login']);
 
-// Resourceful Routes (harder to apply authenticated access to)
-// We split the routes up into Publically accessible
+// Resourceful API Routes (harder to apply authenticated access to)
+// Route::apiResource('authors', AuthorAPIController::class);
+// We split the routes up into publicly accessible
 // and those requiring Authentication
-// Route::resource('authors', AuthorAPIController::class);
 
 // Public API Routes
 Route::get("/authors", [AuthAPIController::class,'index']);
