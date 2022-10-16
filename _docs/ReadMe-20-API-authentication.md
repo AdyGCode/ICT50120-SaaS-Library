@@ -22,11 +22,11 @@ TODO: Write this section
 > https://laravel.com/docs/9.x/sanctum.
 > 
 > This tutorial is based on:
-> - (Setup Postman for Laravel Sanctum)[http://www.cgs4k.nz/setup-postman-for-laravel-sanctum]
-> - (REST API Authentication Using Laravel Sanctum)[https://linuxhint.com/rest-api-authentication-laravel-sanctum/]
-> - (Making Api CRUD(Create,Read,Update,Delete) with Laravel 8 n API Authentication with sanctum)[https://dev.to/tanzimibthesam/making-api-crud-create-read-update-delete-with-laravel-8-n-api-authentication-with-sanctum-19oh]
-> - (Protecting our Laravel API with Sanctum)[https://daily-dev-tips.com/posts/protecting-our-laravel-api-with-sanctum/]
-> - (https://www.twilio.com/blog/build-restful-api-php-laravel-sanctum)[Build a Restful API in PHP with Laravel Sanctum]
+> - [Setup Postman for Laravel Sanctum](http://www.cgs4k.nz/setup-postman-for-laravel-sanctum)
+> - [REST API Authentication Using Laravel Sanctum](https://linuxhint.com/rest-api-authentication-laravel-sanctum/)
+> - [Making Api CRUD (Create, Read, Update, Delete) with Laravel 8 + API Authentication with sanctum](https://dev.to/tanzimibthesam/making-api-crud-create-read-update-delete-with-laravel-8-n-api-authentication-with-sanctum-19oh)
+> - [Protecting our Laravel API with Sanctum](https://daily-dev-tips.com/posts/protecting-our-laravel-api-with-sanctum/)
+> - [Build a Restful API in PHP with Laravel Sanctum](https://www.twilio.com/blog/build-restful-api-php-laravel-sanctum)
 
 
 ## Install Laravel Sanctum
@@ -100,7 +100,11 @@ public function register(Request $request){
         'token_type' => 'Bearer',
     ]);
 }
-    
+```    
+The validation for this API endpoint is shown in the controller method. It is prudent to move this into a request. we'll do 
+this shortly.   
+
+```php 
 public function login(Request $request){
     if (!\Auth::attempt($request->only('email', 'password'))) {
            return response()
@@ -122,8 +126,82 @@ public function login(Request $request){
 
 ## Create the Register and Login Requests
 
-Using the CLI again, run these two commands to create the Login ad
+Using the CLI again, run these commands to create the Register requests.
 
+```shell
+sail artisan make:request RegisterAPIRequest
+```
+
+Edit the AuthAPIController and change the `Request $request` for the register to the following:
+
+```php
+public function register(RegisterAPIRequest $request){
+```
+
+Make sure you have the requests imported at the top of the controller.
+
+Also, in the register method, change the `$post_data = $request->validate([...]);` line to read:
+
+```php
+        $post_data = $request->validated;
+```
+
+
+
+### Completing the Requests
+
+Next we move the validation code and create error messages, as we have previously.
+
+
+In the `RegisterAPIRequest` we need to do the following:
+- change the `authorize` method result to `true`.
+- add the rules for the Registration Validation
+- add the messages and failed validation handling
+
+The registration validation rules now look like this:
+
+```php
+       return [
+            'name' => [
+                'required',
+                'string',
+            ],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'unique:users',
+            ],
+            'password' => [
+                'required',
+                'min:8',
+            ]
+        ];
+```
+
+
+The failed validaiton handling method is new and loojs like this:
+
+```php
+        throw new HttpResponseException(
+            response()->json([
+                'success' => false,
+                'message' => 'Validation errors',
+                'data' => $validator->errors(),
+            ])
+        );
+```
+
+Finally, the messages handler takes care of the important messages we need returning:
+```php
+        return [
+            'name.required' => 'A name is required',
+            'email.required' => 'An eMail address is required',
+            'email.unique' => 'A unique eMail address is required',
+            'email.email' => 'A valid eMail address is required',
+            'password.min' => 'The password must be at least 8 characters long'
+        ];
+```
 
 
 
@@ -136,16 +214,17 @@ Route::post('register',[AuthController::class,'register']);
 Route::post('login', [AuthController::class, 'login']);
 ```
 
-These will both be accessed via the `api` based URL.
+These will both be accessed via the `api` based URLs: 
 
-```text
-http://localhost/api/register
-http://localhost/api/login
-```
+- [http://localhost/api/register]()
+- [http://localhost/api/login]()
+
+using POST requests.
 
 ## Create Postman Tests
 
-We need two tests, one to check a user can be registered and the other to cehck the login.
+We need to create tests. these tests check for missing data, invalid emails, and passwords when registering, plus incorrect 
+email, and password when logging in, then for valid values when registering and logging in.
 
 ### Registering, Missing Data
 
@@ -153,10 +232,16 @@ We need two tests, one to check a user can be registered and the other to cehck 
 ### Registering, Invalid eMail
 
 
+### Registering, Invalid Password
+
+
 ### Registering, All Valid
 
 
-### Login, Incorrect Details
+### Login, Incorrect Password
+
+
+### Login, Incorrect eMail
 
 
 ### Login, Correct Details

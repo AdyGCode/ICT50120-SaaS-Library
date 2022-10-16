@@ -9,14 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthAPIController extends Controller
 {
-    public function register(Request $request)
+    public function register(RegisterAPIRequest $request)
     {
 
-        $post_data = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string|email|unique:users',
-            'password' => 'required|min:8'
-        ]);
+        $post_data = $request->validated;
 
         $user = User::create([
             'name' => $post_data['name'],
