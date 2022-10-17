@@ -3,10 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Foundation\Http\Request;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class RegisterAPIRequest extends FormRequest
+class RegisterAPIRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

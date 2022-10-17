@@ -248,6 +248,25 @@ email, and password when logging in, then for valid values when registering and 
 
 
 
+# Logging in and Accessing Protected Routes
+
+Once we have the login working, we need to now handle accessing routes that require authentication.
+
+For testing purposes we will move the author/{id} route into the middleware group in the routes/api.php file.
+
+```php
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get("/authors/{id}", [AuthAPIController::class,'show']);
+    Route::post('/author', [AuthorAPIController::class, 'store']);
+    Route::put('/author/{id}', [AuthorAPIController::class, 'update']);
+    Route::delete('/author/{id}', [AuthorAPIController::class, 'delete']);
+});
+```
+
+Open Postman and try accessing the `http://localhost/api/authors/1` endpoint.
+
+Did you get an error?
+
 
 
 # What's next?

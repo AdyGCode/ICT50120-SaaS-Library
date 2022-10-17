@@ -27,12 +27,12 @@ Route::post('login', [AuthAPIController::class, 'login']);
 // and those requiring Authentication
 
 // Public API Routes
-Route::get("/authors", [AuthAPIController::class,'index']);
-Route::get("/authors/{id}", [AuthAPIController::class,'show']);
+Route::get("/authors", [AuthorAPIController::class,'index']);
 
 // Authentication required API Routes
 // We wrap these in "Auth" Middleware
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get("/authors/{id}", [AuthorAPIController::class,'show']);
     Route::post('/author', [AuthorAPIController::class, 'store']);
     Route::put('/author/{id}', [AuthorAPIController::class, 'update']);
     Route::delete('/author/{id}', [AuthorAPIController::class, 'delete']);
