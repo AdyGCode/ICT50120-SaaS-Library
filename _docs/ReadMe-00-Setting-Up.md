@@ -191,12 +191,14 @@ The Authors migration requires:
 ```php
 Schema::create('authors', function (Blueprint $table) {
     $table->id();
-    $table->string('given_name')->nullable();
-    $table->string('family_name')->nullable();
+    $table->string('given_name')->nullable()->default(null);
+    $table->string('family_name')->nullable()->default(null);
     $table->boolean('is_company')->default(false);
     $table->timestamps();
 });
 ```
+We set the given and family names to 'null' as a default - this will still fail when our validation checks that at least one 
+of the two has a minimum length. 
 
 The Author-Books migration requires the following (make sure the table is `author_book`):
 
