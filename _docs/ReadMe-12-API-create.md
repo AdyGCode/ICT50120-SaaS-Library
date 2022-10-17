@@ -271,21 +271,9 @@ if (!isset($validated['family_name']) ) {
 }
 ```
 
-The alternative, family name into given name, is shown here:
+The alternative however, family name into given name, **is not valid in our case**. This is because we set our max length for given_name to 64 and our family_name to 128 characters, meaning we will break our own rules if the family_name is longer than 64 characters and gets swapped.
 
-```php
-if (!isset($validated['given_name'])) {
-    // This will only work if the migration for the author has
-    // one of these two options:
-    // - the given_name's length is greater than the family_name length
-    // - the given_name's length is the same as the family_name's length
-    // if not you will need to shorten the family_name
-    $validated['given_name'] = $validated['family_name']; 
-    $validated['family_name'] = null;
-}
-```
-
-One of these two options will appear immediately before the store method's line:
+The above code will need to appear immediately before the store method's line:
 
 ```php
 $author = Author::create($validated);
