@@ -124,7 +124,24 @@ There are two ways to retrieve the author.
 
 We will use the Author ID and perform the query ourselves.
 
-First we validate then we can retrieve:
+First we add the relevant imports to the top of `AuthorAPIController.php`:
+
+```php
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAuthorAPIRequest;
+use App\Http\Requests\UpdateAuthorAPIRequest;
+use App\Models\Author;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+```
+
+And update the update method's request type from `Request` to our newly created `UpdateAuthorAPIRequest`:
+
+```php
+public function update(UpdateAuthorAPIRequest $request, $id) {
+```
+
+Then inside the update method we can begin by validating, then we can retrieve:
 
 ```php
 $validated = $request->validated();
