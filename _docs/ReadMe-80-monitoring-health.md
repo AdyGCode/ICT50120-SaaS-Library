@@ -13,20 +13,21 @@ This stage uses the Spatie Health Monitoring package, otherwise known as [Larave
 Full documentation for the package is found at:
 - [https://spatie.be/docs/laravel-health/v1/introduction](https://spatie.be/docs/laravel-health/v1/introduction).
 
-
 ## Tutorial Index
-- [Setting Up](ReadMe-00-Setting-Up.md) 🔗
-- [Introduction](ReadMe-10-API-introduction.md) 🔗
-- [Index and Show](ReadMe-11-API-index-show.md) 🔗
-- [Create](ReadMe-12-API-create.md) 🔗
-- [Update](ReadMe-13-API-update.md) 🔗
-- [Delete](ReadMe-14-API-delete.md) 🔗
-- [Documenting API](ReadMe-15-API-documenting.md) 🔗
-- [Pagination](ReadMe-16-API-pagination.md) 🔗
-- [Authentication](ReadMe-20-API-authentication.md) 🔗
-- [Authorisation](ReadMe-21-API-authorisation.md) 🔗
-- [Exercises](ReadMe-90-API-exercises.md) 🔗
-- [Useful Links](ReadMe-99-Links.md) 🔗
+
+- [Setting Up](ReadMe-00-Setting-Up.md)🔗
+- [Postman](ReadMe-02-Postman.md)🔗
+- [Introduction](ReadMe-10-API-introduction.md)🔗
+- [Index and Show](ReadMe-11-API-index-show.md)🔗
+- [Create](ReadMe-12-API-create.md)🔗
+- [Update](ReadMe-13-API-update.md)🔗
+- [Delete](ReadMe-14-API-delete.md)🔗
+- [Documenting API](ReadMe-15-API-documenting.md)🔗
+- [Exercises](ReadMe-90-API-exercises.md)🔗
+- [Pagination](ReadMe-16-API-pagination.md)🔗
+- [API Base Controller](ReadMe-17-API-Base-controller.md)🔗
+- [Fallback Route](ReadMe-18-API-fallback-route.md)🔗
+- [Authentication](ReadMe-20-API-authentication.md)🔗
 ---
 
 ## Installation of Laravel Health
@@ -246,4 +247,3 @@ After that the views are found in the `resources/views/vendor/health` folder.
 > 
 > We have had issues publishing the components for the views.
 > We will investigate, and as required, report an issue to Spatie.
-

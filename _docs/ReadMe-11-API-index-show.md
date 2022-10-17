@@ -5,21 +5,24 @@ This is Part 1 - the Index and Show methods.
 > #### Important:
 > Before continuing, you should have completed at least one of the 
 > suggested Postman learning video series from: 
-> - [ReadMe-API-0-introduction.md](ReadMe-10-API-introduction.md)  🔗 
+> - [ReadMe-API-0-introduction.md](ReadMe-10-API-introduction.md)🔗 
 
 
 ## Tutorial Index
 
-- [Introduction](ReadMe-10-API-introduction.md)  🔗
-- [Index and Show](ReadMe-11-API-index-show.md)  🔗
-- [Create](ReadMe-12-API-create.md)  🔗
-- [Update](ReadMe-13-API-update.md)  🔗
-- [Delete](ReadMe-14-API-delete.md)  🔗
-- [Documenting API](ReadMe-15-API-documenting.md)  🔗
-- [Exercises](ReadMe-90-API-exercises.md)  🔗
-- [Pagination](ReadMe-16-API-pagination.md)  🔗
-- [Authentication](ReadMe-20-API-authentication.md)  🔗
-
+- [Setting Up](ReadMe-00-Setting-Up.md)🔗
+- [Postman](ReadMe-02-Postman.md)🔗
+- [Introduction](ReadMe-10-API-introduction.md)🔗
+- [Index and Show](ReadMe-11-API-index-show.md)🔗
+- [Create](ReadMe-12-API-create.md)🔗
+- [Update](ReadMe-13-API-update.md)🔗
+- [Delete](ReadMe-14-API-delete.md)🔗
+- [Documenting API](ReadMe-15-API-documenting.md)🔗
+- [Exercises](ReadMe-90-API-exercises.md)🔗
+- [Pagination](ReadMe-16-API-pagination.md)🔗
+- [API Base Controller](ReadMe-17-API-Base-controller.md)🔗
+- [Fallback Route](ReadMe-18-API-fallback-route.md)🔗
+- [Authentication](ReadMe-20-API-authentication.md)🔗
 ---
 
 # Author API
@@ -174,7 +177,7 @@ Then we check to see if the number of authors found was at least
 
 A review of HTTP response codes may be found in:
 
-- [ReadMe-API-0-introduction.md](ReadMe-10-API-introduction.md) 🔗
+- [ReadMe-API-0-introduction.md](ReadMe-10-API-introduction.md)🔗
 
 ## Quick "Brute Force" Test 
 
@@ -185,17 +188,74 @@ A quick test of the API so far may be done using a browser window and
 going to `http://localhost/api/authors` which will show a 
 JSON structure with all the authors.
 
+## Postman Test: Important Notes on Headers
+
+Postman is a wonderful way of testing your APIs, but we need to take care when sending data to and getting data back from 
+the application.
+
+There are a few things we MUST do to make sure we are sending and receiving JSON data only.
+
+### Headers
+
+In the Headers of the Postman request we must do two things:
+1. Add `Content-Type` with a setting of `application/json`.
+2. Add `Accept` with the same setting of `application/json`.
+
+Note that you are not able to edit the existing `accept` and this new line will override the existing one.
+
+![Postman Headers](images/postman-headers-2.png)
+
+### Body
+
+It is advised (or is that required) to use the Body in RAW mode with a type of JSON.
+
+![Postman Headers](images/postman-headers-1.png)
+
+
 ## Postman Test: Browse
 
 The Postman configuration for the Browse/Index/Retrieve is:
 
 ![GET request for Authors](images/postman-retrieve-1.png)
 
+Make sure you modify both of `accept` and `content-type` entries.
+
 ## Postman Test: Read
 
 When you send the GET request you will obtain results similar to:
 
 ![GET Results for Authors](images/postman-retrieve-2.png)
+
+
+Make sure you modify both of `accept` and `content-type` entries.
+
+
+## Postman Test: Index/Get with Page number and Resources per page
+
+What if you want to retrieve a certain page of results or change the number of items retrieved?
+
+This is done by passing the requested details as JSON:
+
+```json
+{
+    "page":1,
+    "per_page":2
+}
+```
+
+When you send the request you will get the results expected.
+
+![Postman JSON Results with Pagination](images/postman-headers-4.png)
+
+![Postman JSON Results with Pagination](images/postman-headers-3.png)
+
+
+
+Try changing the page to be 5 and see the results...
+
+
+![Postman JSON Results with Pagination](images/postman-headers-5.png)
+
 
 # What's next?
 

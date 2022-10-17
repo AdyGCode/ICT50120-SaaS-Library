@@ -9,17 +9,21 @@ exercises.
 
 ## Tutorial Index
 
-- [Introduction](ReadMe-10-API-introduction.md)  🔗
-- [Index and Show](ReadMe-11-API-index-show.md)  🔗
-- [Create](ReadMe-12-API-create.md)  🔗
-- [Update](ReadMe-13-API-update.md)  🔗
-- [Delete](ReadMe-14-API-delete.md)  🔗
-- [Documenting API](ReadMe-15-API-documenting.md)  🔗
-- [Exercises](ReadMe-90-API-exercises.md)  🔗
-- [Pagination](ReadMe-16-API-pagination.md)  🔗
-- [Authentication](ReadMe-20-API-authentication.md)  🔗
-
+- [Setting Up](ReadMe-00-Setting-Up.md)🔗
+- [Postman](ReadMe-02-Postman.md)🔗
+- [Introduction](ReadMe-10-API-introduction.md)🔗
+- [Index and Show](ReadMe-11-API-index-show.md)🔗
+- [Create](ReadMe-12-API-create.md)🔗
+- [Update](ReadMe-13-API-update.md)🔗
+- [Delete](ReadMe-14-API-delete.md)🔗
+- [Documenting API](ReadMe-15-API-documenting.md)🔗
+- [Exercises](ReadMe-90-API-exercises.md)🔗
+- [Pagination](ReadMe-16-API-pagination.md)🔗
+- [API Base Controller](ReadMe-17-API-Base-controller.md)🔗
+- [Fallback Route](ReadMe-18-API-fallback-route.md)🔗
+- [Authentication](ReadMe-20-API-authentication.md)🔗
 ---
+
 
 These exercises are divided into sections. The idea is to create the features of the project step by step.
 
@@ -202,6 +206,3 @@ Complete the method to `delete` a publisher.
 Ensure you have suitable messages for failure/success.
 
 Create and use Postman to test the delete method.
-
-
-

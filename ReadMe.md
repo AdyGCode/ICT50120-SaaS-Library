@@ -48,15 +48,15 @@ You will find a set of 'tutorials' in the [documentation](./_docs) folder.
 
 These contain the following chapters (in development).
 
-- [Introduction](./_docs/ReadMe-10-API-introduction.md)  🔗
-- [Index and Show](./_docs/ReadMe-11-API-index-show.md)  🔗
-- [Create](./_docs/ReadMe-12-API-create.md)  🔗
-- [Update](./_docs/ReadMe-13-API-update.md)  🔗
-- [Delete](./_docs/ReadMe-14-API-delete.md)  🔗
-- [Documenting API](./_docs/ReadMe-15-API-documenting.md)  🔗
-- [Exercises](./_docs/ReadMe-30-API-exercises.md)  🔗
-- [Pagination](./_docs/ReadMe-16-API-pagination.md)  🔗
-- [Authentication](./_docs/ReadMe-20-API-authentication.md)  🔗
+- [Introduction](./_docs/ReadMe-10-API-introduction.md)🔗
+- [Index and Show](./_docs/ReadMe-11-API-index-show.md)🔗
+- [Create](./_docs/ReadMe-12-API-create.md)🔗
+- [Update](./_docs/ReadMe-13-API-update.md)🔗
+- [Delete](./_docs/ReadMe-14-API-delete.md)🔗
+- [Documenting API](./_docs/ReadMe-15-API-documenting.md)🔗
+- [Exercises](./_docs/ReadMe-30-API-exercises.md)🔗
+- [Pagination](./_docs/ReadMe-16-API-pagination.md)🔗
+- [Authentication](./_docs/ReadMe-20-API-authentication.md)🔗
 
 ## Table of Contents
 
