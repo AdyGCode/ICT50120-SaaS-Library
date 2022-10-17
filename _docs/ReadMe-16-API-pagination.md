@@ -17,8 +17,8 @@ built-in pagination for Laravel.
 - [Documenting API](ReadMe-15-API-documenting.md)  🔗
 - [Exercises](ReadMe-90-API-exercises.md)  🔗
 - [Pagination](ReadMe-16-API-pagination.md)  🔗
-- [Authentication](ReadMe-20-API-authentication.md)  🔗
-
+- [Fallback Route](ReadMe-18-API-fallback-route.md)🔗
+- [Authentication](ReadMe-20-API-authentication.md)🔗
 ---
 
 We are going to add pagination by using a new Request (to validate page and number of items per page).

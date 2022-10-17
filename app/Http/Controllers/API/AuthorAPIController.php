@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\PaginateAPIRequest;
 use App\Http\Requests\StoreAuthorAPIRequest;
 use App\Http\Requests\UpdateAuthorAPIRequest;
 use App\Models\Author;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 
 
@@ -19,7 +16,7 @@ use Illuminate\Support\Carbon;
  *
  * API endpoints for managing authors
  */
-class AuthorAPIController extends Controller
+class AuthorAPIController extends ApiBaseController
 {
 
     /**
@@ -30,15 +27,17 @@ class AuthorAPIController extends Controller
      * @response {
      *      "status": true,
      *      "message": "Retrieved successfully",
-     *      "authors": "authors": [
-     *          {
-     *              "id": 1,
-     *              "given_name": "UNKNOWN",
-     *              "family_name": "AUTHOR",
-     *              "is_company": 0,
-     *              "created_at": "2022-09-10T14:45:22.000000Z",
-     *              "updated_at": "2022-09-10T14:45:22.000000Z"
-     *          }, ...
+     *      "data": {
+     *          "authors": [
+     *              {
+     *                  "id": 1,
+     *                  "given_name": "UNKNOWN",
+     *                  "family_name": "AUTHOR",
+     *                  "is_company": 0,
+     *                  "created_at": "2022-09-10T14:45:22.000000Z",
+     *                  "updated_at": "2022-09-10T14:45:22.000000Z"
+     *              }, ...
+     *          }
      *      ]
      * }
      *
@@ -49,13 +48,9 @@ class AuthorAPIController extends Controller
         // $authors = Author::all();
         $authors = Author::paginate($request['per_page']);
 
-        return response()->json(
-            [
-                'status' => true,
-                'message' => "Retrieved successfully.",
-                'authors' => $authors
-            ],
-            200
+        return $this->sendResponse(
+            $authors,
+            "Retrieved successfully."
         );
     }
 
@@ -92,17 +87,11 @@ class AuthorAPIController extends Controller
             $validated['family_name'] = null;
         }
 
-        $author = Author::create($validated);
+        $authors = Author::create($validated);
 
-        return response()->json(
-            [
-                'success' => true,
-                'message' => "Created successfully.",
-                'data' => [
-                    'authors' => $author,
-                ],
-            ],
-            200
+        return $this->sendResponse(
+            $authors,
+            "Created successfully."
         );
     }
 
@@ -123,28 +112,16 @@ class AuthorAPIController extends Controller
     #[ResponseField("authors", "The author details.")]
     public function show(int $id): JsonResponse
     {
-        $author = Author::query()->where('id', $id)->get();
+        $authors = Author::query()->where('id', $id)->get();
 
-        $response = response()->json(
-            [
-                'status' => false,
-                'message' => "Author Not Found",
-                'authors' => null
-            ],
-            404  # Not Found
-        );
-
-        if ($author->count() > 0) {
-            $response = response()->json(
-                [
-                    'status' => true,
-                    'message' => "Retrieved successfully.",
-                    'authors' => $author
-                ],
-                200  # Ok
+        if ($authors->count() > 0) {
+            return $this->sendResponse(
+                $authors,
+                "Retrieved successfully.",
             );
         }
-        return $response;
+
+        return $this->sendError("Author Not Found");
     }
 
     /**
@@ -157,39 +134,28 @@ class AuthorAPIController extends Controller
     public function update(UpdateAuthorAPIRequest $request, int $id): JsonResponse
     {
         $validated = $request->validated();
-        $author = Author::query()->where('id', $id)->first();
-        $response = response()->json(
-            [
-                'status' => false,
-                'message' => "Unable to update: Author Not Found",
-                'authors' => null
-            ],
-            404  # Not Found
-        );
+        $authors = Author::query()->where('id', $id)->first();
 
-        if (!is_null($author) && $author->count() > 0) {
+        if (!is_null($authors) && $authors->count() > 0) {
             $validated['is_company'] = $validated['is_company'] ?? 0;
             if (!isset($validated['given_name'])) {
                 $validated['given_name'] = $validated['family_name'];
                 $validated['family_name'] = null;
             }
 
-            $author['given_name'] = $validated['given_name'];
-            $author['family_name'] = $validated['family_name'];
-            $author['is_company'] = $validated['is_company'];
-            $author['updated_at'] = Carbon::now();
-            $author->save();
+            $authors['given_name'] = $validated['given_name'];
+            $authors['family_name'] = $validated['family_name'];
+            $authors['is_company'] = $validated['is_company'];
+            $authors['updated_at'] = Carbon::now();
+            $authors->save();
 
-            $response = response()->json(
-                [
-                    'status' => true,
-                    'message' => "Updated successfully.",
-                    'authors' => $author
-                ],
-                200  # Ok
+            return $this->sendResponse(
+                $authors,
+                "Updated successfully.",
             );
+
         }
-        return $response;
+        return $this->sendError("Unable to update: Author Not Found");
     }
 
     /**
@@ -198,34 +164,22 @@ class AuthorAPIController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public
-    function destroy(int $id)
+    public function destroy(int $id)
     {
         $author = Author::query()->where('id', $id)->first();
 
         $destroyedAuthor = $author;
-        $response = response()->json(
-            [
-                'status' => false,
-                'message' => "Unable to delete: Author Not Found",
-                'authors' => null
-            ],
-            404  # Not Found
-        );
 
         if (!is_null($author) && $author->count() > 0) {
             $author->delete();
 
-            $response = response()->json(
-                [
-                    'status' => true,
-                    'message' => "Author deleted.",
-                    'authors' => $destroyedAuthor
-                ],
-                200  # Ok
+            return $this->sendResponse(
+                $destroyedAuthor,
+                "Deleted successfully.",
             );
-        }
 
-        return $response;
+        }
+        return $this->sendError("Unable to remove: Author Not Found");
     }
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ApiFallbackController;
 use App\Http\Controllers\API\AuthAPIController;
 use App\Http\Controllers\API\AuthorAPIController;
 use Illuminate\Http\Request;
@@ -27,16 +28,28 @@ Route::post('login', [AuthAPIController::class, 'login']);
 // and those requiring Authentication
 
 // Public API Routes
-Route::get("/authors", [AuthorAPIController::class,'index']);
+Route::get("/authors", [AuthorAPIController::class, 'index']);
+Route::get("/authors/{id}", [AuthorAPIController::class, 'show']);
 
 // Authentication required API Routes
 // We wrap these in "Auth" Middleware
-Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::get("/authors/{id}", [AuthorAPIController::class,'show']);
-    Route::post('/author', [AuthorAPIController::class, 'store']);
-    Route::put('/author/{id}', [AuthorAPIController::class, 'update']);
-    Route::delete('/author/{id}', [AuthorAPIController::class, 'delete']);
-});
+//Route::group(['middleware' => ['auth:sanctum']], function () {
+
+    /* Prefix the given routes with /authors
+     * Based on http://laravel-school.com/posts/building-a-delighted-restful-api-with-laravel-16
+     */
+    Route::prefix('authors')->group(function () {
+
+//        Route::get("{id}", [AuthorAPIController::class, 'show']);
+        Route::post('/', [AuthorAPIController::class, 'store']);
+        Route::put('/{id}', [AuthorAPIController::class, 'update']);
+        Route::delete('/{id}', [AuthorAPIController::class, 'destroy']);
+
+    });
+
+    /* Logout a logged-in user */
+    Route::post('/logout', [AuthorAPIController::class, 'logout']);
+//});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -47,6 +60,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  * Using Spatie's Health package
  */
 Route::get('health', HealthCheckJsonResultsController::class);
+
 
 /*********************************************************************/
 
@@ -64,7 +78,7 @@ Route::get('health', HealthCheckJsonResultsController::class);
  * @responseField services Map of each downstream service and their status (`up` or `down`).
  */
 Route::get('/healthcheck', function () {
-    return [
+    return response()->json([
         'status' => 'unknown',
         'services' => [
             'database' => 'unknown',
@@ -73,7 +87,9 @@ Route::get('/healthcheck', function () {
             'mail' => 'unknown',
             'load' => 'unknown',
         ],
-    ];
+    ]);
 });
 
+/* Fallback route with nice error message */
 
+Route::fallback([ ApiFallbackController::class,'error']);
