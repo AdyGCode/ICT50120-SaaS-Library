@@ -91,6 +91,16 @@ return [
 ];
 ```
 
+### Imports
+At the top of the file, just below the FormRequest import, add the two extra lines to import HTTP Response
+Exceptions and the Validator contract:
+
+```php
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
+```
+
 Finally the custom responses, `failedValidation`, for validation 
 failures, and the `messages` that are sent to the caller:
 
