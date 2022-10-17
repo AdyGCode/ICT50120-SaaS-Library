@@ -44,9 +44,10 @@ Find index method and modify the signature:
 public function index(PaginationAPIRequest $request): JsonResponse
 ```
 
-Next modify the index's `$author` line to read:
+Next modify the index's `$author` line and the line before it to read:
 
 ```php
+        $validated = $request->validated();
         $authors = Author::paginate($validated["per_page"]);
 ```
 
