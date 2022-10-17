@@ -159,9 +159,9 @@ if (!is_null($author) && $author->count() > 0) {
 Performing the update:
 ```php
 $validated['is_company'] = $validated['is_company'] ?? 0;
-if (!isset($validated['given_name'])) {
-    $validated['given_name'] = $validated['family_name'];
-    $validated['family_name'] = null;
+if (!isset($validated['family_name']) ) {
+    $validated['family_name'] = $validated['given_name'];
+    $validated['given_name'] = null;
 }
 
 $author['given_name'] = $validated['given_name'];
