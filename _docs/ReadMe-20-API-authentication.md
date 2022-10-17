@@ -64,9 +64,9 @@ your application's `app/Http/Kernel.php` file at the end of the `api` section:
 
 ```php
 'api' => [
-\Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-'throttle:api',
-\Illuminate\Routing\Middleware\SubstituteBindings::class,
+    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+    'throttle:api',
+    \Illuminate\Routing\Middleware\SubstituteBindings::class,
 ],
 ```
 
@@ -104,8 +104,11 @@ public function register(Request $request){
 }
 ```    
 
-The validation for this API endpoint is shown in the controller method. It is prudent to move this into a request. we'll do
-this shortly.
+The validation for this API endpoint is shown in the controller method. 
+
+It is prudent to move this into a request. We'll do this shortly.
+
+The Login method is a little simpler...
 
 ```php 
 public function login(Request $request){
@@ -218,17 +221,17 @@ Route::post('register',[AuthController::class,'register']);
 Route::post('login', [AuthController::class, 'login']);
 ```
 
-These will both be accessed via the `api` based URLs:
+These will both be accessed via the `api` based URLs that use POST requests:
 
 - [http://localhost/api/register]()
 - [http://localhost/api/login]()
 
-using POST requests.
 
 ## Create Postman Tests
 
-We need to create tests. these tests check for missing data, invalid emails, and passwords when registering, plus incorrect
-email, and password when logging in, then for valid values when registering and logging in.
+We need to create tests. These tests check for missing data, invalid emails, and 
+passwords when registering, plus incorrect email, and password when logging in, then for
+valid values when registering and logging in.
 
 ### Registering, Missing Data
 
@@ -246,7 +249,7 @@ email, and password when logging in, then for valid values when registering and 
 
 ## Logout Method
 
-Edit the AuthAPIController and add a new method: logout.
+Edit the AuthAPIController and add a new method: `logout`.
 
 ```php
 public function logout(Request $request){
@@ -317,21 +320,55 @@ Open Postman and try accessing the `http://localhost/api/authors/1` endpoint.
 
 Did you get an error?
 
-It should have directed you back to a HTML page - not what we want.
+It should have directed you back to an HTML page - not what we want.
 
 We need to get JSON responses, so how can we do this?
 
 ## API Controller that Returns JSON responses
 
-A good technique is to create a API Controller that we use to send our results back to the caller in a set manner, and thus 
+A good technique is to create an API Controller that we use to send our results back to 
+the caller in a set manner, and thus 
 also reducing the amount of code written.
 
+This is covered in [17 API Base Controller](ReadMe-17-API-Base-controller.md).
+
+Also, a part of this is also making sure you are sending JSON based requests and not 
+form based requests.
+
+This is covered in [17 API Base Controller](ReadMe-11-API-index-show.md).
+
+## Example testing
+
+Successful Login:
+```json
+{
+    "success": true,
+    "data": {
+        "access_token": "1|QABHSmyESS4blQR004qq7exBssDGgMeOMjeHzcG9",
+        "token_type": "Bearer"
+    },
+    "message": "Logged-in"
+}
+```
+
+Error on Login:
+```json
+{
+    "success": false,
+    "message": "Login information is invalid."
+}
+```
+
+# Exercise!
+
+Update the controller(s) used in this tutorial to use the API Base Controller, and ensure they
+send back the uniform result structure.
 
 
-
+If you get stuck, always check the latest code in the repository for this tutorial.
 
 # What's next?
 
-Next it's onto [Authorisation](ReadMe-21-API-authorisation.md).
+Next it's onto [Authorization](ReadMe-21-API-authorisation.md).
 
 Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).
