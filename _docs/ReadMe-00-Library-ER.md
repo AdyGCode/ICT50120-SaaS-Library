@@ -45,7 +45,7 @@ erDiagram
         big_integer     id              PK      "Publisher's ID (Unsigned)"
         string          name                    "Publisher's name (255 chars)"
         string          city                    "Publisher's city (128 Chars)"
-        string          country                 "Publisher's country code (3 Chars)"
+        char            country                 "Publisher's country code (3 Chars)"
     }
 
     Genre {
@@ -69,8 +69,8 @@ erDiagram
     Country {
         big_integer     id              PK      "Numeric country code (Unsigned)"
         string          name                    "Genre's name (Required, 64 Chars)"
-        string          code_2             "Two letter country code (2 Chars)"
-        string          code_3             "Three letter country code (3 Chars)"
+        char            code_2             "Two letter country code (2 Chars)"
+        char            code_3             "Three letter country code (3 Chars)"
     }
 
     Publisher   ||--o{ Book             : publishes       
