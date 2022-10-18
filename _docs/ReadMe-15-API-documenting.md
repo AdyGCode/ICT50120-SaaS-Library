@@ -58,8 +58,7 @@ sail artisan vendor:publish --tag=scribe-views --tag=scribe-themes --tag=scribe-
 ```
 
 When we did the upgrade and then update it also did bug-fix updates to 20+ packages, plus installed some polyfills and also 
-symfony's uid 
-package.
+symfony's uid package.
 
 Next you will need to edit the `config\scribe.php` file and manually add the missing lines from this code (indicated by a + 
 sign):
@@ -226,7 +225,17 @@ Here is the documentation for the show method, updated to suit Scribe.
 ```
 
 ## Alternative markup
-Another form of markup is to yse 
+To BE completed
+
+
+## Regenerating Documentation
+
+Regenerate the documentation:
+```shell
+sail artisan scribe:generate
+```
+
+Test the publication worked by visiting: `http://localhost/docs`
 
 ---
 
