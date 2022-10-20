@@ -19,7 +19,7 @@ This file outlines what we install and our settings for our development environm
 - [Pagination](ReadMe-17-API-pagination.md)🔗
 - [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
 - [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
+- [Authentication](ReadMe-20-API-authentication.md)🔗
 ---
 
 ## UML Rendering in MarkDown
@@ -34,3 +34,12 @@ This allows you to create UML, Entity-Relationship and other diagrams in a Markd
 
 (Check out ReadMe-00-Library-ER.md for an example.
 
+
+
+## Plugins
+
+The plugins we usually install in PhpStorm and other JetBrains editors include:
+
+- .env
+- .gitignore
+- 
