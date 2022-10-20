@@ -31,6 +31,7 @@ Route::post('login', [AuthAPIController::class, 'login']);
 // Public API Routes
 Route::get("/authors", [AuthorAPIController::class, 'index']);
 Route::get("/authors/search", [AuthorAPIController::class, 'search']);
+Route::get("/authors/{id}", [AuthorAPIController::class, 'show']);
 
 Route::apiResource('/books', \App\Http\Controllers\API\BookAPIController::class);
 
@@ -42,8 +43,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
      */
     Route::prefix('authors')->group(function () {
 
-        Route::get('/search', [AuthAPIController::class, 'search']);
-        Route::get("{id}", [AuthorAPIController::class, 'show']);
+//        Route::get('/search', [AuthAPIController::class, 'search']);
+//        Route::get("{id}", [AuthorAPIController::class, 'show']);
         Route::post('/', [AuthorAPIController::class, 'store']);
         Route::put('/{id}', [AuthorAPIController::class, 'update']);
         Route::delete('/{id}', [AuthorAPIController::class, 'destroy']);

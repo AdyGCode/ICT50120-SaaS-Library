@@ -51,7 +51,7 @@ tables.
 
 In the Authors Model we added the `books()` method, and in the Books model we added the `authors()` method.
 
-In the previous tutoprial we used `hasMany` and `belongsToMany` relationship descriptors. This was a 'small' error.
+In the previous tutorial we used `hasMany` and `belongsToMany` relationship descriptors. This was a 'small' error.
 
 We actually need to use '`belongsToMany`' in BOTH methods.
 
