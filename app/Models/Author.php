@@ -16,11 +16,11 @@ class Author extends Model
     ];
 
     /**
-     * Create the author may have MANY books relationship
+     * Create the author may write MANY books relationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function books() {
-        return $this->hasMany(Books::class);
+        return $this->belongsToMany(Book::class);
     }
 }

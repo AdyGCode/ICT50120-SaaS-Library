@@ -7,6 +7,7 @@ use App\Http\Requests\StoreAuthorAPIRequest;
 use App\Http\Requests\UpdateAuthorAPIRequest;
 use App\Models\Author;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 
@@ -112,7 +113,7 @@ class AuthorAPIController extends ApiBaseController
     #[ResponseField("authors", "The author details.")]
     public function show(int $id): JsonResponse
     {
-        $authors = Author::query()->where('id', $id)->get();
+        $authors = Author::with('books')->find( $id);
 
         if ($authors->count() > 0) {
             return $this->sendResponse(
@@ -180,6 +181,29 @@ class AuthorAPIController extends ApiBaseController
 
         }
         return $this->sendError("Unable to remove: Author Not Found");
+    }
+
+
+    /**
+     * Search request in the form http://localhost/authors/search with raw JSON sent { "search": "name" }
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function search(Request $request): JsonResponse
+    {
+        $search = $request->get('search');
+
+        $authors = Author::with('books')->where( 'family_name', 'like', "%{$search}%")->get();
+
+        if ($authors->count() > 0) {
+            return $this->sendResponse(
+                $authors,
+                "Retrieved successfully.",
+            );
+        }
+
+        return $this->sendError("Author Not Found");
     }
 
 }

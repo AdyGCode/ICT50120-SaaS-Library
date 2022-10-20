@@ -14,15 +14,15 @@ This is Part 1 - the Index and Show methods.
 - [Postman](ReadMe-02-Postman.md)🔗
 - [Introduction](ReadMe-10-API-introduction.md)🔗
 - [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Create](ReadMe-12-API-create.md)🔗
-- [Update](ReadMe-13-API-update.md)🔗
-- [Delete](ReadMe-14-API-delete.md)🔗
-- [Documenting API](ReadMe-15-API-documenting.md)🔗
+- [Create](ReadMe-13-API-create.md)🔗
+- [Update](ReadMe-14-API-update.md)🔗
+- [Delete](ReadMe-15-API-delete.md)🔗
+- [Documenting API](ReadMe-16-API-documenting.md)🔗
 - [Exercises](ReadMe-90-API-exercises.md)🔗
-- [Pagination](ReadMe-16-API-pagination.md)🔗
-- [API Base Controller](ReadMe-17-API-Base-controller.md)🔗
-- [Fallback Route](ReadMe-18-API-fallback-route.md)🔗
-- [Authentication](ReadMe-20-API-authentication.md)🔗
+- [Pagination](ReadMe-17-API-pagination.md)🔗
+- [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
+- [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
+- [Authentication](ReadMe-21-API-authentication.md)🔗
 ---
 
 # Author API
@@ -259,6 +259,6 @@ Try changing the page to be 5 and see the results...
 
 # What's next?
 
-Next it's onto [Create](ReadMe-12-API-create.md).
+Next it's onto [Create](ReadMe-13-API-create.md).
 
 Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).
