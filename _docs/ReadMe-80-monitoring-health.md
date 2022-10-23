@@ -1,8 +1,8 @@
 # Monitoring Application Health
 
-It is a good idea to have a quick way to monitor your applicaition's health.
+It is a good idea to have a quick way to monitor your application's health.
 
-Health, int eh case of an applicaiton, includes items such as checking:
+Health, in the case of any application, includes items such as checking:
 - Database server is running
 - Cloud Storage availability
 - Disk storage usage
@@ -15,20 +15,9 @@ Full documentation for the package is found at:
 
 ## Tutorial Index
 
-- [Setting Up](ReadMe-00-Setting-Up.md)🔗
-- [Postman](ReadMe-02-Postman.md)🔗
-- [Introduction](ReadMe-10-API-introduction.md)🔗
-- [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Create](ReadMe-13-API-create.md)🔗
-- [Update](ReadMe-14-API-update.md)🔗
-- [Delete](ReadMe-15-API-delete.md)🔗
-- [Documenting API](ReadMe-16-API-documenting.md)🔗
-- [Exercises](ReadMe-90-API-exercises.md)🔗
-- [Pagination](ReadMe-17-API-pagination.md)🔗
-- [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
-- [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
----
+|                   Previous                    |                Index                 |                      Next                       |
+|:---------------------------------------------:|:------------------------------------:|:-----------------------------------------------:|
+| [Authentication](ReadMe-20-Authentication.md) | [Tutorial Index](ReadMe-00-Index.md) | [Authorisation](ReadMe-22-API-Authorisation.md) | 
 
 ## Installation of Laravel Health
 

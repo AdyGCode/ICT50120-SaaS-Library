@@ -1,34 +1,21 @@
 # Making an API - Authentication
 
-TODO: Write this section
+
+Remember that there are comprehensive docs on Sanctum at:
+- https://laravel.com/docs/9.x/sanctum.
+
+This tutorial is based on:
+- [Setup Postman for Laravel Sanctum](http://www.cgs4k.nz/setup-postman-for-laravel-sanctum).
+- [REST API Authentication Using Laravel Sanctum](https://linuxhint.com/rest-api-authentication-laravel-sanctum/).
+- [Making Api CRUD (Create, Read, Update, Delete) with Laravel 8 + API Authentication with sanctum](https://dev.to/tanzimibthesam/making-api-crud-create-read-update-delete-with-laravel-8-n-api-authentication-with-sanctum-19oh).
+- [Protecting our Laravel API with Sanctum](https://daily-dev-tips.com/posts/protecting-our-laravel-api-with-sanctum/).
+- [Build a Restful API in PHP with Laravel Sanctum](https://www.twilio.com/blog/build-restful-api-php-laravel-sanctum).
 
 ## Tutorial Index
 
-- [Setting Up](ReadMe-00-Setting-Up.md)🔗
-- [Postman](ReadMe-02-Postman.md)🔗
-- [Introduction](ReadMe-10-API-introduction.md)🔗
-- [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Create](ReadMe-13-API-create.md)🔗
-- [Update](ReadMe-14-API-update.md)🔗
-- [Delete](ReadMe-15-API-delete.md)🔗
-- [Documenting API](ReadMe-16-API-documenting.md)🔗
-- [Exercises](ReadMe-90-API-exercises.md)🔗
-- [Pagination](ReadMe-17-API-pagination.md)🔗
-- [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
-- [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
----
-> 
-> 
-> Remember that there are comprehensive docs on Sanctum at:
-> https://laravel.com/docs/9.x/sanctum.
->
-> This tutorial is based on:
-> - [Setup Postman for Laravel Sanctum](http://www.cgs4k.nz/setup-postman-for-laravel-sanctum)
-> - [REST API Authentication Using Laravel Sanctum](https://linuxhint.com/rest-api-authentication-laravel-sanctum/)
-> - [Making Api CRUD (Create, Read, Update, Delete) with Laravel 8 + API Authentication with sanctum](https://dev.to/tanzimibthesam/making-api-crud-create-read-update-delete-with-laravel-8-n-api-authentication-with-sanctum-19oh)
-> - [Protecting our Laravel API with Sanctum](https://daily-dev-tips.com/posts/protecting-our-laravel-api-with-sanctum/)
-> - [Build a Restful API in PHP with Laravel Sanctum](https://www.twilio.com/blog/build-restful-api-php-laravel-sanctum)
+|                      Previous                       |                Index                 |                        Next                        |
+|:---------------------------------------------------:|:------------------------------------:|:--------------------------------------------------:|
+| [Fallback Routes](ReadMe-18-API-fallback-routes.md) | [Tutorial Index](ReadMe-00-Index.md) | [Monitroing Health](ReadMe-80-monitoring-health.md) | 
 
 ## Install Laravel Sanctum
 

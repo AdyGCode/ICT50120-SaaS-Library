@@ -6,21 +6,9 @@ Laravel (v9 or later) and Postman (for testing).
 You will also add a plugin to document your API dynamically.
 
 ## Tutorial Index
-
-- [Setting Up](ReadMe-00-Setting-Up.md)🔗
-- [Postman](ReadMe-02-Postman.md)🔗
-- [Introduction](ReadMe-10-API-introduction.md)🔗
-- [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Create](ReadMe-13-API-create.md)🔗
-- [Update](ReadMe-14-API-update.md)🔗
-- [Delete](ReadMe-15-API-delete.md)🔗
-- [Documenting API](ReadMe-16-API-documenting.md)🔗
-- [Exercises](ReadMe-90-API-exercises.md)🔗
-- [Pagination](ReadMe-17-API-pagination.md)🔗
-- [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
-- [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
----
+|               Previous               |                Index                 |                 Next                  |
+|:------------------------------------:|:------------------------------------:|:-------------------------------------:|
+| [Tutorial Index](ReadMe-00-Index.md) | [Tutorial Index](ReadMe-00-Index.md) | [Setting Up](ReadMe-00-Setting-Up.md) |
 
 # Required Resources
 
@@ -29,25 +17,22 @@ We are presuming you are using:
 - PC/Mac
     - Docker Desktop
 - PC
-    - Windows Terminal 
+    - Windows Terminal
     - Windows Subsystem for Linux v2 (WSL2)
     - Ubuntu Linux on WSL2
 - MacOS
-    - iTerm 2  
+    - iTerm 2
 
-All code will use PHP 8.0 or later. Actual version used in 
+All code will use PHP 8.0 or later. Actual version used in
 the tutorial is 8.1.x.
-
 
 ## Links
 
 Links to useful resources on Docker, Laravel, and so on are available in [ReadMe-99-Links.md](ReadMe-99-Links.md).
 
-
 # Terminology
 
 Before we start on the process, let's get the obligatory terminology out of the way...
-
 
 | Term              | Definition                                                                                                         |
 |-------------------|--------------------------------------------------------------------------------------------------------------------|
@@ -71,32 +56,32 @@ As we are creating a **REST**ful **API**, we will be returning **JSON**
 based results to any request, as against a **SOAP** based API which
 communicates via **XML**.
 
-## URL/URI Structure 
+## URL/URI Structure
 
 ![URI RESTful Endpoint Structure](./images/URI-RESTful-Endpoint.png)
 
-From Daniel Miessler's article 
-"[Difference Between URI and URN](https://danielmiessler.com/study/difference-between-uri-url/)", 
+From Daniel Miessler's article
+"[Difference Between URI and URN](https://danielmiessler.com/study/difference-between-uri-url/)",
 this is a very good summary:
 
 - Many of the old RFCs (eg. RFC 3986) are ancient, poorly written.
 - These RFCs are not worth debating until they’re updated.
-- They have had supplemental RFCs written to clarify points 
+- They have had supplemental RFCs written to clarify points
   (eg. RFCs 6874, 7320, 8820)
 - A URI is an identifier.
 - A URL is an identifier that tells you how to get to it.
 - Use the term that is best understood by the recipient.
 
-The diagram below shows the URL, URN and URI components and Scheme, 
-Host and Path relationships, and how a full 
+The diagram below shows the URL, URN and URI components and Scheme,
+Host and Path relationships, and how a full
 scheme-host-path may be called URL or URI. As stated above, use which
 is best for the person(s) you are talking to.
 
 ![URL - URL - URN vs Scheme, Host and Path](images/URI-URN-URL-2.png)
 
-Another good article is 
-[URI vs URL](https://www.hostinger.com/tutorials/uri-vs-url) 
-on the Hostinger website. 
+Another good article is
+[URI vs URL](https://www.hostinger.com/tutorials/uri-vs-url)
+on the Hostinger website.
 
 It is recommended that you read these two articles.
 

@@ -2,24 +2,11 @@
 
 Steps to set up this application from scratch (as in build it yourself).
 
-
 ## Tutorial Index
 
-- [Setting Up](ReadMe-00-Setting-Up.md)🔗
-- [Postman](ReadMe-02-Postman.md)🔗
-- [Introduction](ReadMe-10-API-introduction.md)🔗
-- [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Create](ReadMe-13-API-create.md)🔗
-- [Update](ReadMe-14-API-update.md)🔗
-- [Delete](ReadMe-15-API-delete.md)🔗
-- [Documenting API](ReadMe-16-API-documenting.md)🔗
-- [Exercises](ReadMe-90-API-exercises.md)🔗
-- [Pagination](ReadMe-17-API-pagination.md)🔗
-- [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
-- [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
----
-
+|               Previous               |                Index                 |           Next            |
+|:------------------------------------:|:------------------------------------:|:-------------------------:|
+| [Tutorial Index](ReadMe-00-Index.md) | [Tutorial Index](ReadMe-00-Index.md) | [Postman](ReadMe-02-Postman.md) |
 
 ## Getting the Terminal Set Up
 
@@ -119,7 +106,7 @@ sail artisan make:model Book -ars
 sail artisan make:model Author -ars
 ```
 
-The next command creates the pivot table migrations for `author_book`. We specify the table name as, by default, Laravel will 
+The next command creates the pivot table migrations for `author_book`. We specify the table name as, by default, Laravel will
 attempt to pluralise the table name it deduces from the "`create_author_name_table`" migration name.
 
 ```shell
@@ -136,10 +123,10 @@ sail artisan make:migration create_author_book_table --table=author_book
 ## Migrations and Models
 
 > ‼ **IMPORTANT** ‼
-> 
-> Ensure you verify the most up-to-date version of the 
-> database structure shown in the ERD in the document 
-> [ReadMe-00-Library-ER.md](ReadMe-00-Library-ER.md) and update any 
+>
+> Ensure you verify the most up-to-date version of the
+> database structure shown in the ERD in the document
+> [ReadMe-00-Library-ER.md](ReadMe-00-Library-ER.md) and update any
 > data structures as required.
 
 Edit the migrations, and models for the Author, Book and Author Book tables.
@@ -160,13 +147,14 @@ Schema::create('books', function (Blueprint $table) {
     $table->timestamps();
 });
 ```
-The genre and sub-genre fields are really a repetition of a 'genre' field, 
+
+The genre and sub-genre fields are really a repetition of a 'genre' field,
 so we should really move these into a separate table with a many-to-many
 relationship using a pivot table.
 
 > **Note:**
-> 
-> We will remove the genre and subgenre in a later migration as we create a genre 
+>
+> We will remove the genre and subgenre in a later migration as we create a genre
 > model, and the related book-genre pivot. This will then require us to update the book
 > migration to perform the attaching of the genres to the book using a many-to-many
 > relationship defined in the book and genre models.
@@ -215,8 +203,9 @@ Schema::create('authors', function (Blueprint $table) {
     $table->timestamps();
 });
 ```
-We set the given and family names to 'null' as a default - this will still fail when our validation checks that at least one 
-of the two has a minimum length. 
+
+We set the given and family names to 'null' as a default - this will still fail when our validation checks that at least one
+of the two has a minimum length.
 
 The Author-Books migration requires the following (make sure the table is `author_book`):
 
@@ -247,17 +236,17 @@ Normally, we would perform the seeding in this order:
 - Books
 - Author Books
 
-This is because the Author is the highest priority for this data, 
-followed by Books, and then the Author-Books model that joins 
+This is because the Author is the highest priority for this data,
+followed by Books, and then the Author-Books model that joins
 these two tables.
 
 In fact, we do not create an Author-Books migration as we will fill it
 from the Books seeder.
 
-Also, we will create a few authors without books, including an UNKNOWN 
+Also, we will create a few authors without books, including an UNKNOWN
 author and corporate author, to act as a placeholder/error if needed.
 
-Open the `database/seeders/AuthorSeeder.php` file and add the 
+Open the `database/seeders/AuthorSeeder.php` file and add the
 following to the `run` method:
 
 ```php
@@ -300,9 +289,9 @@ following to the `run` method:
 ```
 
 Now we are going to construct the Book seeding, but this time we are
-going to employ a bit of trickery by listing our books with all the 
-required data, and then going through each book, adding missing authors 
-and then books as needed, plus finally linking the book to the author 
+going to employ a bit of trickery by listing our books with all the
+required data, and then going through each book, adding missing authors
+and then books as needed, plus finally linking the book to the author
 via Laravel's attach method.
 
 We do this, starting with an `Unknown` book which will have the `id` of `1`.
@@ -388,7 +377,7 @@ foreach ($seedBooks as $book) {
 ```
 
 We are now ready to add the new book, and then link the authors to the book, automatically populating the Author-Book table.
-   
+
 ```php
     # Create book record
     $newBook = [
@@ -420,7 +409,6 @@ $this->call([
    BookSeeder::class,
 ]);
 ```
-
 
 ## Run your fresh migration
 

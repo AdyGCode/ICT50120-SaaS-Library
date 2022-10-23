@@ -8,20 +8,9 @@ ALL the records (even if we had 1,000,000 of them)!
 
 ## Tutorial Index
 
-- [Setting Up](ReadMe-00-Setting-Up.md)🔗
-- [Postman](ReadMe-02-Postman.md)🔗
-- [Introduction](ReadMe-10-API-introduction.md)🔗
-- [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Create](ReadMe-13-API-create.md)🔗
-- [Update](ReadMe-14-API-update.md)🔗
-- [Delete](ReadMe-15-API-delete.md)🔗
-- [Documenting API](ReadMe-16-API-documenting.md)🔗
-- [Exercises](ReadMe-90-API-exercises.md)🔗
-- [Pagination](ReadMe-17-API-pagination.md)🔗
-- [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
-- [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
----
+|                   Previous                    |                Index                 |               Next                |
+|:---------------------------------------------:|:------------------------------------:|:---------------------------------:|
+| [Related Data](ReadMe-12-API-related-data.md) | [Tutorial Index](ReadMe-00-Index.md) | [Update](ReadMe-14-API-update.md) |
 
 # Author API - Create a New Author
 
@@ -40,7 +29,7 @@ You can also use the following:
 Route::resource('authors', AuthorAPIController::class);
 ```
 
-This means we can now concentrate on the `API/AuthorAPIController.php` 
+This means we can now concentrate on the `API/AuthorAPIController.php`
 file and the `store`method.
 
 ## Store API Method
@@ -84,7 +73,6 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 ```
-
 
 ### Allowing the Request
 
@@ -139,20 +127,22 @@ A reasonable structure could be:
 {
     "success": true,
     "message": "MESSAGE TEXT",
-    "data": [ { } ]
+    "data": [
+        {}
+    ]
 }
 ```
 
 - `success` will be a yes or no (aka true and false) situation. So
   we return true or false.
-- `message` will be some text to give immediate feedback to the caller. 
+- `message` will be some text to give immediate feedback to the caller.
   This could be further presented to the end user if appropriate.
-- `data` will contain an array of any returned data, be that data 
+- `data` will contain an array of any returned data, be that data
   from queries or error messages, or similar.
 
 ### Failed Validation Response
 
-Because we want to send back a JSON response it is a good idea to 
+Because we want to send back a JSON response it is a good idea to
 structure our response to failed validation in a manner that is usable.
 
 We do this by adding the `failedValidation` method.
@@ -188,7 +178,6 @@ Now we have the Response set up we modify the `AuthorAPIController` a little.
 
 Edit the `AuthorAPIController` and change the store signature to:
 
-
 ```php
 public function store(StoreAuthorAPIRequest $request)
 ```
@@ -220,7 +209,7 @@ Because we are sending data to the API we cannot use the brute force
 check via the browser.
 
 We need to use Postman to do the testing. In this test we are not using
-authenticated access. 
+authenticated access.
 
 A suitable postman request could be as shown below:
 
@@ -259,7 +248,7 @@ Alternatively we move the family name into the given name.
 
 Either is workable and equally useful.
 
-Here is the code to move the given name into the family name if 
+Here is the code to move the given name into the family name if
 the family name is missing but a given name is provided:
 
 ```php
@@ -294,11 +283,9 @@ One of these two options will appear immediately before the store method's line:
 $author = Author::create($validated);
 ```
 
-
-
 # What's next?
 
 Next it's onto [Update](ReadMe-14-API-update.md).
 
-Before that though, remember to 
+Before that though, remember to
 [complete the exercises](ReadMe-90-API-exercises.md).

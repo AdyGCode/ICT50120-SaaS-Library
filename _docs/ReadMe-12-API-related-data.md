@@ -4,26 +4,14 @@ How do we retrieve the books that belong to and author?
 
 We do this with our Many-to-Many relationship that we have defined.
 
+
 ## Tutorial Index
 
-- [Setting Up](ReadMe-00-Setting-Up.md)🔗
-- [Postman](ReadMe-02-Postman.md)🔗
-- [Introduction](ReadMe-10-API-introduction.md)🔗
-- [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Related Data](ReadMe-12-API-related-data.md)🔗
-- [Create](ReadMe-13-API-create.md)🔗
-- [Update](ReadMe-14-API-update.md)🔗
-- [Delete](ReadMe-15-API-delete.md)🔗
-- [Documenting API](ReadMe-16-API-documenting.md)🔗
-- [Exercises](ReadMe-90-API-exercises.md)🔗 _These are important practice_
-- [Pagination](ReadMe-17-API-pagination.md)🔗
-- [API Base Controller](ReadMe-18-API-Base-controller.md)🔗
-- [Fallback Route](ReadMe-19-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
-- [Authentication](ReadMe-22-API-authorisation.md)🔗
-- [Links](ReadMe-99-Links.md)🔗
+|           Previous           |                Index                |           Next            |
+|:----------------------------:|:-----------------------------------:|:-------------------------:|
+| [Index-Show](ReadMe-11-index-show.md) | Tutorial Index](ReadMe-00-Index.md) | [Create](ReadMe-13-create.md) |
 
----
+
 
 ## Relationships
 
@@ -139,5 +127,3 @@ You can always check the example in the [`routes\api.php` file](..\routes\api.ph
 
 Later, when you look at authentication, you will discover that a route that is listed as
 being processed by middleware will take priority over one that does not require processing. 
-
-
