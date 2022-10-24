@@ -47,7 +47,7 @@ class AuthorAPIController extends ApiBaseController
     public function index(PaginateAPIRequest $request): JsonResponse
     {
         // $authors = Author::all();
-        $authors = Author::paginate($request['per_page']);
+        $authors = Author::with('books')->paginate($request['per_page']);
 
         return $this->sendResponse(
             $authors,
@@ -113,7 +113,7 @@ class AuthorAPIController extends ApiBaseController
     #[ResponseField("authors", "The author details.")]
     public function show(int $id): JsonResponse
     {
-        $authors = Author::with('books')->find( $id);
+        $authors = Author::with('books')->find($id);
 
         if ($authors->count() > 0) {
             return $this->sendResponse(

@@ -37,8 +37,8 @@ We've even included a [ ] so you can place an X in the box when you complete a t
 
 ## Web Application Tutorial
 - [ ] [50 Introduction and Static Pages](ReadMe-50-Introduction.md) 🔗
-- [ ] [51 Blade and the Homepage](ReadMe-51-Blade-HomePage.md) 🔗
-- [ ] [52 Blade Template](ReadMe-52-Blade-Template.md) 🔗
+- [ ] [51 Blade, Guest Template and the Homepage](ReadMe-51-Blade-HomePage.md) 🔗
+- [ ] [52 Blade Authenticated Template](ReadMe-52-Blade-Template.md) 🔗
 - [ ] [53 Authentication](ReadMe-53-Blade-Authentication.md) 🔗
 - [ ] [54 Authors: Browse](ReadMe-54-Blade-Authors-Browse.md) 🔗
 - [ ] [55 Authors: Read](ReadMe-55-Blade-Authors-Read.md) 🔗
