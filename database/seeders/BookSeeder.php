@@ -1918,7 +1918,7 @@ class BookSeeder extends Seeder
             [
                 "title" => "We the People",
                 "authors" => [
-                    ",Palkhivala",
+                    "Palkhivala, Nani",
                 ],
                 "genre" => "philosophy",
                 "sub_genre" => "philosophy",
@@ -1928,7 +1928,7 @@ class BookSeeder extends Seeder
             [
                 "title" => "We the Nation",
                 "authors" => [
-                    ",Palkhivala",
+                    "Palkhivala, Nani",
                 ],
                 "genre" => "philosophy",
                 "sub_genre" => "philosophy",
@@ -1938,7 +1938,7 @@ class BookSeeder extends Seeder
             [
                 "title" => "Courtroom Genius, The",
                 "authors" => [
-                    "Sorabjee   ",
+                    "Sorabjee, Soli  ",
                 ],
                 "genre" => "non-fiction",
                 "sub_genre" => "autobiography",
@@ -2189,8 +2189,8 @@ class BookSeeder extends Seeder
                 $authorGiven = null;
                 $authorFamily = $author;
                 if ($comma = mb_strpos($author, ",")) {
-                    $authorGiven = trim(mb_substr($author, 0, $comma));
-                    $authorFamily = trim(mb_substr($author, $comma + 1, mb_strlen($author)));
+                    $authorFamily = trim(mb_substr($author, 0, $comma));
+                    $authorGiven = trim(mb_substr($author, $comma + 1, mb_strlen($author)));
                 }
 
                 // Check to see if we have the author in the table (yes => author, no => null)
