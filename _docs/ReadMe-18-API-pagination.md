@@ -11,7 +11,7 @@ built-in pagination for Laravel.
 
 |                     Previous                      |                Index                 |                        Next                         |
 |:-------------------------------------------------:|:------------------------------------:|:---------------------------------------------------:|
-| [Documenting the API](ReadMe-16-API-documenting.md) | [Tutorial Index](ReadMe-00-Index.md) | [Base Controller](ReadMe-18-API-Base-controller.md)| 
+| [Documenting the API](ReadMe-17-API-documenting.md) | [Tutorial Index](ReadMe-00-Index.md) | [Base Controller](ReadMe-19-API-Base-controller-II.md)| 
 
 We are going to add pagination by using a new Request (to validate page and number of items per page).
 

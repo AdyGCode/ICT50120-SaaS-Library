@@ -7,9 +7,9 @@ This is when a fallback route is very useful.
 
 ## Tutorial Index
 
-|                      Previous                       |                Index                 |                             Next                              |
-|:---------------------------------------------------:|:------------------------------------:|:-------------------------------------------------------------:|
-| [Fallback Routes](ReadMe-18-API-fallback-routes.md) | [Tutorial Index](ReadMe-00-Index.md) | [Authentication via Sanctum](ReadMe-20-API-authentication.md) | 
+|                             Previous                             |                Index                 |                             Next                              |
+|:----------------------------------------------------------------:|:------------------------------------:|:-------------------------------------------------------------:|
+| [Using the Base Controller](ReadMe-20-API-Base-controller-II.md) | [Tutorial Index](ReadMe-00-Index.md) | [Authentication via Sanctum](ReadMe-21-API-authentication.md) | 
 
 
 ## Create the API "Error" Controller

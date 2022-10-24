@@ -9,7 +9,7 @@ Now we need to look at deleting them.
 
 |             Previous              |                Index                 |                      Next                       |
 |:---------------------------------:|:------------------------------------:|:-----------------------------------------------:|
-| [Update](ReadMe-14-API-update.md) | [Tutorial Index](ReadMe-00-Index.md) | [Documentation](ReadMe-16-API-documentation.md) | 
+| [Update](ReadMe-15-API-update.md) | [Tutorial Index](ReadMe-00-Index.md) | [Documentation](ReadMe-16-API-documentation.md) | 
 
 ## Author API - Delete an Author
 
@@ -106,6 +106,6 @@ data of the author that was just removed.
 
 # What's next?
 
-Next it's onto [Pagination](ReadMe-17-API-pagination.md).
+Next it's onto [Pagination](ReadMe-18-API-pagination.md).
 
 Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).

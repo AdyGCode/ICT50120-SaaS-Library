@@ -1,70 +1,18 @@
-# Making an API - API Base Controller
+# Making an API - API Base Controller Part II
 
-Having a controller that all the API Controllers are based on helps reduce possible errors when responding to requests. This 
-is done by unifying the response structures be it when sending a response or an error.
 
-In this tutorial we will create a base controller and then use it in our Authors API Controller.
+In this tutorial we will use the Base Controller we created in [Base Controller](ReadMe-12-API-Base-controller.md),
+and apply it to  our Authors API Controller.
 
 
 ## Tutorial Index
 
-|           Previous           |                Index                 |                     Next                      |
-|:----------------------------:|:------------------------------------:|:---------------------------------------------:|
-| [Pagination](ReadMe-17-API-pagination.md) | [Tutorial Index](ReadMe-00-Index.md) | [Fallback routes](ReadMe-19-API-fallback-route.md) | 
+|           Previous           |                Index                 |                        Next                        |
+|:----------------------------:|:------------------------------------:|:--------------------------------------------------:|
+| [Pagination](ReadMe-18-API-pagination.md) | [Tutorial Index](ReadMe-00-Index.md) | [Fallback routes](ReadMe-20-API-fallback-route.md) | 
 
 
-
-## Create the Controller
-
-Run the command:
-```shell
- sail artisan make:controller API/ApiBaseController
-```
-
-This creates an empty "stub"/"prototype"/"skeleton" controller.
-
-Edit this new file, and add:
-
-```php
-/**
-     * success response method.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function sendResponse($result, $message)
-    {
-    	$response = [
-            'success' => true,
-            'data'    => $result,
-            'message' => $message,
-        ];
-
-
-        return response()->json($response, 200);
-    }
-
-
-    /**
-     * return error response.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function sendError($error, $errorMessages = [], $code = 404)
-    {
-    	$response = [
-            'success' => false,
-            'message' => $error,
-        ];
-
-
-        if(!empty($errorMessages)){
-            $response['data'] = $errorMessages;
-        }
-
-
-        return response()->json($response, $code);
-    }
-```
+## Editing the Controllers to use the BaseController
 
 Now edit the AuthorAPIController and change the class definition line to read:
 

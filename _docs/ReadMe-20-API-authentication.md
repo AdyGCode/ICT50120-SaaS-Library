@@ -13,9 +13,9 @@ This tutorial is based on:
 
 ## Tutorial Index
 
-|                      Previous                       |                Index                 |                        Next                        |
-|:---------------------------------------------------:|:------------------------------------:|:--------------------------------------------------:|
-| [Fallback Routes](ReadMe-18-API-fallback-routes.md) | [Tutorial Index](ReadMe-00-Index.md) | [Monitroing Health](ReadMe-80-monitoring-health.md) | 
+|                      Previous                       |                Index                 |                        Next                         |
+|:---------------------------------------------------:|:------------------------------------:|:---------------------------------------------------:|
+| [Fallback Routes](ReadMe-20-API-fallback-routes.md) | [Tutorial Index](ReadMe-00-Index.md) | [Monitoring Health](ReadMe-80-monitoring-health.md) | 
 
 ## Install Laravel Sanctum
 
@@ -317,7 +317,7 @@ A good technique is to create an API Controller that we use to send our results 
 the caller in a set manner, and thus 
 also reducing the amount of code written.
 
-This is covered in [17 API Base Controller](ReadMe-18-API-Base-controller.md).
+This is covered in [17 API Base Controller](ReadMe-19-API-Base-controller-II.md).
 
 Also, a part of this is also making sure you are sending JSON based requests and not 
 form based requests.

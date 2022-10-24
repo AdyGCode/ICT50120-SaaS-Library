@@ -4,14 +4,11 @@ How do we retrieve the books that belong to and author?
 
 We do this with our Many-to-Many relationship that we have defined.
 
-
 ## Tutorial Index
 
-|           Previous           |                Index                |           Next            |
-|:----------------------------:|:-----------------------------------:|:-------------------------:|
-| [Index-Show](ReadMe-11-index-show.md) | Tutorial Index](ReadMe-00-Index.md) | [Create](ReadMe-13-create.md) |
-
-
+|                     Previous                      |                Index                 |              Next               |
+|:-------------------------------------------------:|:------------------------------------:|:-------------------------------:|
+| [Base Controller](ReadMe-12-API-Base-controller.md) | [Tutorial Index](ReadMe-00-Index.md) | [Create](ReadMe-14-API-create.md) |
 
 ## Relationships
 
@@ -28,7 +25,7 @@ We already know that we have the following situations:
 - An author may write MANY books
 - A book may have MANY authors
 
-We resolve this using a 'pivot' or 'through' or 'mediatory' table.
+We resolve this using a 'pivot' or 'through' or 'mediator' table.
 
 In the case of the Books and Authors that is an Author-Book table.
 
@@ -126,4 +123,4 @@ You can always check the example in the [`routes\api.php` file](..\routes\api.ph
 ## Aside
 
 Later, when you look at authentication, you will discover that a route that is listed as
-being processed by middleware will take priority over one that does not require processing. 
+being processed by middleware will take priority over one that does not require processing.

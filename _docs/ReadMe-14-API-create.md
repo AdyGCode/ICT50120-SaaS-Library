@@ -10,7 +10,7 @@ ALL the records (even if we had 1,000,000 of them)!
 
 |                   Previous                    |                Index                 |               Next                |
 |:---------------------------------------------:|:------------------------------------:|:---------------------------------:|
-| [Related Data](ReadMe-12-API-related-data.md) | [Tutorial Index](ReadMe-00-Index.md) | [Update](ReadMe-14-API-update.md) |
+| [Related Data](ReadMe-13-API-related-data.md) | [Tutorial Index](ReadMe-00-Index.md) | [Update](ReadMe-15-API-update.md) |
 
 # Author API - Create a New Author
 
@@ -285,7 +285,7 @@ $author = Author::create($validated);
 
 # What's next?
 
-Next it's onto [Update](ReadMe-14-API-update.md).
+Next it's onto [Update](ReadMe-15-API-update.md).
 
 Before that though, remember to
 [complete the exercises](ReadMe-90-API-exercises.md).

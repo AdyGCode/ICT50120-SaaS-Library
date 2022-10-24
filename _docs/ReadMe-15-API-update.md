@@ -8,7 +8,7 @@ Now we need to look at updating them.
 
 |             Previous              |                Index                 |               Next                |
 |:---------------------------------:|:------------------------------------:|:---------------------------------:|
-| [Create](ReadMe-13-API-create.md) | [Tutorial Index](ReadMe-00-Index.md) | [Delete](ReadMe-15-API-delete.md) |
+| [Create](ReadMe-14-API-create.md) | [Tutorial Index](ReadMe-00-Index.md) | [Delete](ReadMe-16-API-delete.md) |
 
 
 # Author API - Update an Author
@@ -216,6 +216,6 @@ error, and the relevant status (false) and author (null).
 
 That's the update completed.
 
-Next it's onto [Delete](ReadMe-15-API-delete.md).
+Next it's onto [Delete](ReadMe-16-API-delete.md).
 
 Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).

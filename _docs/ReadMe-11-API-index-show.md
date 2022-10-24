@@ -10,9 +10,9 @@ This is Part 1 - the Index and Show methods.
 
 ## Tutorial Index
 
-|            Previous            |                Index                 |                  Next                  |
-|:------------------------------:|:------------------------------------:|:--------------------------------------:|
-| [Introduction](ReadMe-10-Introduction) | [Tutorial Index](ReadMe-00-Index.md) | [Related Data](ReadMe-12-related-data.md) |
+|            Previous            |                Index                 |                   Next                   |
+|:------------------------------:|:------------------------------------:|:----------------------------------------:|
+| [Introduction](ReadMe-10-Introduction) | [Tutorial Index](ReadMe-00-Index.md) | [Base Controller](ReadMe-12-API-Base-controller.md) |
 
 ---
 
@@ -250,6 +250,6 @@ Try changing the page to be 5 and see the results...
 
 # What's next?
 
-Next it's onto [Create](ReadMe-13-API-create.md).
+Next it's onto [Create](ReadMe-14-API-create.md).
 
 Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).
