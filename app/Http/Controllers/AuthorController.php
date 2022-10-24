@@ -11,11 +11,12 @@ class AuthorController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $authors = Author::paginate(10);
+        return view('authors.index', compact(['authors']));
     }
 
     /**
