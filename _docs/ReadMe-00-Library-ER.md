@@ -1,5 +1,12 @@
 # Library ER Diagram
 
+## Tutorial Index
+
+|                Home                  |
+|:------------------------------------:|
+| [Tutorial Index](ReadMe-00-Index.md) |
+
+## Notes 
 - All fields are Required unless indicated as Optional.
 - Field Sizes are shown in the comments. 
 

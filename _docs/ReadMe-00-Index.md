@@ -7,7 +7,7 @@ recommended that you complete it by reading, and practicing. That is,
 do not just *copy-paste* code from the tutorial into the editor, but
 ***ACTUALLY TYPE*** the code in yourself.
 
-The more you complete teh work, when learning, the more you will
+The more you complete the work, when learning, the more you will
 remember. Plus, when it comes to completing the exercises, it also 
 helps to remember what is needed to be completed for each part of 
 the development process.
@@ -46,10 +46,11 @@ We've even included a [ ] so you can place an X in the box when you complete a t
 - [ ] [57 Authors: Add](ReadMe-57-Blade-Authors-Add.md) 🔗
 - [ ] [58 Authors: Delete](ReadMe-58-Blade-Authors-Delete.md) 🔗
 
-## Exercises & Extras
+## Exercises
 - [ ] [90 API: Exercises](ReadMe-90-API-exercises.md) 🔗 ⚠
 - [ ] [91 Web: Exercises](ReadMe-91-Web-exercises.md) 🔗
 
 ## Links and Extras
 - [ ] [99 Links](ReadMe-99-Links.md) 🔗
+- [ ] [04 PhpStorm Plugins & Settings](ReadMe-04-PhpStorm-Plugins-and-Settings.md) 🔗
 - [ ] [01 Clone-Docker-Rebuild](ReadMe-01-Clone-Docker-Rebuild.md) 🔗
