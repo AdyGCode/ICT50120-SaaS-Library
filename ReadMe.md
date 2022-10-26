@@ -25,21 +25,21 @@ This application provides a number of features.
     - Authentication [N]
     - Authorisation via Roles and Permissions [N]
 - API interface
-    - Author API BREAD [-]
+    - Author API BREAD [Y]
     - Book API BREAD [N]
     - Publisher API  BREAD [N]
     - User API BREAD [N]
-    - Authentication API  [N]
+    - Authentication API  [Y]
     - Authorisation API via Roles and Permissions [N]
 
 To develop this application we are using:
-- [Laravel (v9+)](https://laravel.com)
+- [Laravel (v9+)](https://laravel.com) ![](./images/laravel.svg)
 - [Laravel Sanctum](https://laravel.com/docs/9.x/sanctum)
-- [Postman](#)
+- [Postman](https://www.postman.com/)
 - [Blade and Blade components](https://laravel.com/docs/9.x/blade)
 - [TailwindCSS (v3+)](https://tailwindcss.com)
-- [...](#)
-- [...](#)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) ![](./images/docker.svg)
+- [FontAwesome (Free)](https://fontawesome.com/) ![](./images/font-awesome-solid.svg)
 - [...](#)
 
 # Documentation

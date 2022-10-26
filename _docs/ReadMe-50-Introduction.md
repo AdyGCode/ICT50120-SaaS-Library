@@ -10,6 +10,35 @@ The interface will use Blade and TailwindCSS in this initial configuration.
 |:------------------------------------:|:------------------------------------:|:-------------------------------------:|
 | [Tutorial Index](ReadMe-00-Index.md) | [Tutorial Index](ReadMe-00-Index.md) | [51 Blade and the Homepage](ReadMe-51-Blade-HomePage.md) |
 
+
+## Adding FontAwesome for icons
+
+Open the terminal and make sire you are in the main folder of the project.
+
+Enter the command:
+```shell
+npm install @fortawesome/fontawesome-free
+```
+
+Open the `app.css` file from the `resources\css` folder
+
+add the following line at the end of the file:
+
+```js
+@import "@fortawesome/fontawesome-free/css/all.css";
+```
+
+Open the terminal with teh `npm run dev` running within it.
+
+Use <kbd>CTRL</kbd>+<kbd>C</kbd> to stop the process.
+
+Re-run the command:
+```shell
+npm run dev
+```
+
+This should then automatically add the FontAwesome icons to the application's CSS.
+
 ## Static Page Controller
 
 Before we start doing any work with Blade, we are going to create a static page controller.
