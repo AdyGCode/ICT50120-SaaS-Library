@@ -45,6 +45,9 @@ We've even included a [ ] so you can place an X in the box when you complete a t
 - [ ] [56 Authors: Edit](ReadMe-56-Blade-Authors-Edit.md) 🔗
 - [ ] [57 Authors: Add](ReadMe-57-Blade-Authors-Add.md) 🔗
 - [ ] [58 Authors: Delete](ReadMe-58-Blade-Authors-Delete.md) 🔗
+- [ ] [59 Authorisation](ReadMe-59-Blade-Authorisation.md) 🔗
+- [ ] [60 Roles](ReadMe-60-Blade-Roles.md) 🔗
+- [ ] [61 Permissions](ReadMe-61-Blade-Permissions.md) 🔗
 
 ## Exercises
 - [ ] [90 API: Exercises](ReadMe-90-API-exercises.md) 🔗 ⚠

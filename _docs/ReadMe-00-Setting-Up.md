@@ -64,7 +64,7 @@ Likewise, if you are not using a Source/Repos folder structure, you will need to
 In first window, run the following command
 
 ```shell
-curl -s https://laravel.build/library?with=mariadb,redis,memcached,meilisearch,selenium,minio,mailhog | bash
+curl -s "https://laravel.build/library?with=mariadb,redis,memcached,meilisearch,selenium,minio,mailhog" | bash
 ```
 
 In all three windows run the command:
