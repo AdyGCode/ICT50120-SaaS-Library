@@ -38,8 +38,11 @@ class BookSeeder extends Seeder
                     "Evans, David",
                     "Roden, Tom"
                 ],
-                "genre" => "technology",
-                "sub_genre" => "programming",
+                "genres" => [
+                    "technology",
+                    "programming",
+                    "testing",
+                ],
                 "height" => 291,
                 "publisher" => "Leanpub",
             ],
@@ -48,9 +51,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Goswami, Jaideva",
                 ],
-                "genre" => "technology",
-                "sub_genre"
-                => "signal processing",
+                "genres" => [
+                    "technology",
+                    "signal processing",
+                    "non-fiction",
+                ],
                 "height" => 228,
                 "publisher" => "Wiley",
             ],
@@ -59,8 +64,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Foreman, John",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                    "non-fiction",
+                ],
                 "height" => 235,
                 "publisher" => "Wiley",
             ],
@@ -69,8 +77,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Hawking, Stephen",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "technology",
+                    "mathematics",
+                    "non-fiction",
+                ],
                 "height" => 197,
                 "publisher" => "Penguin",
             ],
@@ -79,8 +90,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dubner, Stephen",
                 ],
-                "genre" => "science",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "science",
+                    "economics",
+                    "non-fiction",
+                ],
                 "height" => 179,
                 "publisher" => "Harper Collins",
             ],
@@ -89,8 +103,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Said, Edward",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 197,
                 "publisher" => "Penguin",
             ],
@@ -99,8 +115,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Vapnik, Vladimir",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 230,
                 "publisher" => "Springer",
             ],
@@ -109,8 +127,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Menon, V P",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 217,
                 "publisher" => "Orient Blackswan",
             ],
@@ -119,8 +139,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Mlodinow, Leonard",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 197,
                 "publisher" => "Penguin",
             ],
@@ -129,8 +151,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Shih, Frank",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "signal processing",
+                "genres" => [
+                    "technology",
+                    "signal processing",
+                ],
                 "height" => 241,
                 "publisher" => "CRC",
             ],
@@ -139,8 +163,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Konnikova, Maria",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "psychology",
+                "genres" => [
+                    "non-fiction",
+                    "psychology",
+                ],
                 "height" => 240,
                 "publisher" => "Penguin",
             ],
@@ -149,8 +175,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Gutierrez, Sebastian",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 230,
                 "publisher" => "Apress",
             ],
@@ -159,8 +187,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Vonnegut, Kurt",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 198,
                 "publisher" => "Random House",
             ],
@@ -169,8 +199,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Villani, Cedric",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 234,
                 "publisher" => "Bodley Head",
             ],
@@ -179,8 +211,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sussman, Gerald",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 240,
                 "publisher" => "MIT Press",
             ],
@@ -189,8 +223,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Eraly, Abraham",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 238,
                 "publisher" => "Penguin",
             ],
@@ -199,8 +235,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Kafka, Frank",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 198,
                 "publisher" => "Random House",
             ],
@@ -209,8 +247,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Pratt, John",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                    "non-fiction",
+                ],
                 "height" => 236,
                 "publisher" => "MIT Press",
             ],
@@ -219,8 +260,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Nisbet, Robert",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                    "non-fiction",
+                ],
                 "height" => 242,
                 "publisher" => "Apress",
             ],
@@ -229,8 +273,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Wells, H. G.",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 180,
                 "publisher" => "Penguin",
             ],
@@ -239,8 +285,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Heisenberg, Werner",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "science",
+                "genres" => [
+                    "philosophy",
+                    "science",
+                ],
                 "height" => 197,
                 "publisher" => "Penguin",
             ],
@@ -249,8 +297,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Oram, Andy",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                    "non-fiction",
+                ],
                 "height" => 232,
                 "publisher" => "O'Reilly",
             ],
@@ -259,8 +310,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Tao, Terence",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "technology",
+                    "mathematics",
+                    "non-fiction",
+                ],
                 "height" => 248,
                 "publisher" => "HBA",
             ],
@@ -269,8 +323,12 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Conway, Drew",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                    "artificial intelligence",
+                    "non-fiction",
+                ],
                 "height" => 233,
                 "publisher" => "O'Reilly",
             ],
@@ -279,8 +337,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Silver, Nate",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 233,
                 "publisher" => "Penguin",
             ],
@@ -289,8 +349,12 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "McKinney, Wes",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                    "programming",
+                    "python",
+                ],
                 "height" => 233,
                 "publisher" => "O'Reilly",
             ],
@@ -299,8 +363,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Cormen, Thomas",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                    "algorithms",
+                ],
                 "height" => 234,
                 "publisher" => "MIT Press",
             ],
@@ -309,8 +376,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Deb, Siddhartha",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 198,
                 "publisher" => "Penguin",
             ],
@@ -319,8 +388,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Camus, Albert",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 198,
                 "publisher" => "Penguin",
             ],
@@ -329,8 +400,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Doyle, Arthur Conan",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                    "crime",
+                ],
                 "height" => 176,
                 "publisher" => "Random House",
             ],
@@ -339,8 +413,11 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Doyle, Arthur Conan",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                    "crime",
+                ],
                 "height" => 176,
                 "publisher" => "Random House",
             ],
@@ -349,8 +426,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Smith, Adam",
                 ],
-                "genre" => "science",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "science",
+                    "economics",
+                ],
                 "height" => 175,
                 "publisher" => "Random House",
             ],
@@ -359,8 +438,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Follett, Ken",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 176,
                 "publisher" => "Random House",
             ],
@@ -369,8 +450,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Capra, Fritjof",
                 ],
-                "genre" => "science",
-                "sub_genre" => "physics",
+                "genres" => [
+                    "science",
+                    "physics",
+                ],
                 "height" => 179,
                 "publisher" => "Penguin",
             ],
@@ -379,8 +462,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Feynman, Richard",
                 ],
-                "genre" => "science",
-                "sub_genre" => "physics",
+                "genres" => [
+                    "science",
+                    "physics",
+                ],
                 "height" => 198,
                 "publisher" => "Random House",
             ],
@@ -389,8 +474,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Hemingway, Ernest",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 179,
                 "publisher" => "Rupa",
             ],
@@ -399,8 +486,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Forsyth, Frederick",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 177,
                 "publisher" => "Transworld",
             ],
@@ -409,8 +498,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Archer, Jeffery",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 177,
                 "publisher" => "Pan",
             ],
@@ -419,8 +510,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Pausch, Randy",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 197,
                 "publisher" => "Hyperion",
             ],
@@ -429,8 +522,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rand, Ayn",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "objectivism",
+                "genres" => [
+                    "philosophy",
+                    "objectivism",
+                ],
                 "height" => 202,
                 "publisher" => "Penguin",
             ],
@@ -439,8 +534,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Crichton, Michael",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 174,
                 "publisher" => "Random House",
             ],
@@ -449,8 +546,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 196,
                 "publisher" => "Penguin",
             ],
@@ -459,8 +558,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Poe, Edgar Allen",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 172,
                 "publisher" => "Harper Collins",
             ],
@@ -469,8 +570,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dubner, Stephen",
                 ],
-                "genre" => "science",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "science",
+                    "economics",
+                ],
                 "height" => 197,
                 "publisher" => "Penguin",
             ],
@@ -479,8 +582,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Capra, Fritjof",
                 ],
-                "genre" => "science",
-                "sub_genre" => "physics",
+                "genres" => [
+                    "science",
+                    "physics",
+                ],
                 "height" => 197,
                 "publisher" => "Harper Collins",
             ],
@@ -489,8 +594,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Durant, Will",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "history",
+                "genres" => [
+                    "philosophy",
+                    "history",
+                ],
                 "height" => 170,
                 "publisher" => "Pocket",
             ],
@@ -499,8 +606,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, P L",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 205,
                 "publisher" => "Mauj",
             ],
@@ -509,8 +618,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 196,
                 "publisher" => "Penguin",
             ],
@@ -519,8 +630,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 196,
                 "publisher" => "Penguin",
             ],
@@ -529,8 +642,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 196,
                 "publisher" => "Penguin",
             ],
@@ -539,8 +654,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Grisham, John",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 174,
                 "publisher" => "Random House",
             ],
@@ -549,8 +666,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Naipaul, V. S.",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 196,
                 "publisher" => "Rupa",
             ],
@@ -559,8 +678,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Heller, Joseph",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 178,
                 "publisher" => "Random House",
             ],
@@ -569,8 +690,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "BBC",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "trivia",
+                "genres" => [
+                    "non-fiction",
+                    "trivia",
+                ],
                 "height" => 178,
                 "publisher" => "BBC",
             ],
@@ -579,8 +702,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dylan, Bob",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 197,
                 "publisher" => "Random House",
             ],
@@ -589,8 +714,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Gupta, Madan",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 242,
                 "publisher" => "Elsevier",
             ],
@@ -599,8 +726,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Stonier, Alfred",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "technology",
+                    "economics",
+                ],
                 "height" => 242,
                 "publisher" => "Pearson",
             ],
@@ -609,8 +738,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Greene, W. H.",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "technology",
+                    "economics",
+                ],
                 "height" => 242,
                 "publisher" => "Pearson",
             ],
@@ -619,8 +750,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Bradsky, Gary",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "signal processing",
+                "genres" => [
+                    "technology",
+                    "signal processing",
+                ],
                 "height" => 232,
                 "publisher" => "O'Reilly",
             ],
@@ -629,8 +762,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Tanenbaum, Andrew",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 235,
                 "publisher" => "Prentice Hall",
             ],
@@ -639,8 +774,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Forsyth, David",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "signal processing",
+                "genres" => [
+                    "technology",
+                    "signal processing",
+                ],
                 "height" => 255,
                 "publisher" => "Pearson",
             ],
@@ -649,8 +786,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Taub, Schilling",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "signal processing",
+                "genres" => [
+                    "technology",
+                    "signal processing",
+                ],
                 "height" => 240,
                 "publisher" => "TMH",
             ],
@@ -659,8 +798,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Kanetkar, Yashwant",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 213,
                 "publisher" => "Prentice Hall",
             ],
@@ -669,8 +810,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Stroud, Jonathan",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 179,
                 "publisher" => "Random House",
             ],
@@ -679,8 +822,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dostoevsky, Fyodor",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 180,
                 "publisher" => "Penguin",
             ],
@@ -689,8 +834,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Brown, Dan",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 178,
                 "publisher" => "Random House",
             ],
@@ -699,8 +846,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sen, Amartya",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 209,
                 "publisher" => "Picador",
             ],
@@ -709,8 +858,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Ghosh, Amitav",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 197,
                 "publisher" => "Penguin",
             ],
@@ -719,8 +870,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sen, Amartya",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "philosophy",
+                    "economics",
+                ],
                 "height" => 212,
                 "publisher" => "Penguin",
             ],
@@ -729,8 +882,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Hansberry, Lorraine",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 175,
                 "publisher" => "Penguin",
             ],
@@ -739,8 +894,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Woodward, Bob",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 177,
                 "publisher" => "Random House",
             ],
@@ -749,8 +906,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Archer, Jeffery",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 176,
                 "publisher" => "Pan",
             ],
@@ -759,8 +918,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Nayar, Kuldip",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 216,
                 "publisher" => "Harper Collins",
             ],
@@ -769,8 +930,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, Sunita",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 213,
                 "publisher" => "Mauj",
             ],
@@ -779,8 +942,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dalrymple, William",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 199,
                 "publisher" => "Penguin",
             ],
@@ -789,8 +954,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Various",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "technology",
+                    "economics",
+                ],
                 "height" => 235,
                 "publisher" => "Springer",
             ],
@@ -799,8 +966,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, P L",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "misc",
+                "genres" => [
+                    "non-fiction",
+                    "misc",
+                ],
                 "height" => 213,
                 "publisher" => "Mauj",
             ],
@@ -809,8 +978,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, P L",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "misc",
+                "genres" => [
+                    "non-fiction",
+                    "misc",
+                ],
                 "height" => 212,
                 "publisher" => "Mauj",
             ],
@@ -819,8 +990,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, P L",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "misc",
+                "genres" => [
+                    "non-fiction",
+                    "misc",
+                ],
                 "height" => 212,
                 "publisher" => "Mauj",
             ],
@@ -829,8 +1002,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Garg, Sanjay",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "poetry",
+                "genres" => [
+                    "non-fiction",
+                    "poetry",
+                ],
                 "height" => 221,
                 "publisher" => "Mauj",
             ],
@@ -839,8 +1014,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "education",
+                "genres" => [
+                    "philosophy",
+                    "education",
+                ],
                 "height"
                 => 222,
                 "publisher" => "Harper Collins",
@@ -850,8 +1027,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Kale, V P",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "misc",
+                "genres" => [
+                    "non-fiction",
+                    "misc",
+                ],
                 "height" =>
                     213,
                 "publisher" => "Mauj",
@@ -861,8 +1040,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Tharoor, Shashi",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 198,
                 "publisher" => "Penguin",
             ],
@@ -871,8 +1052,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 210,
                 "publisher" => "",
             ],
@@ -881,8 +1064,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Tharoor, Shashi",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 198,
                 "publisher" => "Penguin",
             ],
@@ -891,8 +1076,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Lapierre, Dominique",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 217,
                 "publisher" => "vikas",
             ],
@@ -901,8 +1088,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Lapierre, Dominique",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 177,
                 "publisher" => "vikas",
             ],
@@ -911,9 +1100,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Lapierre, Dominique",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre"
-                => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 167,
                 "publisher" => "vikas",
             ],
@@ -922,9 +1112,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "fiction",
-                "sub_genre"
-                => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 196,
                 "publisher" => "Penguin",
             ],
@@ -933,8 +1124,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Russell, Bertrand",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "education",
+                "genres" => [
+                    "philosophy",
+                    "education",
+                ],
                 "height" => 203,
                 "publisher" => "Routledge",
             ],
@@ -943,8 +1136,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Harris, Sam",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "psychology",
+                "genres" => [
+                    "non-fiction",
+                    "psychology",
+                ],
                 "height" => 203,
                 "publisher" => "FreePress",
             ],
@@ -953,8 +1148,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Tharoor, Shashi",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 206,
                 "publisher" => "Penguin",
             ],
@@ -963,8 +1160,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Gardner, Earle Stanley",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 179,
                 "publisher" => "",
             ],
@@ -973,8 +1172,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Hawking, Stephen",
                 ],
-                "genre" => "science",
-                "sub_genre" => "physics",
+                "genres" => [
+                    "science",
+                    "physics",
+                ],
                 "height" => 217,
                 "publisher" => "Jaico",
             ],
@@ -983,8 +1184,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Drucker, Peter",
                 ],
-                "genre" => "science",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "science",
+                    "economics",
+                ],
                 "height" => 176,
                 "publisher" => "Penguin",
             ],
@@ -993,8 +1196,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Bodanis, David",
                 ],
-                "genre" => "science",
-                "sub_genre" => "physics",
+                "genres" => [
+                    "science",
+                    "physics",
+                ],
                 "height" => 201,
                 "publisher" => "Penguin",
             ],
@@ -1003,8 +1208,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Hugo, Victor",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 175,
                 "publisher" => "Random House",
             ],
@@ -1013,8 +1220,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 175,
                 "publisher" => "Penguin",
             ],
@@ -1023,9 +1232,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Drucker, Peter",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre"
-                => "economics",
+                "genres" => [
+                    "non-fiction",
+                    "economics",
+                ],
                 "height" => 178,
                 "publisher" => "Random House",
             ],
@@ -1034,8 +1244,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Gordon, Richard",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 179,
                 "publisher" => "Penguin",
             ],
@@ -1044,8 +1256,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Orwell, George",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 179,
                 "publisher" => "Penguin",
             ],
@@ -1054,8 +1268,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sen, Amartya",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "philosophy",
+                "genres" => [
+                    "philosophy",
+                    "philosophy",
+                ],
                 "height" => 219,
                 "publisher" => "Penguin",
             ],
@@ -1064,9 +1280,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dalrymple, William",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre"
-                => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 197,
                 "publisher" => "Random House",
             ],
@@ -1075,8 +1292,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 217,
                 "publisher" => "Jaico",
             ],
@@ -1085,8 +1304,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Iacoca, Lee",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 175,
                 "publisher" => "",
             ],
@@ -1095,8 +1316,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Maugham, William S",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 171,
                 "publisher" => "Vintage",
             ],
@@ -1105,9 +1328,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Forsyth, Frederick",
                 ],
-                "genre" => "fiction",
-                "sub_genre"
-                => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -1116,8 +1340,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Maugham, William S",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 160,
                 "publisher" => "Vintage",
             ],
@@ -1126,8 +1352,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Pirsig, Robert",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "philosophy",
+                    "autobiography",
+                ],
                 "height" => 172,
                 "publisher" => "Vintage",
             ],
@@ -1136,8 +1364,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Fisk, Robert",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 197,
                 "publisher" => "Harper Collins",
             ],
@@ -1146,8 +1376,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rand, Ayn",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height"
                 => 178,
                 "publisher" => "Penguin",
@@ -1157,9 +1389,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Aczel, Amir",
                 ],
-                "genre" => "science",
-                "sub_genre"
-                => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 186,
                 "publisher" => "HighStakes",
             ],
@@ -1168,8 +1401,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Russell, Bertrand",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "philosophy",
+                "genres" => [
+                    "philosophy",
+                    "philosophy",
+                ],
                 "height" => 213,
                 "publisher" => "Routledge",
             ],
@@ -1178,8 +1413,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 215,
                 "publisher" => "Jaico",
             ],
@@ -1188,8 +1425,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sen, Amartya",
                 ],
-                "genre" => "science",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "science",
+                    "economics",
+                ],
                 "height" => 213,
                 "publisher" => "Springer",
             ],
@@ -1198,8 +1437,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Huntington, Samuel",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 228,
                 "publisher" => "Simon & Schuster",
             ],
@@ -1208,8 +1449,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Capra, Fritjof",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "anthology",
+                "genres" => [
+                    "non-fiction",
+                    "anthology",
+                ],
                 "height" => 197,
                 "publisher" => "Fontana",
             ],
@@ -1218,8 +1461,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Bach, Richard",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 172,
                 "publisher" => "Dell",
             ],
@@ -1228,18 +1473,22 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 162,
                 "publisher" => "",
             ],
             [
                 "title" => "To Sir With Love",
                 "authors" => [
-                    "Braithwaite",
+                    "Braithwaite, E.R",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 197,
                 "publisher" => "Penguin",
             ],
@@ -1248,8 +1497,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Naipaul, V S",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height"
                 => 196,
                 "publisher" => "",
@@ -1259,9 +1510,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Nehru, Jawaharlal",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre"
-                => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 230,
                 "publisher" => "",
             ],
@@ -1270,8 +1522,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, P L",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "misc",
+                "genres" => [
+                    "non-fiction",
+                    "misc",
+                ],
                 "height" => 211,
                 "publisher" => "",
             ],
@@ -1280,8 +1534,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Russell, Bertrand",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "philosophy",
+                "genres" => [
+                    "philosophy",
+                    "philosophy",
+                ],
                 "height" => 198,
                 "publisher" => "",
             ],
@@ -1290,8 +1546,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Forsyth, Frederick",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 178,
                 "publisher" => "",
             ],
@@ -1300,8 +1558,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Woodward, Bob",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 171,
                 "publisher" => "",
             ],
@@ -1310,8 +1570,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, P L",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "misc",
+                "genres" => [
+                    "non-fiction",
+                    "misc",
+                ],
                 "height" => 214,
                 "publisher" => "",
             ],
@@ -1320,8 +1582,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Durrell, Gerald",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 176,
                 "publisher" => "",
             ],
@@ -1330,8 +1594,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Maugham, William S",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -1340,8 +1606,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "politics",
+                "genres" => [
+                    "philosophy",
+                    "politics",
+                ],
                 "height" => 162,
                 "publisher" => "",
             ],
@@ -1350,9 +1618,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Wells, H G",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre"
-                => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 197,
                 "publisher" => "",
             ],
@@ -1361,9 +1630,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Maugham, William S",
                 ],
-                "genre" => "fiction",
-                "sub_genre"
-                => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 205,
                 "publisher" => "",
             ],
@@ -1372,8 +1642,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Gordon, Richard",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 204,
                 "publisher" => "",
             ],
@@ -1382,8 +1654,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Singh, Simon",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 233,
                 "publisher" => "",
             ],
@@ -1392,8 +1666,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Duda, Hart",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 241,
                 "publisher" => "",
             ],
@@ -1402,9 +1678,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Friedman, Thomas",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre"
-                => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 202,
                 "publisher" => "",
             ],
@@ -1413,8 +1690,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Singh, Simon",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 197,
                 "publisher" => "",
             ],
@@ -1423,8 +1702,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Fisk, Robert",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 197,
                 "publisher" => "",
             ],
@@ -1433,8 +1714,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 257,
                 "publisher" => "",
             ],
@@ -1443,8 +1726,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" =>
                     283,
                 "publisher" => "",
@@ -1454,8 +1739,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 265,
                 "publisher" => "",
             ],
@@ -1464,8 +1751,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" =>
                     265,
                 "publisher" => "",
@@ -1475,8 +1764,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 258,
                 "publisher" => "",
             ],
@@ -1485,8 +1776,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Devlin, Keith",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 202,
                 "publisher" => "",
             ],
@@ -1495,8 +1788,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height"
                 => 259,
                 "publisher" => "",
@@ -1506,8 +1801,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height"
                 => 258,
                 "publisher" => "",
@@ -1517,8 +1814,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 258,
                 "publisher" => "",
             ],
@@ -1527,8 +1826,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 258,
                 "publisher" => "",
             ],
@@ -1537,8 +1838,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height"
                 => 258,
                 "publisher" => "",
@@ -1548,8 +1851,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 258,
                 "publisher" => "",
             ],
@@ -1558,8 +1863,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 258,
                 "publisher" => "",
             ],
@@ -1568,8 +1875,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 196,
                 "publisher" => "",
             ],
@@ -1578,8 +1887,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Gleick, James",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 233,
                 "publisher" => "",
             ],
@@ -1588,8 +1899,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "science",
-                "sub_genre" => "economics",
+                "genres" => [
+                    "science",
+                    "economics",
+                ],
                 "height" => 235,
                 "publisher" => "",
             ],
@@ -1598,9 +1911,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Thomas, Joy",
                 ],
-                "genre" => "technology",
-                "sub_genre"
-                => "signal processing",
+                "genres" => [
+                    "technology",
+                    "signal processing",
+                ],
                 "height" => 229,
                 "publisher" => "",
             ],
@@ -1609,8 +1923,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rashid, Muhammad",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 235,
                 "publisher" => "",
             ],
@@ -1619,8 +1935,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Mohan, Ned",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 237,
                 "publisher" => "",
             ],
@@ -1629,8 +1947,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Haykin, Simon",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 240,
                 "publisher" => "",
             ],
@@ -1639,8 +1959,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Steinbeck, John",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 196,
                 "publisher" => "",
             ],
@@ -1649,8 +1971,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Desh Pande, P L",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "misc",
+                "genres" => [
+                    "non-fiction",
+                    "misc",
+                ],
                 "height" => 211,
                 "publisher" => "",
             ],
@@ -1659,8 +1983,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Vapnik, Vladimir",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 228,
                 "publisher" => "",
             ],
@@ -1669,8 +1995,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rutherford, Alex",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -1679,8 +2007,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rutherford, Alex",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -1689,8 +2019,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rutherford, Alex",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -1699,8 +2031,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rutherford, Alex",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -1709,8 +2043,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rutherford, Alex",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -1719,8 +2055,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Baz-Zohar, Michael",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 236,
                 "publisher" => "",
             ],
@@ -1729,8 +2067,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Corbett, Jim",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 223,
                 "publisher" => "",
             ],
@@ -1739,38 +2079,46 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Verne, Jules",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 190,
                 "publisher" => "",
             ],
             [
                 "title" => "Batatyachi Chal",
                 "authors" => [
-                    "Desh Pande P L",
+                    "Desh Pande, P L",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 200,
                 "publisher" => "",
             ],
             [
                 "title" => "Hafasavnuk",
                 "authors" => [
-                    "Desh Pande P L",
+                    "Desh Pande, P L",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 211,
                 "publisher" => "",
             ],
             [
                 "title" => "Urlasurla",
                 "authors" => [
-                    "Desh Pande P L",
+                    "Desh Pande, P L",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height"
                 => 211,
                 "publisher" => "",
@@ -1780,8 +2128,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Kanetkar, Yashwant",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 213,
                 "publisher" => "",
             ],
@@ -1790,8 +2140,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Raymond, Eric",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 217,
                 "publisher" => "",
             ],
@@ -1800,8 +2152,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Franco, Sergio",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "computer science",
+                "genres" => [
+                    "technology",
+                    "computer science",
+                ],
                 "height" => 240,
                 "publisher" => "",
             ],
@@ -1810,8 +2164,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Downey, Allen",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 230,
                 "publisher" => "",
             ],
@@ -1820,8 +2176,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "West, Morris",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 178,
                 "publisher" => "",
             ],
@@ -1830,8 +2188,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rand, Ayn",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "objectivism",
+                "genres" => [
+                    "philosophy",
+                    "objectivism",
+                ],
                 "height" => 203,
                 "publisher" => "",
             ],
@@ -1840,8 +2200,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rand, Ayn",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "objectivism",
+                "genres" => [
+                    "philosophy",
+                    "objectivism",
+                ],
                 "height" => 171,
                 "publisher" => "",
             ],
@@ -1850,8 +2212,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "science",
-                "sub_genre" => "physics",
+                "genres" => [
+                    "science",
+                    "physics",
+                ],
                 "height" => 189,
                 "publisher" => "",
             ],
@@ -1860,8 +2224,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Janert, Phillip",
                 ],
-                "genre" => "technology",
-                "sub_genre" => "data science",
+                "genres" => [
+                    "technology",
+                    "data science",
+                ],
                 "height" => 230,
                 "publisher" => "",
             ],
@@ -1870,8 +2236,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sagan, Carl",
                 ],
-                "genre" => "science",
-                "sub_genre" => "physics",
+                "genres" => [
+                    "science",
+                    "physics",
+                ],
                 "height" => 174,
                 "publisher" => "",
             ],
@@ -1880,8 +2248,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Bell, E T",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 217,
                 "publisher" => "",
             ],
@@ -1890,8 +2260,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dawkins, Richard",
                 ],
-                "genre" => "science",
-                "sub_genre" => "science",
+                "genres" => [
+                    "science",
+                    "science",
+                ],
                 "height" => 240,
                 "publisher" => "",
             ],
@@ -1900,8 +2272,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Ranjan, Sudhanshu",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "legal",
+                "genres" => [
+                    "non-fiction",
+                    "legal",
+                ],
                 "height" => 224,
                 "publisher" => "",
             ],
@@ -1910,8 +2284,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Kautiyla    ",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "philosophy",
+                "genres" => [
+                    "philosophy",
+                    "philosophy",
+                ],
                 "height" => 214,
                 "publisher" => "",
             ],
@@ -1920,8 +2296,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Palkhivala, Nani",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "philosophy",
+                "genres" => [
+                    "philosophy",
+                    "philosophy",
+                ],
                 "height" => 216,
                 "publisher" => "",
             ],
@@ -1930,8 +2308,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Palkhivala, Nani",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "philosophy",
+                "genres" => [
+                    "philosophy",
+                    "philosophy",
+                ],
                 "height" => 216,
                 "publisher" => "",
             ],
@@ -1940,8 +2320,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sorabjee, Soli  ",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "autobiography",
+                "genres" => [
+                    "non-fiction",
+                    "autobiography",
+                ],
                 "height" => 217,
                 "publisher" => "",
             ],
@@ -1950,8 +2332,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Zaidi, Hussain",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 216,
                 "publisher" => "",
             ],
@@ -1960,8 +2344,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Ackroyd, Peter",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 197,
                 "publisher" => "",
             ],
@@ -1970,8 +2356,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dalrymple, William",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "history",
+                "genres" => [
+                    "non-fiction",
+                    "history",
+                ],
                 "height" => 198,
                 "publisher" => "",
             ],
@@ -1980,8 +2368,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Nariman",
                 ],
-                "genre" => "non-fiction",
-                "sub_genre" => "legal",
+                "genres" => [
+                    "non-fiction",
+                    "legal",
+                ],
                 "height" => 177,
                 "publisher" => "",
             ],
@@ -1990,8 +2380,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Sassoon, Jean",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 235,
                 "publisher" => "",
             ],
@@ -2000,8 +2392,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dickinson, Peter",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 196,
                 "publisher" => "",
             ],
@@ -2010,8 +2404,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Brown, Dan",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 170,
                 "publisher" => "",
             ],
@@ -2020,8 +2416,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 170,
                 "publisher" => "",
             ],
@@ -2030,8 +2428,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 170,
                 "publisher" => "",
             ],
@@ -2040,8 +2440,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Machiavelli",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 173,
                 "publisher" => "",
             ],
@@ -2050,8 +2452,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Huxley, Aldous",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -2060,8 +2464,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Rowling, J K",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 184,
                 "publisher" => "",
             ],
@@ -2070,8 +2476,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Larsson, Steig",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 179,
                 "publisher" => "",
             ],
@@ -2080,8 +2488,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Larsson, Steig",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 179,
                 "publisher" => "",
             ],
@@ -2090,8 +2500,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Larsson, Steig",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "novel",
+                "genres" => [
+                    "fiction",
+                    "novel",
+                ],
                 "height" => 179,
                 "publisher" => "",
             ],
@@ -2100,8 +2512,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "comic",
+                "genres" => [
+                    "fiction",
+                    "comic",
+                ],
                 "height" => 270,
                 "publisher" => "",
             ],
@@ -2110,8 +2524,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "",
                 ],
-                "genre" => "philosophy",
-                "sub_genre" => "psychology",
+                "genres" => [
+                    "philosophy",
+                    "psychology",
+                ],
                 "height" =>
                     178,
                 "publisher" => "",
@@ -2121,8 +2537,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Tao, Terence",
                 ],
-                "genre" => "science",
-                "sub_genre" => "mathematics",
+                "genres" => [
+                    "science",
+                    "mathematics",
+                ],
                 "height" => 252,
                 "publisher" => "",
             ],
@@ -2131,9 +2549,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Eddins, Steve",
                 ],
-                "genre" => "technology",
-                "sub_genre"
-                => "signal processing",
+                "genres" => [
+                    "technology",
+                    "signal processing",
+                ],
                 "height" => 241,
                 "publisher" => "",
             ],
@@ -2142,8 +2561,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Orwell, George",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 180,
                 "publisher" => "",
             ],
@@ -2152,8 +2573,10 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dostoevsky, Fyodor",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 197,
                 "publisher" => "",
             ],
@@ -2162,10 +2585,30 @@ class BookSeeder extends Seeder
                 "authors" => [
                     "Dickens, Charles",
                 ],
-                "genre" => "fiction",
-                "sub_genre" => "classic",
+                "genres" => [
+                    "fiction",
+                    "classic",
+                ],
                 "height" => 196,
                 "publisher" => "",
+            ],
+            [
+                "title" => "PHP & MySQL: Novice to Ninja",
+                "authors" => [
+                    "Butler, Tom",
+                    "Yank, Kevin",
+                ],
+                "genres" => [
+                    "non-fiction",
+                    "programming",
+                    "web",
+                    "PHP",
+                    "MySQL",
+                ],
+                "height" => 233,
+                "publisher" => "SitePoint",
+                "isbn_10" => "0994346980",
+                "isbn_13" => "9780994346988",
             ],
         ];
 
@@ -2180,7 +2623,7 @@ class BookSeeder extends Seeder
         foreach ($seedBooks as $book) {
 
             $authors = $book['authors'];    // Get the list of authors for the book
-            $author_list = [];  // create an empty list of authors
+            $authors_list = [];  // create an empty list of authors
 
             // Go through the authors one by one
             foreach ($authors as $author) {
@@ -2205,8 +2648,23 @@ class BookSeeder extends Seeder
                     $author = Author::create($newAuthor);
                 }
                 // add the existing, or new author's id to the author list
-                $author_list[] = $author->id;
+                $authors_list[] = $author->id;
             }
+
+            // ------ Genre Processing --------
+            $genres = $book['genres'];
+            $genres_list = [];
+
+            // Go through the genres one by one
+            foreach ($genres as $genre) {
+                $genres_list[] = $genre;
+            }
+
+            // This is getting the genre and sub-genre until
+            // proper processing of the genres is completed
+            $genre = $genres_list[0] ?? null;
+            $sub_genre = $genres_list[1] ?? null;
+
 
             # Create book record
             $newBook = [
@@ -2217,13 +2675,19 @@ class BookSeeder extends Seeder
                 'isbn_10' => $book['isbn_10'] ?? null,
                 'isbn_13' => $book['isbn_13'] ?? null,
                 'height' => $book['height'] ?? null,
-                'genre' => $book['genre'] ?? null,
-                'sub_genre' => $book['sub_genre'] ?? null,
+                /* ----- Genres and Sub-Genres -----
+                   You will need to remove these two lines and use a
+                   similar process to the Authors.  */
+                'genre' => $genre ?? null,
+                'sub_genre' => $sub_genre ?? null,
             ];
             $theBook = Book::create($newBook);
 
             # Link the authors to the book
-            $theBook->authors()->attach($author_list);
+            $theBook->authors()->attach($authors_list);
+
+            # Link the genres with the book
+            # This is part of the exercises / portfolio
 
             $progressBar->advance();
         }

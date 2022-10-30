@@ -13,8 +13,13 @@ class StaticPageController extends Controller
      */
     public function home()
     {
-        return view('static/home');
+        return view('static.home');
 
     }
 
+    public function dashboard()
+    {
+        return view('static.dashboard');
+
+    }
 }

@@ -147,9 +147,9 @@ In this we will add the following static content:
 
 This creates a 3 part footer with a dark stone background and mid-stone text.
 
-To the `<a>` elements, after the 'text-stone-500' we are going to add hover highlighting using:
+To the `<a>` elements, after the `text-stone-500` we are going to add hover highlighting using:
 
-```text
+```css
 hover:text-stone-200 transition duration-500
 ```
 
@@ -167,8 +167,8 @@ When on a wider screen device, the menu is displayed horizontally, with an accou
 The menu content is directly available from:
 - [layouts\navigation-home.blade.php](../resources/views/layouts/navigation-home.blade.php).
 
-> **Icons**: There are two icons used in this tutorial, they, and the licenses
-> to use them, are given in the [licenses area](../_licenses/).
+> **Icons**: We are using FontAwesome to provide icons on this site. 
+> We installed the package in the Introduction to the Web App. 
 
 ## Views (Home page)
 

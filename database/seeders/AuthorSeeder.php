@@ -16,16 +16,26 @@ class AuthorSeeder extends Seeder
     {
 
         $seedAuthors = [
-            ['id' => 1, 'given_name' => 'UNKNOWN', 'family_name' => 'AUTHOR', 'is_company' => False,],
-            ['id' => 2, 'given_name' => 'UNKNOWN', 'family_name' => 'CORPORATE AUTHOR', 'is_company' => True,],
+            ['id' => 1, 'family_name' => null, 'given_name' => 'UNKNOWN AUTHOR', 'is_company' => False,],
+            ['id' => 2, 'family_name' => null, 'given_name' => 'UNKNOWN CORPORATE AUTHOR', 'is_company' => True,],
+            ['given_name' => 'P L', 'family_name' => 'Desh Pande ', 'is_company' => False,],
             ['given_name' => 'Kevin', 'family_name' => 'Yank', 'is_company' => False,],
-            ['given_name' => 'Mark', 'family_name' => 'Boulton', 'is_company' => False,],
+            ['given_name' => null, 'family_name' => 'Government of Australia', 'is_company' => True,],
+            ['given_name' => 'Robert', 'family_name' => 'Pirsig', 'is_company' => False,],
+            ['given_name' => 'Stephen', 'family_name' => 'Hawking', 'is_company' => False,],
             ['given_name' => 'Robert', 'family_name' => 'Hoekman, jr.', 'is_company' => False,],
+            ['given_name' => 'Microsoft', 'family_name' => null, 'is_company' => True,],
             ['given_name' => 'Luke', 'family_name' => 'Wroblewski', 'is_company' => False,],
+            ['given_name' => null, 'family_name' => 'Oracle', 'is_company' => True,],
+            ['given_name' => 'Mark', 'family_name' => 'Boulton', 'is_company' => False,],
             ['given_name' => 'Kevin', 'family_name' => 'Potts', 'is_company' => False,],
         ];
 
         foreach ($seedAuthors as $seedAuthor) {
+            if (!isset($seedAuthor['given_name']) || is_null($seedAuthor['given_name'])) {
+                $seedAuthor['given_name'] = $seedAuthor['family_name'];
+                $seedAuthor['family_name'] = null;
+            }
             Author::create($seedAuthor);
         }
 

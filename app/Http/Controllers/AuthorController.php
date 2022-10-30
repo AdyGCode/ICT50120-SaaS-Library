@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
 use App\Models\Author;
+use App\Models\Book;
 
 class AuthorController extends Controller
 {
@@ -16,7 +17,7 @@ class AuthorController extends Controller
     public function index()
     {
         $authors = Author::paginate(10);
-        return view('authors.index', compact(['authors']));
+        return view('authors.index', compact(['authors',]));
     }
 
     /**
@@ -48,7 +49,8 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        $books = $author->with('books')->find($author);
+        return view('authors.show', compact(['author','books',]));
     }
 
     /**
@@ -59,7 +61,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('authors.edit',compact(['author',]));
     }
 
     /**

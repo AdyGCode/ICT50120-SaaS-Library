@@ -1,4 +1,4 @@
-# Making a Web Application - Home Page
+# Authors - Browsing
 
 In this set of tutorials we create a web interface to act as a back-end management system.
 
