@@ -8,7 +8,7 @@ We will fix that first item, by creating a "view" page.
 ## Tutorial Index
 |                      Previous                      |                Index                 |                       Next                       |
 |:--------------------------------------------------:|:------------------------------------:|:------------------------------------------------:|
-| [54 Authors: Browse](ReadMe-54-Blade-Authors-Browse.md) | [Tutorial Index](ReadMe-00-Index.md) | [55 Authors: Read](ReadMe-56-Blade-Authors-Edit.md) |
+| [54 Authors: Browse](ReadMe-54-Blade-Authors-Browse.md) | [Tutorial Index](ReadMe-00-Index.md) | [56 Authors: Edit](ReadMe-56-Blade-Authors-Edit.md) |
 
 ## Authors Route
 
