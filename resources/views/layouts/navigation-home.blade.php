@@ -25,6 +25,9 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-stone-300">
                         {{ __('Publishers') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')" class="text-stone-300">
+                        {{ __('Users') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -91,6 +94,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Publishers') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                {{ __('Users') }}
             </x-responsive-nav-link>
         </div>
 

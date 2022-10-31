@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBookRequest;
-use App\Http\Requests\UpdateBookRequest;
-use App\Models\Book;
+use Illuminate\Http\Request;
 
-class BookController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +29,10 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreBookRequest $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBookRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +40,10 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Book $book
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show($id)
     {
         //
     }
@@ -53,10 +51,10 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Book $book
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +62,11 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\UpdateBookRequest $request
-     * @param \App\Models\Book $book
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBookRequest $request, Book $book)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +74,10 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Book $book
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
         //
     }
