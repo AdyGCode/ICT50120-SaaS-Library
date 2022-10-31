@@ -17,7 +17,7 @@ Full documentation for the package is found at:
 
 |                     Previous                      |                Index                 |                      Next                       |
 |:-------------------------------------------------:|:------------------------------------:|:-----------------------------------------------:|
-| [Authentication](ReadMe-21-API-authentication.md) | [Tutorial Index](ReadMe-00-Index.md) | [Authorisation](ReadMe-25-API-authorisation.md) | 
+| [Authentication](ReadMe-21-API-authentication.md) | [Tutorial Index](ReadMe-00-Index.md) | [Authorisation](ReadMe-70-Authorisation.md) | 
 
 ## Installation of Laravel Health
 

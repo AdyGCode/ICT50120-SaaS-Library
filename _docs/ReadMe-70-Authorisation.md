@@ -43,13 +43,56 @@ Publish the service provider for customisation (as required):
 sail artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
 ```
 
-And run the migration:
+Create the seeders for the various tables:
 
 ```shell
-sail artisan migrate
+sail artisan make:seeder PermissionSeeder
 ```
 
-NB: no need to do a migration from fresh as we are adding the new tables for Spatie's Laravel Permissions to function.
+### Add the seed data 
+Remember to import the Spatie Model at the top of the file...
+
+```php
+use Spatie\Permission\Models\Permission;
+```
+
+Now the seeder, add the following to the `PermissionSeeder.php` file
+
+```php
+ $permissions = [
+           'role-list',
+           'role-create',
+           'role-edit',
+           'role-delete',
+           'product-list',
+           'product-create',
+           'product-edit',
+           'product-delete'
+        ];
+     
+        foreach ($permissions as $permission) {
+             Permission::create(['name' => $permission]);
+        }
+```
+
+Remember to edit the DatabaseSeeder file, and add the PermissionSeeder to the top before the Country Seeder.
+
+```php
+$this->call([
+            PermissionSeeder::class,
+            CountrySeeder::class,
+```
+
+### Migrate! Migrate! Migrate!
+And run the migration and seed (SEPARATELY this time):
+
+```shell
+sail artisan migrate --step
+sail artisan db:seed --class=PermissionSeeder
+```
+
+> Note we are not running the seeder and migration from fresh.
+
 
 ## Create the Required Additional Controllers
 Run the following artisan commands:
@@ -249,3 +292,17 @@ FIRST function definition in the class:
         );
     }
 ```
+
+We will need to do the same for the Roles Controller and the Users Controller.
+
+So repeat for these.
+
+## The User Views
+
+Now we need to create the views for the Users, so we can perform our BREAD (aka CRUD) operations:
+
+Create a new folder `users` in the `resources/views` folder.
+
+We are now able to add the index, create, update, show and delete views.
+
+### Users Index
