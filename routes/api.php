@@ -29,10 +29,10 @@ Route::post('login', [AuthAPIController::class, 'login']);
 // and those requiring Authentication
 
 // Public API Routes
+// Authors: Browse, Read, Search
 Route::get("/authors", [AuthorAPIController::class, 'index']);
 Route::get("/authors/search", [AuthorAPIController::class, 'search']);
 Route::get("/authors/{id}", [AuthorAPIController::class, 'show']);
-Route::post('/authors', [AuthorAPIController::class, 'store']);
 
 Route::apiResource('/books', \App\Http\Controllers\API\BookAPIController::class);
 
@@ -43,13 +43,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
      * Based on http://laravel-school.com/posts/building-a-delighted-restful-api-with-laravel-16
      */
     Route::prefix('authors')->group(function () {
-
 //        Route::get('/search', [AuthAPIController::class, 'search']);
 //        Route::get("{id}", [AuthorAPIController::class, 'show']);
-//        Route::post('/', [AuthorAPIController::class, 'store']);
+        Route::post('/', [AuthorAPIController::class, 'store']);
         Route::put('/{id}', [AuthorAPIController::class, 'update']);
         Route::delete('/{id}', [AuthorAPIController::class, 'destroy']);
-
     });
 
     /* Logout a logged-in user */
