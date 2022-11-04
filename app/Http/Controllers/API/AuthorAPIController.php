@@ -193,9 +193,12 @@ class AuthorAPIController extends ApiBaseController
      */
     public function search(AuthorSearchAPIRequest $request): JsonResponse
     {
-        $search = $request->get('search');
+        $search = $request->validated('search');
 
-        $authors = Author::with('books')->where( 'family_name', 'like', "%{$search}%")->get();
+        $authors = Author::with('books')
+            ->where( 'given_name', 'like', "%{$search}%")
+            ->orWhere( 'family_name', 'like', "%{$search}%")
+            ->get();
 
         if ($authors->count() > 0) {
             return $this->sendResponse(
