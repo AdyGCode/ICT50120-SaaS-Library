@@ -42,7 +42,7 @@ locate the line that starts with `` and if it says something line `^3.xx.x` or s
 Now run:
 ```shell
 sail composer update
-sail artisan scribe:ugrade
+sail artisan scribe:upgrade
 sail artisan vendor:publish --tag=scribe-views --tag=scribe-themes --tag=scribe-examples
 ```
 
