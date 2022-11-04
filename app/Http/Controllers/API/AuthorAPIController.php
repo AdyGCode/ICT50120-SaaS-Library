@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Requests\AuthorSearchAPIRequest;
 use App\Http\Requests\PaginateAPIRequest;
 use App\Http\Requests\StoreAuthorAPIRequest;
 use App\Http\Requests\UpdateAuthorAPIRequest;
@@ -190,7 +191,7 @@ class AuthorAPIController extends ApiBaseController
      * @param Request $request
      * @return JsonResponse
      */
-    public function search(Request $request): JsonResponse
+    public function search(AuthorSearchAPIRequest $request): JsonResponse
     {
         $search = $request->get('search');
 
