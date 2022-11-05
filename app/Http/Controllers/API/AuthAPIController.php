@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginAPIRequest;
 use App\Http\Requests\RegisterAPIRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class AuthAPIController extends ApiBaseController
         return $this->sendResponse($responseData, "Registered successfully");
     }
 
-    public function login(Request $request)
+    public function login(LoginAPIRequest $request)
     {
         if (!\Auth::attempt($request->only('email', 'password'))) {
             return $this->sendError('Login information is invalid.', [], 401);

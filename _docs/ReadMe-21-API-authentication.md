@@ -199,6 +199,81 @@ public function messages()
 }
 ```
 
+## Handle the Login Request
+
+Using the CLI again, run these commands to create the Register requests.
+
+```shell
+sail artisan make:request LoginAPIRequest
+```
+
+Edit the AuthAPIController and change the `Request $request` for the register to the following:
+
+```php
+public function register(LoginAPIRequest $request){
+```
+
+Make sure you have the requests imported at the top of the controller.
+
+Also, in the register method, change the `$post_data = $request->validate([...]);` line to read:
+
+```php
+        $post_data = $request->validated;
+```
+
+### Completing the Login Request
+
+Next we move the validation code and create error messages, as we have previously.
+
+In the `LoginAPIRequest` we need to do the following:
+
+- change the `authorize` method result to `true`.
+- add the rules for the Login Validation
+- add the messages and failed validation handling
+
+The login validation rules now look like this:
+
+```php
+       return [
+            'email' => [
+                'required',
+                'string',
+                'email',
+            ],
+            'password' => [
+                'required',
+            ]
+        ];
+```
+
+The failed validation handling method is new and looks like this:
+
+```php
+public function failedValidation(Validator $validator)
+{
+    throw new HttpResponseException(
+        response()->json([
+            'success' => false,
+            'message' => 'Validation errors',
+            'data' => $validator->errors(),
+        ])
+    );
+}
+```
+
+Finally, the messages handler takes care of the important messages we need returning:
+
+```php
+public function messages()
+{
+    return [
+        'email.required' => 'An eMail address is required',
+        'email.email' => 'A valid eMail address is required',
+        'password.required' => 'A password is required',
+    ];
+}
+```
+
 ## Add the Routes to the API
 
 Open the `routes/api.php` file and add two routes for the registration and authentication:
