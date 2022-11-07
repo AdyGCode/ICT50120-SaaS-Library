@@ -429,6 +429,14 @@ send back the uniform result structure.
 
 If you get stuck, always check the latest code in the repository for this tutorial.
 
+
+# Password Complexity
+
+This is VERY new to Laravel's base code. Until now you would have to create a validation rule using RegEx but as of Laravel 
+9.39 there is now extensions to the password validation.
+
+(Note: 7/11/22 - 9.39 not released yet)
+
 # What's next?
 
 Next it's onto [Authorization](ReadMe-22-API-authorisation.md).
