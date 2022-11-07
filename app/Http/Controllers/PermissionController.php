@@ -16,16 +16,16 @@ class PermissionController extends Controller
     {
         $this->middleware(
             'permission:permission-browse|permission-read|permission-edit|permission-add|permission-delete',
-            ['only' => ['index', 'store']]);
+            ['only' => ['index', 'show', 'store', ]]);
         $this->middleware(
             'permission:permission-create',
-            ['only' => ['create', 'store']]);
+            ['only' => ['create', 'store', ]]);
         $this->middleware(
             'permission:permission-edit',
-            ['only' => ['edit', 'update']]);
+            ['only' => ['edit', 'update', ]]);
         $this->middleware(
             'permission:permission-delete',
-            ['only' => ['destroy']]);
+            ['only' => ['destroy', ]]);
     }
 
 

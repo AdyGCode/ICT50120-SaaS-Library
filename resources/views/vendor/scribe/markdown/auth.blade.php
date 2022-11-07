@@ -1,7 +1,7 @@
-# Authenticating requests
+{{ trans('auth.authenticating_requests') }}
 
 @if(!$isAuthed)
-This API is not authenticated.
+{{ trans('auth.this_api_is_not_authenticated') }}
 @else
 {!! $authDescription !!}
 

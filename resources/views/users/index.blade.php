@@ -5,7 +5,7 @@
             {{ __('Users') }}
         </h2>
 
-        <a href="{{ route('users.create') }}" class="rounded bg-sky-600 text-white shadow p-2">New User</a>
+        <a href="{{ route('users.create') }}" class="rounded bg-sky-600 text-white shadow p-2">{{ __("New User") }}</a>
 
         </div>
     </x-slot>

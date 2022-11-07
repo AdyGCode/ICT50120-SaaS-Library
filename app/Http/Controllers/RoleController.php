@@ -14,19 +14,19 @@ class RoleController extends Controller
     {
         $this->middleware(
             'permission:role-browse|role-read|role-edit|role-add|role-delete',
-            ['only' => ['index', 'store']]
+            ['only' => ['index', 'show', 'store',]]
         );
         $this->middleware(
             'permission:role-create',
-            ['only' => ['create', 'store']]
+            ['only' => ['create', 'store', ]]
         );
         $this->middleware(
             'permission:role-edit',
-            ['only' => ['edit', 'update']]
+            ['only' => ['edit', 'update', ]]
         );
         $this->middleware(
             'permission:role-delete',
-            ['only' => ['destroy']]
+            ['only' => ['destroy', ]]
         );
     }
 

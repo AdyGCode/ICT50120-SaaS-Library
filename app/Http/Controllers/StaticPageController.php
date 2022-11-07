@@ -25,7 +25,7 @@ class StaticPageController extends Controller
         $user_count = User::count();
         $book_count = Book::count();
         $author_count = Author::count();
-        return view('dashboard', compact(
+        return view('static.dashboard', compact(
             ['user_count', 'book_count', 'author_count']
         ));
     }
