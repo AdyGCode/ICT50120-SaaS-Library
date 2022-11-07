@@ -45,6 +45,6 @@ Route::group(['middleware' => ['auth']], function() {
 /**
  * Using Spatie's Health package
  */
-Route::get('health', HealthCheckResultsController::class);
+Route::get('/health', HealthCheckResultsController::class);
 
 require __DIR__.'/auth.php';
