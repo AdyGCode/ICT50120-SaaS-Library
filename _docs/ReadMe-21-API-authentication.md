@@ -389,8 +389,7 @@ We need to get JSON responses, so how can we do this?
 ## API Controller that Returns JSON responses
 
 A good technique is to create an API Controller that we use to send our results back to 
-the caller in a set manner, and thus 
-also reducing the amount of code written.
+the caller in a set manner, and thus also reducing the amount of code written.
 
 This is covered in [17 API Base Controller](ReadMe-19-API-Base-controller-II.md).
 

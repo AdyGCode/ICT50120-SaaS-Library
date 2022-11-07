@@ -57,7 +57,10 @@
 
                         <label for="" class="py-2">Confirm Password:</label>
                         <div class="col-span-4">
-                            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password', 'class' => 'w-full')) !!}
+                            {!! Form::password(
+                                'confirm-password',
+                                array('placeholder' => 'Confirm Password', 'class' => 'w-full'))
+                             !!}
                         </div>
 
                         <label for="" class="py-2">Role:</label>
@@ -65,7 +68,8 @@
                             {!! Form::select('roles[]', $roles, $userRole, array('class' => 'w-full','multiple')) !!}
                         </div>
                         <div></div>
-                        <div class="px-4 py-2 bg-sky-600 text-white shadow hover:bg-sky-200 hover:text-sky-900 transition
+                        <div class="px-4 py-2 bg-sky-600 text-white shadow
+                                    hover:bg-sky-200 hover:text-sky-900 transition
                                     duration-500 border-sky-900 text-center">
                             <button type="submit" class="btn btn-primary">
                                 Submit

@@ -18,7 +18,6 @@ use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 |
 */
 
-
 Route::post('register', [AuthAPIController::class, 'register']);
 Route::post('login', [AuthAPIController::class, 'login']);
 
