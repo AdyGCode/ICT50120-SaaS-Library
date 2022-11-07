@@ -8,6 +8,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class UpdateAuthorAPIRequest extends FormRequest
 {
+    
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -35,7 +36,7 @@ class UpdateAuthorAPIRequest extends FormRequest
             ],
             'is_company' => [
                 'boolean',
-            ]
+            ],
         ];
     }
 
@@ -44,7 +45,7 @@ class UpdateAuthorAPIRequest extends FormRequest
         throw new HttpResponseException(
             response()->json([
                 'success' => false,
-                'message' => 'Validation errors',
+                'message' => _('Validation errors'),
                 'data' => $validator->errors(),
             ])
         );
@@ -54,8 +55,8 @@ class UpdateAuthorAPIRequest extends FormRequest
     public function messages()
     {
         return [
-            'family_name.required_without' => 'Either a given or family name is required.',
-            'is_company' => 'Company must be set to True or False',
+            'family_name.required_without' => __('Either a given or family name is required.'),
+            'is_company' => __('Company must be set to True or False'),
         ];
     }
 

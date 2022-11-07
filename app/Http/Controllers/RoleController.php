@@ -13,7 +13,7 @@ class RoleController extends Controller
     function __construct()
     {
         $this->middleware(
-            'permission:role-list|role-create|role-edit|role-delete',
+            'permission:role-browse|role-read|role-edit|role-add|role-delete',
             ['only' => ['index', 'store']]
         );
         $this->middleware(
@@ -98,12 +98,12 @@ class RoleController extends Controller
     public function edit($id)
     {
         $role = Role::find($id);
-        $permission = Permission::get();
+        $permissions = Permission::orderBy('name')->get();
         $rolePermissions = DB::table("role_has_permissions")->where("role_has_permissions.role_id", $id)
             ->pluck('role_has_permissions.permission_id', 'role_has_permissions.permission_id')
             ->all();
 
-        return view('roles.edit', compact('role', 'permission', 'rolePermissions'));
+        return view('roles.edit', compact('role', 'permissions', 'rolePermissions'));
     }
 
     /**

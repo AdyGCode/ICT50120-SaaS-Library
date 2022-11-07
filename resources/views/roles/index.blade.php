@@ -2,10 +2,10 @@
     <x-slot name="header">
         <div class="flex flex-row gap">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight flex-grow">
-            {{ __('Users') }}
+            {{ __('Roles') }}
         </h2>
 
-        <a href="{{ route('users.create') }}" class="rounded bg-sky-600 text-white shadow p-2">New User</a>
+        <a href="{{ route('roles.create') }}" class="rounded bg-sky-600 text-white shadow p-2">New Role</a>
 
         </div>
     </x-slot>
@@ -19,31 +19,29 @@
                         <tr class="bg-stone-300">
                             <th class="p-2 text-right">#</th>
                             <th class="p-2 text-left">{{ __("Name") }}</th>
-                            <th class="p-2 text-left">{{ __("eMail") }}</th>
                             <th class="p-2 text-left">{{ __("Actions") }}</th>
                         </tr>
                         </thead>
                         <tbody class="border border-stone-300">
-                        @foreach($users as $user)
+                        @foreach($roles as $role)
                             <tr class="border-b border-stone-300 hover:bg-stone-200 transition duration-500 ease-in-out">
                                 <td class="p-2 text-right">{{ $loop->iteration }}</td>
-                                <td class="p-2">{{ $user->name }}</td>
-                                <td class="p-2">{{ $user->email }}</td>
+                                <td class="p-2">{{ $role->name }}</td>
 
                                 <td class="py-2 pl-2 pr-0 flex flex-row gap-2">
-                                    <a href="{{ route('users.show', compact('user')) }}"
+                                    <a href="{{ route('roles.show', compact('role')) }}"
                                        class="px-2 w-12 text-center rounded-md border border-emerald-600
                                               hover:bg-emerald-600 hover:text-white transition duration-500">
                                         <span class="sr-only">View</span>
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                    <a href="{{ route('users.edit', compact('user')) }}"
+                                    <a href="{{ route('roles.edit', compact('role')) }}"
                                        class="px-2 w-12 text-center rounded-md border border-sky-600
                                               hover:bg-sky-600 hover:text-white transition duration-500">
                                         <span class="sr-only">Edit</span>
                                         <i class="fa fa-pen"></i>
                                     </a>
-                                    <a href="{{ route('users.show', compact('user')) }}"
+                                    <a href="{{ route('roles.show', compact('role')) }}"
                                        class="px-2 w-12 text-center rounded-md border border-red-600
                                               hover:bg-red-600 hover:text-white transition duration-500">
                                         <span class="sr-only">Delete</span>
@@ -56,7 +54,7 @@
                         <tfoot class="border border-stone-300">
                         <tr>
                             <td colspan="4" class="p-2 h-10">
-                                {{ $users->links()}}
+                                {{ $roles->links()}}
                             </td>
                         </tr>
                         </tfoot>

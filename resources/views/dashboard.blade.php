@@ -23,7 +23,7 @@
                             </div>
                             <div class=" p-4 grow">
                                 <h5 class="text-2xl text-right mb-4">Books</h5>
-                                <p class="text-5xl text-right grow">999999</p>
+                                <p class="text-5xl text-right grow">{{ $book_count ?? "n/a"}}</p>
                             </div>
                         </section>
                     </a>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="p-4 grow">
                                 <h5 class="text-2xl text-right mb-4">Authors</h5>
-                                <p class="text-5xl text-right grow">999999</p>
+                                <p class="text-5xl text-right grow">{{ $author_count ?? "n/a"}}</p>
                             </div>
                         </section>
                     </a>
@@ -113,7 +113,7 @@
                             </div>
                             <div class="p-4 grow">
                                 <h5 class="text-2xl text-right mb-4">Publishers</h5>
-                                <p class="text-5xl text-right grow">999999</p>
+                                <p class="text-5xl text-right grow">{{ $publisher_count ?? "n/a"}}</p>
                             </div>
                         </section>
                     </a>

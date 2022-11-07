@@ -8,18 +8,20 @@
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
+        "laravel/horizon": "^5.10",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "laravelcollective/html": "^6.3",
         "spatie/cpu-load-health-check": "^1.0",
         "spatie/laravel-health": "^1.14",
-        "spatie/laravel-permission": "^5.5"
+        "spatie/laravel-permission": "^5.5",
+        "spatie/security-advisories-health-check": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "knuckleswtf/scribe": "^4.0.0",
         "laravel/breeze": "^1.14",
-        "laravel/pint": "^1.0",
+        "laravel/pint": "^1.2",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",

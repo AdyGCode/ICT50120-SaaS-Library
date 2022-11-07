@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Spatie\Health\Checks\Checks\CacheCheck;
+use Spatie\Health\Checks\Checks\RedisCheck;
+use Spatie\Health\Checks\Checks\ScheduleCheck;
 use Spatie\Health\Facades\Health;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\CpuLoadHealthCheck\CpuLoadCheck;
@@ -12,6 +15,7 @@ use Spatie\Health\Checks\Checks\EnvironmentCheck;
 use Spatie\Health\Checks\Checks\HorizonCheck;
 use Spatie\Health\Checks\Checks\MeiliSearchCheck;
 use Spatie\Health\Checks\Checks\OptimizedAppCheck;
+use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 
 class HealthServiceProvider extends ServiceProvider
 {
@@ -23,18 +27,23 @@ class HealthServiceProvider extends ServiceProvider
     public function register()
     {
         Health::checks([
+            EnvironmentCheck::new(),
+            DebugModeCheck::new(),
+            SecurityAdvisoriesCheck::new(),
             CpuLoadCheck::new()
                 ->failWhenLoadIsHigherInTheLast5Minutes(2.0)
                 ->failWhenLoadIsHigherInTheLast15Minutes(1.5),
+            DatabaseCheck::new(),
             UsedDiskSpaceCheck::new()
                 ->failWhenUsedSpaceIsAbovePercentage(80)
                 ->warnWhenUsedSpaceIsAbovePercentage(50),
-            DatabaseCheck::new(),
-            MeiliSearchCheck::new(),
-            EnvironmentCheck::new(),
             OptimizedAppCheck::new(),
-            DebugModeCheck::new(),
             HorizonCheck::new(),
+            ScheduleCheck::new(),
+            CacheCheck::new(),
+            RedisCheck::new(),
+            MeiliSearchCheck::new(),
+
         ]);
     }
 

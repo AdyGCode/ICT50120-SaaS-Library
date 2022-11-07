@@ -285,6 +285,34 @@ Replace the Home etc with suitable placeholder text, such as "About".
 
 Do not worry about creating a contact form at this time.
 
+## Adding Statistics Blocks to the Dashboard
+
+We will add a way to provide the number of authors, books and so on in the site.
+
+To do so we will update the "Static Pages" for the dashboard to retrieve the values we need and send them to the view.
+
+Open the Static Page controller.
+
+Edit the dashboard method, to become:
+
+```php
+        $user_count = User::count();
+        $book_count = Book::count();
+        $author_count = Author::count();
+        return view('static.dashboard', compact(
+            ['user_count', 'book_count', 'author_count']
+        ));
+```
+
+You can add an extra counts you need.
+
+Open the dashboard.blade.php file from the resources\views folder.
+
+Edit the page so the content section contains:
+
+
+
+
 ## Menus and Where they Go
 
 The main navigation menu does not go to the Author, Publisher and so forth as we have not created these sections.

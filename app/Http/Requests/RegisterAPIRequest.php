@@ -49,7 +49,7 @@ class RegisterAPIRequest extends Request
         throw new HttpResponseException(
             response()->json([
                 'success' => false,
-                'message' => 'Validation errors',
+                'message' => __('Validation errors'),
                 'data' => $validator->errors(),
             ])
         );
@@ -59,13 +59,12 @@ class RegisterAPIRequest extends Request
     public function messages()
     {
         return [
-            'name.required' => 'A name is required',
-            'email.required' => 'An eMail address is required',
-            'email.unique' => 'A unique eMail address is required',
-            'email.email' => 'A valid eMail address is required',
-            'password.min' => 'The password must be at least 8 characters long'
+            'name.required' => __('A name is required'),
+            'email.required' => __('An eMail address is required'),
+            'email.unique' => __('A unique eMail address is required'),
+            'email.email' => __('A valid eMail address is required'),
+            'password.min' => __('The password must be at least 8 characters long'),
         ];
     }
 
 }
-

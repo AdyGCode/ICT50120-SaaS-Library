@@ -48,8 +48,8 @@ class LoginAPIRequest extends FormRequest
     public function messages()
     {
         return [
-            'email' => 'A valid eMail address is required',
-            'password' => 'A valid password is required'
+            'email' => __('A valid eMail address is required'),
+            'password' => __('A valid password is required'),
         ];
     }
 }

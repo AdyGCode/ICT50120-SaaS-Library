@@ -15,20 +15,21 @@ class AuthorController extends Controller
      */
     function __construct()
     {
+        // we use author- to represent the 'namespace' for the permission.
         $this->middleware(
-            'permission:product-list|product-create|product-edit|product-delete',
+            'permission:author-browse|author-read|author-edit|author-add|author-delete',
             ['only' => ['index', 'show']]
         );
         $this->middleware(
-            'permission:product-create',
+            'permission:author-add',
             ['only' => ['create', 'store']]
         );
         $this->middleware(
-            'permission:product-edit',
+            'permission:author-edit',
             ['only' => ['edit', 'update']]
         );
         $this->middleware(
-            'permission:product-delete',
+            'permission:author-delete',
             ['only' => ['destroy']]
         );
     }

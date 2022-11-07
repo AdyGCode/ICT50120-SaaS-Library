@@ -2,11 +2,11 @@
     <x-slot name="header">
         <div class="flex flex-row gap">
             <h2 class="font-semibold text-2xl text-gray-800 leading-tight flex-1">
-                {{ __('Users') }}
+                {{ __('Roles') }}
             </h2>
             <p class="flex-initial">
-                <a href="{{ route('users.create') }}" class="rounded shadow text-white bg-sky-600 p-2">
-                    New User
+                <a href="{{ route('roles.create') }}" class="rounded shadow text-white bg-sky-600 p-2">
+                    New Role
                 </a>
             </p>
         </div>
@@ -19,10 +19,10 @@
 
                     <div class="flex flex-row">
                         <h3 class="text-xl flex-grow">
-                            Edit User
+                            Edit Role
                         </h3>
                         <a class="rounded bg-stone-600 text-stone-50 shadow p-2 px-4"
-                           href="{{ route('users.index')}}">
+                           href="{{ route('roles.index')}}">
                             Back
                         </a>
                     </div>
@@ -38,31 +38,25 @@
                         </div>
                     @endif
 
-                    {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+                    {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
                     <div class="grid grid-cols-5 gap-4 my-4">
                         <label for="" class="py-2">Name:</label>
                         <div class="col-span-4">
                             {!! Form::text('name', null, array('placeholder' => 'Name', 'class' => 'w-full')) !!}
                         </div>
 
-                        <label for="" class="py-2">Email:</label>
-                        <div class="col-span-4">
-                            {!! Form::text('email', null, array('placeholder' => 'Email', 'class' => 'w-full')) !!}
-                        </div>
-
-                        <label for="" class="py-2">Password:</label>
-                        <div class="col-span-4">
-                            {!! Form::password('password', array('placeholder' => 'Password', 'class' => 'w-full')) !!}
-                        </div>
-
-                        <label for="" class="py-2">Confirm Password:</label>
-                        <div class="col-span-4">
-                            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password', 'class' => 'w-full')) !!}
-                        </div>
-
-                        <label for="" class="py-2">Role:</label>
-                        <div class="col-span-4">
-                            {!! Form::select('roles[]', $roles, $userRole, array('class' => 'w-full','multiple')) !!}
+                        <label for="" class="py-2">Permissions:</label>
+                        <div class="col-span-4 flex flex-column flex-wrap gap-4 ">
+                            @foreach($permissions as $permission)
+                                <p>{{ $permission->name }}
+@if(in_array($permission->name, $rolePermissions))
+X
+@endif
+</p>
+                            @endforeach
+                            {!! Form::select('permissions[]', $permissions, $rolePermissions, array('class' => 'w-full',
+                            'multiple'))
+                             !!}
                         </div>
                         <div></div>
                         <div class="px-4 py-2 bg-sky-600 text-white shadow hover:bg-sky-200 hover:text-sky-900 transition

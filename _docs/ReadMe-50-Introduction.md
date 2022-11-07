@@ -6,18 +6,32 @@ The interface will use Blade and TailwindCSS in this initial configuration.
 
 ## Tutorial Index
 
-|               Previous               |                Index                 |                 Next                  |
-|:------------------------------------:|:------------------------------------:|:-------------------------------------:|
-| [Tutorial Index](ReadMe-00-Index.md) | [Tutorial Index](ReadMe-00-Index.md) | [51 Blade and the Homepage](ReadMe-51-Blade-HomePage.md) |
+|                Previous                 |                Index                 |                 Next                  |
+|:---------------------------------------:|:------------------------------------:|:-------------------------------------:|
+| [Web Interface Intro](ReadMe-50-Introduction.md) | [Tutorial Index](ReadMe-00-Index.md) | [51 Blade and the Homepage](ReadMe-51-Blade-HomePage.md) |
 
-## Adding FontAwesome for icons
+## Adding Interface Helpers
 
-Open the terminal and make sire you are in the main folder of the project.
+To begin we want to add a few 'plugins' that will give us icons, and a other features.
+
+Let's start with FontAwesome, one of the most well known and evolving icon sets that can be used as a desktop application 
+font, a web font, SVG font, SVG images and more. 
+
+### FontAwesome (Free)
+
+Fontawesome has been around for some time. It comes in two main license forms: free and full. The latter is a by 
+subscription license that provides (at time of writing) over 19,000+ icons across six styles,in 68 categories. The free 
+version provides you with just over 2000 free and open source icons to use. The full list of icons may be found at
+[https://fontawesome.com/icons](https://fontawesome.com/icons).
+
+#### Installing the FontAwesome Node plugin
+
+Open the terminal and make sure you are in the main folder of the project.
 
 Enter the command:
 
 ```shell
-npm install @fortawesome/fontawesome-free
+sail npm install @fortawesome/fontawesome-free
 ```
 
 Open the `app.css` file from the `resources\css` folder
@@ -25,18 +39,17 @@ Open the `app.css` file from the `resources\css` folder
 add the following line at the end of the file:
 
 ```js
-@import
-"@fortawesome/fontawesome-free/css/all.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
 ```
 
-Open the terminal with teh `npm run dev` running within it.
+Open the terminal with the `npm run dev` running within it.
 
 Use <kbd>CTRL</kbd>+<kbd>C</kbd> to stop the process.
 
-Re-run the command:
+Re-run the vite CSS/JS compiler using:
 
 ```shell
-npm run dev
+sail npm run dev
 ```
 
 This should then automatically add the FontAwesome icons to the application's CSS.
@@ -53,7 +66,7 @@ Create the new controller using:
 sail artisan make:controller StaticPageController
 ```
 
-Open the app/Http/Controllers/StaticPageController.php file.
+Open the `app/Http/Controllers/StaticPageController.php` file.
 
 In this file we will now create a series of methods for the various static pages.
 
@@ -70,7 +83,6 @@ Add the home method:
     public function home()
     {
         return view('static.home');
-
     }
 ```
 
@@ -92,8 +104,8 @@ Route::get('/', [StaticPageController::class, 'home'])->name('home');
 
 **Remember** to import the StaticPageController at the top of the page!
 
-At the moment if you visit the `http:\\localhost` you will get an error, but we are on the way to the static pages being
-rendered.
+At the moment if you visit the `http:\\localhost` you will get an error, but we are 
+on the way to the static pages being rendered.
 
 ## Publishing Package Views
 
@@ -148,7 +160,7 @@ Dive into the `/resources/views/vendor/pagination` folder.
 
 In here locate and open the `tailwind.blade.php` file.
 
-We are going to do two things:
+We are going to do the following:
 - add hover colour to the page numbers
 - add highlight colour to the current page
 - add hover colours to the previous and next buttons

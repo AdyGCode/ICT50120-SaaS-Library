@@ -38,7 +38,7 @@ class AuthorSearchAPIRequest extends FormRequest
         throw new HttpResponseException(
             response()->json([
                 'success' => false,
-                'message' => 'Validation errors',
+                'message' => __('Validation errors'),
                 'data' => $validator->errors(),
             ])
         );
@@ -48,7 +48,7 @@ class AuthorSearchAPIRequest extends FormRequest
     public function messages()
     {
         return [
-            'search.required' => 'Search text is required.',
+            'search.required' => __('Search text is required'),
         ];
     }
 }

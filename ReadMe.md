@@ -21,9 +21,9 @@ This application provides a number of features.
     - Author BREAD [N]
     - Book BREAD [N]
     - Publisher BREAD [N]
-    - User BREAD [N]
-    - Authentication [N]
-    - Authorisation via Roles and Permissions [N]
+    - User BREAD [-]
+    - Authentication [-]
+    - Authorisation via Roles and Permissions [-]
 - API interface
     - Author API BREAD [Y]
     - Book API BREAD [N]

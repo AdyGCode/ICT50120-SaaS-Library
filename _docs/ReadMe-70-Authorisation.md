@@ -46,17 +46,19 @@ sail artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvi
 Create the seeders for the various tables:
 
 ```shell
-sail artisan make:seeder PermissionSeeder
+sail artisan make:seeder PermissionsSeeder
+sail artisan make:seeder RolesSeeder
 ```
 
 ### Add the seed data 
-Remember to import the Spatie Model at the top of the file...
+Remember to import the Spatie Models at the top of the files...
 
+#### PermissionsSeeder 
 ```php
 use Spatie\Permission\Models\Permission;
 ```
 
-Now the seeder, add the following to the `PermissionSeeder.php` file
+Now the seeder, add the following to the `PermissionsSeeder.php` file
 
 ```php
  $permissions = [
@@ -74,12 +76,33 @@ Now the seeder, add the following to the `PermissionSeeder.php` file
              Permission::create(['name' => $permission]);
         }
 ```
+#### RoleSeeder 
+```php
+use Spatie\Permission\Models\Role;
+```
 
-Remember to edit the DatabaseSeeder file, and add the PermissionSeeder to the top before the Country Seeder.
+Now the seeder, add the following to the `RoleSeeder.php` file
+
+```php
+ $roles = [
+           ['name'=>'admin',],
+           ['name'=>'manager',],           
+           ['name'=>'user',],           
+           ['name'=>'guest',],           
+        ];
+     
+        foreach ($roles as $role) {
+             Role::create(['name' => $role]);
+        }
+```
+
+Remember to edit the DatabaseSeeder file, and add the PermissionsSeeder and the RolesSeeder to the top before the Country 
+Seeder.
 
 ```php
 $this->call([
-            PermissionSeeder::class,
+            PermissionsSeeder::class,
+            RolesSeeder::class,
             CountrySeeder::class,
 ```
 
@@ -88,11 +111,26 @@ And run the migration and seed (SEPARATELY this time):
 
 ```shell
 sail artisan migrate --step
-sail artisan db:seed --class=PermissionSeeder
+sail artisan db:seed --class=PermissionsSeeder
 ```
 
 > Note we are not running the seeder and migration from fresh.
 
+## Add teh HasRoles trait to the User Model
+
+Open the User model from `app/Models/User.php`.
+
+Add the following import:
+
+```php
+use Spatie\Permission\Traits\HasRoles;
+```
+
+Then edit the `use HasFactory...` line to read:
+
+```php
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+```
 
 ## Create the Required Additional Controllers
 Run the following artisan commands:
