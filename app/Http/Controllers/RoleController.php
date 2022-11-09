@@ -18,15 +18,15 @@ class RoleController extends Controller
         );
         $this->middleware(
             'permission:role-create',
-            ['only' => ['create', 'store', ]]
+            ['only' => ['create', 'store',]]
         );
         $this->middleware(
             'permission:role-edit',
-            ['only' => ['edit', 'update', ]]
+            ['only' => ['edit', 'update',]]
         );
         $this->middleware(
             'permission:role-delete',
-            ['only' => ['destroy', ]]
+            ['only' => ['destroy',]]
         );
     }
 
@@ -40,17 +40,6 @@ class RoleController extends Controller
         $roles = Role::orderBy('id', 'DESC')->paginate(5);
         return view('roles.index', compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $permission = Permission::get();
-        return view('roles.create', compact('permission'));
     }
 
     /**
@@ -71,6 +60,17 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')
             ->with('success', 'Role created successfully');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $permission = Permission::get();
+        return view('roles.create', compact('permission'));
     }
 
     /**

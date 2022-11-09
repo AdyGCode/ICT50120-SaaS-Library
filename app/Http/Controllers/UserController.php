@@ -42,17 +42,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $roles = Role::pluck('name', 'name')->all();
-        return view('users.create', compact('roles'));
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -75,6 +64,17 @@ class UserController extends Controller
 
         return redirect()->route('users.index')
             ->with('success', __('User created successfully'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $roles = Role::pluck('name', 'name')->all();
+        return view('users.create', compact('roles'));
     }
 
     /**

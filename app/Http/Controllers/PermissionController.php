@@ -16,16 +16,16 @@ class PermissionController extends Controller
     {
         $this->middleware(
             'permission:permission-browse|permission-read|permission-edit|permission-add|permission-delete',
-            ['only' => ['index', 'show', 'store', ]]);
+            ['only' => ['index', 'show', 'store',]]);
         $this->middleware(
             'permission:permission-create',
-            ['only' => ['create', 'store', ]]);
+            ['only' => ['create', 'store',]]);
         $this->middleware(
             'permission:permission-edit',
-            ['only' => ['edit', 'update', ]]);
+            ['only' => ['edit', 'update',]]);
         $this->middleware(
             'permission:permission-delete',
-            ['only' => ['destroy', ]]);
+            ['only' => ['destroy',]]);
     }
 
 
@@ -39,17 +39,6 @@ class PermissionController extends Controller
         $data = Permission::orderBy('id', 'DESC')->paginate(5);
 
         return view('permissions.index', compact('data'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('permissions.create');
-
     }
 
     /**
@@ -68,6 +57,17 @@ class PermissionController extends Controller
 
         return redirect()->route('permissions.index')
             ->with('success', 'Permission created successfully.');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('permissions.create');
+
     }
 
     /**
