@@ -61,18 +61,18 @@ the BREAD/CRUD actions.
 - Create the resourceful controller skeleton for the Books API
 - Create the resourceful route for the Books API
 
-> Remember that the Books API will be `API/BooksAPIController`
+> Remember that the Books API will be `API/BookAPIController`
 
 ## Exercise 1-02: Create Books Index API method
 
-- Edit the API/BooksAPIController and have the index method return
+- Edit the API/BookAPIController and have the index method return
   **all the books**
 - Do a "brute force" Test using (`http://localhost/api/books`)[http://localhost/api/books]
 - Create a Postman request to test using same URI
 
 ## Exercise 1-03: Create Show One Book API endpoint
 
-- Edit the BooksAPIController and the show method for the Books API
+- Edit the BookAPIController and the show method for the Books API
 - Make the methods return a single book given the `id` for the book
 - Brute force test using (`http://localhost/api/books/45`)[http://localhost/api/books/45]
 - Create a Postman request to test for an existing book
@@ -88,7 +88,7 @@ the BREAD/CRUD actions.
 ---
 ### Exercise 1-05: Create the Books API create endpoint
 
-- Add the `create` method to `BooksAPIController.php`.
+- Add the `create` method to `BookAPIController.php`.
 - Make sure you verify all the required data is submitted.
 - If the data is not submitted, it will return HTML for the time being,
   this is ok, until we look at error responses in a later stage.
