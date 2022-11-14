@@ -47,32 +47,25 @@
                             </ul>
                         </div>
                         <div class=""></div>
-                        <form action=""
+                        <form action="{{ route('authors.update',compact(['author'])) }}"
                               class="mt-6 col-span-3 flex flex-row gap-4">
+                            <button type="submit"
+                                    class="py-2 px-4 mx-2 w-1/6 text-center
+                                       rounded border border-sky-600
+                                       hover:bg-sky-600
+                                       text-sky-600 hover:text-white
+                                       transition duration-500">
+                                <i class="fa fa-floppy-disk"></i> {{ __("Save") }}
+                            </button>
                             <a href="{{ route('authors.index') }}"
                                class="py-2 px-4 mx-2 w-1/6 text-center
                                       rounded border border-stone-600
                                       hover:bg-stone-600
                                       text-stone-600 hover:text-white
                                       transition duration-500">
-                                <i class="fa fa-circle-left"></i> {{ __("Back") }}
+                                <i class="fa fa-arrow-rotate-left"></i> {{ __("Cancel") }}
                             </a>
-                            <a href=""
-                               class="py-2 px-4 mx-2 w-1/6 text-center
-                                      rounded border border-sky-600
-                                      hover:bg-sky-600
-                                      text-sky-600 hover:text-white
-                                      transition duration-500">
-                                <i class="fa fa-pen"></i> {{ __("Edit") }}
-                            </a>
-                            <button type="submit"
-                                    class="py-2 px-4 mx-2 w-1/6 text-center
-                                       rounded border border-red-600
-                                       hover:bg-red-600
-                                       text-red-600 hover:text-white
-                                       transition duration-500">
-                                <i class="fa fa-trash"></i> {{ __("Delete") }}
-                            </button>
+
                         </form>
 
                     </div>

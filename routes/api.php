@@ -50,7 +50,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
 
     /* Logout a logged-in user */
-    Route::post('/logout', [AuthorAPIController::class, 'logout']);
+    Route::post('/logout', [AuthAPIController::class, 'logout']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

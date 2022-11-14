@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 
@@ -36,7 +35,7 @@ class RolesSeeder extends Seeder
             ],
             ['name' => 'member',
                 'permissions' => [
-                    'author-browse',  'author-read',
+                    'author-browse', 'author-read',
                     'book-browse', 'book-read',
 //                    'genre-browse', 'genre-read',
                     'user-read-own', 'user-edit-own',
@@ -44,8 +43,8 @@ class RolesSeeder extends Seeder
             ],
             ['name' => 'guest',
                 'permissions' => [
-                    'author-browse',  'author-read',
-                    'book-browse','book-read',
+                    'author-browse', 'author-read',
+                    'book-browse', 'book-read',
 //                    'genre-browse', 'genre-read',
                 ]],
         ];
