@@ -48,7 +48,7 @@
                                       transition duration-500">
                                 <i class="fa fa-circle-left"></i> {{ __("Back") }}
                             </a>
-                            <a href=""
+                            <a href="{{ route('authors.edit', compact('author')) }}"
                                class="py-2 px-4 mx-2 w-1/6 text-center
                                       rounded border border-sky-600
                                       hover:bg-sky-600

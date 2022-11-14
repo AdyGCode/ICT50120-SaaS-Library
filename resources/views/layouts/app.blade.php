@@ -29,7 +29,11 @@
 
     <!-- Page Content -->
     <main class="flex-grow">
+
+        @include('layouts.messages')
+
         {{ $slot }}
+
     </main>
 
     @include('layouts.footer')

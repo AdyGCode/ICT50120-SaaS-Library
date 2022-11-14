@@ -58,7 +58,7 @@ class AuthorController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreAuthorRequest $request
+     * @param  \App\Http\Requests\StoreAuthorRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreAuthorRequest $request)
@@ -69,7 +69,7 @@ class AuthorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Author $author
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function show(Author $author)
@@ -81,7 +81,7 @@ class AuthorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Author $author
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function edit(Author $author)
@@ -92,19 +92,26 @@ class AuthorController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\UpdateAuthorRequest $request
-     * @param \App\Models\Author $author
-     * @return \Illuminate\Http\Response
+     * @param  \App\Http\Requests\UpdateAuthorRequest  $request
+     * @param  \App\Models\Author  $author
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateAuthorRequest $request, Author $author)
     {
-        //
+        foreach ($request->validated() as $validKey => $validValue) {
+            $author[$validKey] = $validValue;
+        }
+
+        $author->save();
+
+        return redirect()->route('authors.index')
+            ->with('success', 'Author updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Author $author
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function destroy(Author $author)
