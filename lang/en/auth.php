@@ -16,5 +16,7 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'this_api_is_not_authenticated' => 'This API is not authenticated.',
 
+    'authenticating_requests' => '# Authenticating requests'
 ];

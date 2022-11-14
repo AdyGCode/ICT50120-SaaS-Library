@@ -18,19 +18,19 @@ class AuthorController extends Controller
         // we use author- to represent the 'namespace' for the permission.
         $this->middleware(
             'permission:author-browse|author-read|author-edit|author-add|author-delete',
-            ['only' => ['index', 'show']]
+            ['only' => ['index', 'show', 'store',]]
         );
         $this->middleware(
             'permission:author-add',
-            ['only' => ['create', 'store']]
+            ['only' => ['create', 'store',]]
         );
         $this->middleware(
             'permission:author-edit',
-            ['only' => ['edit', 'update']]
+            ['only' => ['edit', 'update',]]
         );
         $this->middleware(
             'permission:author-delete',
-            ['only' => ['destroy']]
+            ['only' => ['destroy',]]
         );
     }
 
