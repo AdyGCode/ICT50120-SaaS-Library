@@ -45,7 +45,7 @@
                                         <span class="sr-only">Edit</span>
                                         <i class="fa fa-pen"></i>
                                     </a>
-                                    <a href="{{ route('authors.show', compact('author')) }}"
+                                    <a href="{{ route('authors.delete', compact('author')) }}"
                                        class="px-2 w-12 text-center rounded-md border border-red-600
                                               hover:bg-red-600 hover:text-white transition duration-500">
                                         <span class="sr-only">Delete</span>

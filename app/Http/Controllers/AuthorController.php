@@ -109,6 +109,17 @@ class AuthorController extends Controller
     }
 
     /**
+     * Verify the removal from storage.
+     *
+     * @param  \App\Models\Author  $author
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Author $author)
+    {
+        //
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Author  $author
