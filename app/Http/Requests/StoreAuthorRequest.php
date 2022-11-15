@@ -13,7 +13,7 @@ class StoreAuthorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class StoreAuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'given_name' => [
+                'required_without:family_name',
+                'max:127',
+            ],
+            'family_name' => [
+                'required_without:given_name',
+                'max:127',
+            ],
+            'is_company' => [
+                'boolean',
+                'nullable',
+            ],
         ];
     }
 }

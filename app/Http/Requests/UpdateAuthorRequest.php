@@ -26,11 +26,11 @@ class UpdateAuthorRequest extends FormRequest
         return [
             'given_name' => [
                 'required_without:family_name',
-                'max:64',
+                'max:127',
             ],
             'family_name' => [
                 'required_without:given_name',
-                'max:128',
+                'max:127',
             ],
             'is_company' => [
                 'boolean',

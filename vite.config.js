@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 // refresh: true is the default, sometimes will not work
@@ -16,12 +16,11 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
             ],
-            refresh: [
-                'resources/routes/**',
-                'routes/**',
-                'resources/views/**',
-                'resources/views/**/*.php',
-            ],
+            // refresh: [
+            //     'routes/**',
+            //     'resources/views/**',
+            // ],
+            refresh: true,
         }),
     ],
 });

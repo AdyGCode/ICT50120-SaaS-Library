@@ -52,7 +52,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('authors.create');
     }
 
     /**
@@ -63,7 +63,10 @@ class AuthorController extends Controller
      */
     public function store(StoreAuthorRequest $request)
     {
-        //
+        $author = Author::create($request->validated());
+
+        return redirect()->route('authors.index')
+            ->with('success', "Author {$author->fullName()} created successfully.");
     }
 
     /**
