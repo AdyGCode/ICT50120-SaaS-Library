@@ -25,11 +25,13 @@ Route::get('/', [StaticPageController::class, 'home'])
     ->name('home');
 
 // Routes not needing authentication
-Route::get("/authors", [AuthorController::class, 'index']);
+Route::get("authors", [AuthorController::class, 'index']);
 //Route::get("/authors/search", [AuthorController::class, 'search']);
-Route::get("/authors/create", [AuthorController::class, 'create'])->name('authors.create');
-Route::get("/authors/{author}", [AuthorController::class, 'show'])->name('authors.show');
-Route::get("/authors/{author}", [AuthorController::class, 'edit'])->name('authors.edit');
+Route::resource('authors', AuthorController::class);
+
+//Route::get("authors/{author}", [AuthorController::class, 'show'])->name('authors.show');
+//Route::get("authors/create", [AuthorController::class, 'create'])->name('authors.create');
+//Route::get("authors/{author}", [AuthorController::class, 'edit'])->name('authors.edit');
 
 
 // Routes requiring authentication
@@ -38,9 +40,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::prefix('authors')->group(function () {
 //        Route::resource('authors', AuthorController::class);
 
-        Route::post('/', [AuthorController::class, 'store']);
-        Route::put('/{id}', [AuthorController::class, 'update']);
-        Route::delete('/{id}', [AuthorController::class, 'delete']);
+//        Route::post('/', [AuthorController::class, 'store']);
+//        Route::put('/{id}', [AuthorController::class, 'update']);
+//        Route::patch('/{id}', [AuthorController::class, 'update']);
+//        Route::delete('/{id}', [AuthorController::class, 'destroy']);
     });
 
 });
