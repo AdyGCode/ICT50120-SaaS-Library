@@ -32,9 +32,6 @@ class UpdateAuthorRequest extends FormRequest
                 'required_without:given_name',
                 'max:127',
             ],
-            'is_company' => [
-                'boolean',
-            ]
         ];
     }
 }

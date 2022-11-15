@@ -17,11 +17,32 @@ We will create them WITHOUT authentication to begin with, and then build upon th
 Remember that BREAD stands for Browse, Retrieve, Edit, Add and Delete.
 
 ## Tutorial Index
-|                                      Previous                                       |                Index                 |                           Next                           |
-|:-----------------------------------------------------------------------------------:|:------------------------------------:|:--------------------------------------------------------:|
-| [Blade Home Page](ReadMe-51-Blade-HomePage.md) | [Tutorial Index](ReadMe-00-Index.md) | [55 Authors: Read](ReadMe-55-Blade-Authors-Read.md) |
+
+|                    Previous                    |                Index                 |                         Next                         |
+|:----------------------------------------------:|:------------------------------------:|:----------------------------------------------------:|
+| [Blade Home Page](ReadMe-51-Blade-HomePage.md) | [Tutorial Index](ReadMe-00-Index.md) | [55 Authors: Read](ReadMe-55-Blade-Authors-Read.md)  |
 
 ## Authors Route
+
+We will be using resourceful routes, with an additional "delete" route that we will need to manually add.........
+
+The routes are structured as shown in the table below:
+
+| HTTP Verb    | URL endpoint            | Route Name      |        Controller Method |
+|:-------------|:------------------------|:----------------|-------------------------:|
+| GET / HEAD   | authors                 | authors.index   |   AuthorController@index |
+| POST         | authors                 | authors.store   |   AuthorController@store |
+| GET / HEAD   | authors/create          | authors.create  |  AuthorController@create |
+| GET / HEAD   | authors/{author}        | authors.show    |    AuthorController@show |
+| PUT  / PATCH | authors/{author}        | authors.update  |  AuthorController@update |
+| DELETE       | authors/{author}        | authors.destroy | AuthorController@destroy |
+| GET / HEAD   | authors/{author}/delete | authors.delete  |  AuthorController@delete |
+| GET / HEAD   | authors/{author}/edit   | authors.edit    |    AuthorController@edit |
+
+Later, we will be using a couple of Laravel route tricks to allow us to split the routes that are allowed for 'guests' as
+against those requiring authentication to be accessed.
+
+Lets get on with creating the routes.
 
 Open the `/routes/web.php` file.
 
