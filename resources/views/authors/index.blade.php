@@ -9,9 +9,13 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-
+                    <a href="{{ route('authors.create') }}"
+                       class="rounded mb-6 p-2 bg-sky-500 text-white text-center w-1/5 min-w-64">
+                        {{ __('Add new Author') }}
+                    </a>
 
                     <table class="table w-full">
+                        <caption>{{ __('All Authors (paginated)') }}</caption>
                         <thead class="border border-stone-300">
                         <tr class="bg-stone-300">
                             <th class="p-2 text-right">#</th>

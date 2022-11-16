@@ -15,6 +15,8 @@ class AuthorController extends Controller
      */
     function __construct()
     {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+
         // we use author- to represent the 'namespace' for the permission.
         $this->middleware(
             'permission:author-browse|author-read|author-edit|author-add|author-delete',
@@ -52,7 +54,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('authors.create');
     }
 
     /**
@@ -63,7 +65,10 @@ class AuthorController extends Controller
      */
     public function store(StoreAuthorRequest $request)
     {
-        //
+        $author = Author::create($request->validated());
+
+        return redirect()->route('authors.index')
+            ->with('success', "Author {$author->fullName()} created successfully.");
     }
 
     /**
@@ -116,17 +121,20 @@ class AuthorController extends Controller
      */
     public function delete(Author $author)
     {
-        //
+        return view('authors.delete', compact(['author',]));
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Author $author)
     {
-        //
+        $author->delete();
+
+        return redirect()->route('authors.index')
+            ->with('success', 'Author deleted successfully.');
     }
 }
