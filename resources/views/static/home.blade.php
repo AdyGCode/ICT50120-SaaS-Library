@@ -36,7 +36,7 @@
                     <div class="w-full">
                         Some Random Authors
                         @foreach($random_authors as $author)
-                            <p>{{ $author->fullName }}</p>
+                            <p>{{ $author->fullName() }}</p>
                         @endforeach
                     </div>
 
