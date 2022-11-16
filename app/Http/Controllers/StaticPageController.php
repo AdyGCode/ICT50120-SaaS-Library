@@ -15,7 +15,20 @@ class StaticPageController extends Controller
      */
     public function home()
     {
-        return view('static.home');
+
+        // Search area here
+
+        $random_books = Book::inRandomOrder()
+            ->limit(2)
+            ->get();
+        $latest_books = Book::latest()->take(3)->get();
+        $random_authors = Author::inRandomOrder()
+            ->limit(3)
+            ->get();
+//        $random_genres = Genre::latest()->take(2)->get();
+
+
+        return view('static.home', compact(['random_authors', 'random_books', 'latest_books']));
 
     }
 

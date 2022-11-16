@@ -31,16 +31,14 @@ Route::get("/authors/create", [AuthorController::class, 'create'])->name('author
 Route::get("/authors/{author}", [AuthorController::class, 'show'])->name('authors.show');
 Route::get("/authors/{author}", [AuthorController::class, 'edit'])->name('authors.edit');
 
+Route::resource('authors', AuthorController::class);
+Route::get('/{author}/delete', [AuthorController::class, 'delete'])->name("authors.delete");
 
 // Routes requiring authentication
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::prefix('authors')->group(function () {
-//        Route::resource('authors', AuthorController::class);
 
-        Route::post('/', [AuthorController::class, 'store']);
-        Route::put('/{id}', [AuthorController::class, 'update']);
-        Route::delete('/{id}', [AuthorController::class, 'delete']);
     });
 
 });
