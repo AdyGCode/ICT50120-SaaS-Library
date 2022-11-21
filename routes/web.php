@@ -24,6 +24,9 @@ use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 Route::get('/', [StaticPageController::class, 'home'])
     ->name('home');
 
+Route::get('/about', [StaticPageController::class, 'about'])
+    ->name('about');
+
 // Routes not needing authentication
 Route::get("/authors", [AuthorController::class, 'index']);
 //Route::get("/authors/search", [AuthorController::class, 'search']);
@@ -33,6 +36,11 @@ Route::get("/authors/{author}", [AuthorController::class, 'edit'])->name('author
 
 Route::resource('authors', AuthorController::class);
 Route::get('/{author}/delete', [AuthorController::class, 'delete'])->name("authors.delete");
+
+Route::group([], function () {
+    Route::get("/author", [AuthorController::class, 'index'])->name('authors.index');
+    Route::get("/authors/{author}", [AuthorController::class, 'show'])->name('authors.show');
+});
 
 // Routes requiring authentication
 Route::group(['middleware' => ['auth:sanctum']], function () {

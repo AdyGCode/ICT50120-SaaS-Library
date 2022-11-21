@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\Genre;
 use App\Models\User;
 
 class StaticPageController extends Controller
@@ -21,15 +22,25 @@ class StaticPageController extends Controller
         $random_books = Book::inRandomOrder()
             ->limit(2)
             ->get();
+
         $latest_books = Book::latest()->take(3)->get();
+
         $random_authors = Author::inRandomOrder()
-            ->limit(3)
+            ->limit(6)
             ->get();
-//        $random_genres = Genre::latest()->take(2)->get();
+
+        $random_genres = Genre::inRandomOrder()
+            ->take(4)
+            ->get();
 
 
-        return view('static.home', compact(['random_authors', 'random_books', 'latest_books']));
+        return view('static.home', compact(['random_authors', 'random_books', 'latest_books', 'random_genres']));
 
+    }
+
+    public function about()
+    {
+        return view('static.about');
     }
 
     public function dashboard()

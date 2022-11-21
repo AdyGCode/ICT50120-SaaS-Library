@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -25,6 +26,7 @@ class BookSeeder extends Seeder
             'edition' => null,
             'isbn_10' => null,
             'isbn_13' => null,
+            'created_at' => "1970-01-01 00:00:01",
         ];
 
         Book::create($unknownBook);
@@ -42,6 +44,7 @@ class BookSeeder extends Seeder
                     "technology",
                     "programming",
                     "testing",
+                    "non-fiction",
                 ],
                 "height" => 291,
                 "publisher" => "Leanpub",
@@ -1270,7 +1273,6 @@ class BookSeeder extends Seeder
                 ],
                 "genres" => [
                     "philosophy",
-                    "philosophy",
                 ],
                 "height" => 219,
                 "publisher" => "Penguin",
@@ -1535,7 +1537,6 @@ class BookSeeder extends Seeder
                     "Russell, Bertrand",
                 ],
                 "genres" => [
-                    "philosophy",
                     "philosophy",
                 ],
                 "height" => 198,
@@ -2680,6 +2681,7 @@ class BookSeeder extends Seeder
                    similar process to the Authors.  */
                 'genre' => $genre ?? null,
                 'sub_genre' => $sub_genre ?? null,
+                'created_at' => Carbon::now()->addHours(random_int(-10000, -100)),
             ];
             $theBook = Book::create($newBook);
 
