@@ -16,7 +16,7 @@
 <body>
 <div class="min-h-screen bg-gray-100 flex flex-col">
 
-    @include('layouts.navigation-home')
+    @include('layouts.navigation')
 
     <!-- Page Heading -->
     @if (isset($header))
