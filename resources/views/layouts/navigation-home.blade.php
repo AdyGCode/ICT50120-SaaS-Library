@@ -15,19 +15,7 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-stone-300">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('authors.index')" :active="request()->routeIs('authors.*')"
-                                class="text-stone-300">
-                        {{ __('Authors') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-stone-300">
-                        {{ __('Books') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-stone-300">
-                        {{ __('Publishers') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')" class="text-stone-300">
-                        {{ __('Users') }}
-                    </x-nav-link>
+
                 </div>
             </div>
 
