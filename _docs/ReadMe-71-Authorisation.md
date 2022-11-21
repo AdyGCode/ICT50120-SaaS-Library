@@ -9,7 +9,7 @@ This tutorial is based on:
 
 |                     Previous                      |                Index                 |                    Next                     |
 |:-------------------------------------------------:|:------------------------------------:|:-------------------------------------------:|
-| [Monitoring Health](ReadMe-80-monitoring-health.md) | [Tutorial Index](ReadMe-00-Index.md) | [API Exercises](ReadMe-90-API-Exercises.md) | 
+| [Monitoring Health](ReadMe-80-Monitoring-Health.md) | [Tutorial Index](ReadMe-00-Index.md) | [API Exercises](ReadMe-90-API-Exercises.md) | 
 
 ## Introduction
 

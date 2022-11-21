@@ -1,6 +1,6 @@
 # Making an API II - Inserting Data
 
-In [API part I](ReadMe-11-API-index-show.md) we looked at how to query the data via
+In [API part I](ReadMe-11-API-Index-and-Show.md) we looked at how to query the data via
 an API in the Index and Show methods.
 
 The Index is NOT paginated (a problem for a later step), so we retrieve
@@ -10,7 +10,7 @@ ALL the records (even if we had 1,000,000 of them)!
 
 |                   Previous                    |                Index                 |               Next                |
 |:---------------------------------------------:|:------------------------------------:|:---------------------------------:|
-| [Related Data](ReadMe-13-API-related-data.md) | [Tutorial Index](ReadMe-00-Index.md) | [Update](ReadMe-15-API-update.md) |
+| [Related Data](ReadMe-13-API-Relationships-and-Models.md) | [Tutorial Index](ReadMe-00-Index.md) | [Update](ReadMe-15-API-Update.md) |
 
 # Author API - Create a New Author
 
@@ -285,7 +285,7 @@ $author = Author::create($validated);
 
 # What's next?
 
-Next it's onto [Update](ReadMe-15-API-update.md).
+Next it's onto [Update](ReadMe-15-API-Update.md).
 
 Before that though, remember to
-[complete the exercises](ReadMe-90-API-exercises.md).
+[complete the exercises](ReadMe-90-API-Exercises.md).

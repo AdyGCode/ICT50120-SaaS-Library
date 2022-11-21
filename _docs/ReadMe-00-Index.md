@@ -17,43 +17,53 @@ Essential parts are indicated with a ⚠ sign.
 We've even included a [ ] so you can place an X in the box when you complete a tutorial, to track progress [X].
 
 ## General
-- [ ] [01 Setting Up](ReadMe-00-Setting-Up.md) 🔗 ⚠
-- [ ] [ ] [02 Postman](ReadMe-02-Postman.md) 🔗 ⚠
-- [ ] [ ] [00 Entity-Relationship Diagram](ReadMe-00-Library-ER.md)
+- [ ] [Tutorial Index *(this page)*](ReadMe-00-Index.md)
+- [ ] [Setting Up](ReadMe-00-Setting-Up.md) 🔗 ⚠
+- [ ] [Postman](ReadMe-02-Postman.md) 🔗 ⚠
+- [ ] [Entity-Relationship Diagram](ReadMe-00-Library-ER.md) ⚠
+- [ ] [Links](ReadMe-99-Links.md) 🔗
+- [ ] [PhpStorm Plugins & Settings](ReadMe-04-PhpStorm-Plugins-and-Settings.md) 🔗
+- [ ] [Clone-Docker-Rebuild](ReadMe-01-Clone-Docker-Rebuild.md) 🔗
+- [ ] [TO DO: Forking vs Cloning]()
 
 ## API Tutorial
-- [ ] [10 Introduction](ReadMe-10-API-introduction.md) 🔗 ⚠
-- [ ] [11 Index and Show](ReadMe-11-API-index-show.md) 🔗 ⚠
-- [ ] [13 Create](ReadMe-14-API-create.md) 🔗 ⚠
-- [ ] [14 Update](ReadMe-15-API-update.md) 🔗 ⚠
-- [ ] [15 Delete](ReadMe-16-API-delete.md) 🔗 ⚠
-- [ ] [16 Documenting API](ReadMe-17-API-documenting.md) 🔗 ⚠
-- [ ] [90 Exercises](ReadMe-90-API-exercises.md) 🔗 ⚠
-- [ ] [17 Pagination](ReadMe-18-API-pagination.md) 🔗 ⚠
-- [ ] [18 API Base Controller](ReadMe-19-API-Base-controller-II.md) 🔗 ⚠
-- [ ] [19 Fallback Route](ReadMe-20-API-fallback-route.md) 🔗 ⚠
-- [ ] [20 Authentication](ReadMe-21-API-authentication.md) 🔗 ⚠
-- [ ] [22 Authorisation](ReadMe-22-API-authorisation.md) 🔗 ⚠
+
+- [ ] [Introduction](ReadMe-10-API-introduction.md) 🔗 ⚠
+- [ ] [Index and Show](ReadMe-11-API-Index-and-Show.md) 🔗 ⚠
+- [ ] [API Base Controller](ReadMe-12-API-Base-Controller.md) 🔗 ⚠
+- [ ] [Relationships and Models](ReadMe-13-API-Relationships-and-Models.md) 🔗 ⚠
+- [ ] [Create](ReadMe-14-API-Create.md) 🔗 ⚠
+- [ ] [Update](ReadMe-15-API-Update.md) 🔗 ⚠
+- [ ] [Delete](ReadMe-16-API-Delete.md) 🔗 ⚠
+- [ ] [Documenting API](ReadMe-17-API-Documenting.md) 🔗 ⚠
+- [ ] [Exercises](ReadMe-90-API-Exercises.md) 🔗 ⚠
+- [ ] [Pagination](ReadMe-18-API-Pagination.md) 🔗 ⚠
+- [ ] [API Base Controller](ReadMe-19-API-Base-controller-II.md) 🔗 ⚠
+- [ ] [API Fallback Route](ReadMe-20-API-fallback-route.md) 🔗 ⚠
+- [ ] [Authentication](ReadMe-21-API-authentication.md) 🔗 ⚠
 
 ## Web Application Tutorial
-- [ ] [50 Introduction and Static Pages](ReadMe-50-Introduction.md) 🔗
-- [ ] [51 Blade, Guest Template and the Homepage](ReadMe-51-Blade-HomePage.md) 🔗
-- [ ] [52 Blade Authenticated Template](ReadMe-52-Blade-Template.md) 🔗
-- [ ] [53 Authentication](ReadMe-53-Blade-Authentication.md) 🔗
-- [ ] [54 Authors: Browse](ReadMe-54-Blade-Authors-Browse.md) 🔗
-- [ ] [55 Authors: Read](ReadMe-55-Blade-Authors-Read.md) 🔗
-- [ ] [56 Authors: Edit](ReadMe-56-Blade-Authors-Edit.md) 🔗
-- [ ] [57 Authors: Add](ReadMe-57-Blade-Authors-Add.md) 🔗
-- [ ] [58 Authors: Delete](ReadMe-58-Blade-Authors-Delete.md) 🔗
-- [ ] [59 Authorisation](ReadMe-59-Blade-Authorisation.md) 🔗
-- [ ] [60 Roles](ReadMe-60-Blade-Roles.md) 🔗
-- [ ] [61 Permissions](ReadMe-61-Blade-Permissions.md) 🔗
+
+- [ ] [Introduction and Static Pages](ReadMe-50-Introduction.md) 🔗
+- [ ] [Blade, Guest Template and the Homepage](ReadMe-51-Blade-Home-Page.md) 🔗
+- [ ] [Blade Authenticated Template](ReadMe-53-Blade-Authenticated-Template.md) 🔗
+- [ ] [Authentication](ReadMe-53-Blade-Authenticated-Template.md) 🔗
+- [ ] [Authors: Browse](ReadMe-54-Blade-Authors-Browse.md) 🔗
+- [ ] [Authors: Read](ReadMe-55-Blade-Authors-Read.md) 🔗
+- [ ] [Authors: Edit](ReadMe-56-Blade-Authors-Edit.md) 🔗
+- [ ] [Authors: Add](ReadMe-57-Blade-Authors-Add.md) 🔗
+- [ ] [Authors: Delete](ReadMe-58-Blade-Authors-Delete.md) 🔗
+
+## Authorisation (AP{I and Web)
+
+- [ ] [Authorisation vs Authentication]()
+- [ ] [Authorisation](ReadMe-71-API-authorisation.md) 🔗 ⚠
+- [ ] [Authorisation and Blade Files](ReadMe-72-Blade-Authorisation.md) 🔗
+- [ ] [Roles](ReadMe-73-Blade-Roles.md) 🔗
+- [ ] [Permissions](ReadMe-74-Blade-Permissions.md) 🔗
 
 ## Exercises
-- [ ] [90 API: Exercises](ReadMe-90-API-exercises.md) 🔗 ⚠
-- [ ] [91 Web: Exercises](ReadMe-91-Web-exercises.md) 🔗
 
-## Links and Extras
-- [ ] [99 Links](ReadMe-99-Links.md) 🔗
-- [ ] [04 PhpStorm Plugins & Settings](ReadMe-04-PhpStorm-Plugins-and-Settings.md) 🔗
-- [ ] [01 Clone-Docker-Rebuild](ReadMe-01-Clone-Docker-Rebuild.md) 🔗
+- [ ] [API: Exercises](ReadMe-90-API-Exercises.md) 🔗 ⚠
+- [ ] [Web: Exercises](ReadMe-91-Web-exercises.md) 🔗
+

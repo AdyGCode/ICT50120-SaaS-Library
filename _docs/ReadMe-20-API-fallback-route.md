@@ -77,4 +77,4 @@ You should get back a response similar to:
 
 Next it's onto [Authentication](ReadMe-21-API-authentication.md).
 
-Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).
+Before that though, remember to [complete the exercises](ReadMe-90-API-Exercises.md).

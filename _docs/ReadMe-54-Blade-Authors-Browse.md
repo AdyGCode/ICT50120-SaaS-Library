@@ -20,7 +20,7 @@ Remember that BREAD stands for Browse, Retrieve, Edit, Add and Delete.
 
 |                    Previous                    |                Index                 |                         Next                         |
 |:----------------------------------------------:|:------------------------------------:|:----------------------------------------------------:|
-| [Blade Home Page](ReadMe-51-Blade-HomePage.md) | [Tutorial Index](ReadMe-00-Index.md) | [55 Authors: Read](ReadMe-55-Blade-Authors-Read.md)  |
+| [Blade Home Page](ReadMe-51-Blade-Home-Page.md) | [Tutorial Index](ReadMe-00-Index.md) | [55 Authors: Read](ReadMe-55-Blade-Authors-Read.md)  |
 
 ## Authors Route
 

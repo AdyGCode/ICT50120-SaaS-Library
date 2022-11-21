@@ -6,16 +6,16 @@ The interface will use Blade and TailwindCSS in this initial configuration.
 
 ## Tutorial Index
 
-|                Previous                 |                Index                 |                 Next                  |
-|:---------------------------------------:|:------------------------------------:|:-------------------------------------:|
-| [Web Interface Intro](ReadMe-50-Introduction.md) | [Tutorial Index](ReadMe-00-Index.md) | [51 Blade and the Homepage](ReadMe-51-Blade-HomePage.md) |
+|                     Previous                     |                Index                 |                           Next                           |
+|:------------------------------------------------:|:------------------------------------:|:--------------------------------------------------------:|
+| [Web Interface Intro](ReadMe-50-Introduction.md) | [Tutorial Index](ReadMe-00-Index.md) | [51 Blade and the Homepage](ReadMe-51-Blade-Home-Page.md) |
 
 ## Adding Interface Helpers
 
-To begin we want to add a few 'plugins' that will give us icons, and a other features.
+To begin we want to add a few 'plugins' that will give us icons, and other features.
 
-Let's start with FontAwesome, one of the most well known and evolving icon sets that can be used as a desktop application 
-font, a web font, SVG font, SVG images and more. 
+Let's start with FontAwesome, one of the most well known and evolving icon sets that can be used as a desktop application
+font, a web font, SVG font, SVG images and more.
 
 ### FontAwesome (Free)
 
@@ -102,9 +102,9 @@ Make the route read:
 Route::get('/', [StaticPageController::class, 'home'])->name('home');
 ```
 
-**Remember** to import the StaticPageController at the top of the page!
+**Remember** to import the `StaticPageController` at the top of the page!
 
-At the moment if you visit the `http:\\localhost` you will get an error, but we are 
+At the moment if you visit the `http:\\localhost` you will get an error, but we are
 on the way to the static pages being rendered.
 
 ## Publishing Package Views
@@ -113,13 +113,18 @@ Laravel packages will often contain a range of views that are available for modi
 
 This is one of the beautiful features of the framework.
 
-We are going to publish the pagination views so we are able to make them a bit more unique to our application.
+We are going to publish the pagination views, so we are able to make them a bit more unique to our application.
 
 A selection of available views and settings for publishing (if the relevant feature or package is
 enabled/installed) are listed below.
 
-From the Health package: 
-- health-config, health-migrations, health-translations, health-views, laravel-health-components
+From the Health package:
+
+- health-config,
+- health-migrations,
+- health-translations,
+- health-views,
+- laravel-health-components
 
 Built into Laravel we have:
 - laravel-errors,
@@ -128,11 +133,17 @@ Built into Laravel we have:
 - laravel-pagination
 
 Sanctum comes with:
-- sanctum-config, sanctum-migrations
+
+- sanctum-config,
+- sanctum-migrations
 
 From "Scribe", the API documentation package:
-- scribe-config, scribe-examples, scribe-markdown, scribe-themes, scribe-views 
 
+- scribe-config,
+- scribe-examples,
+- scribe-markdown,
+- scribe-themes,
+- scribe-views
 
 Run the following commands:
 
@@ -185,3 +196,5 @@ Use Replace <kbd>CTRL</kbd>+<kbd>R</kbd> (use <kbd>CMD</kbd>+<kbd>R</kbd> on Mac
 Use Replace <kbd>CTRL</kbd>+<kbd>R</kbd> (use <kbd>CMD</kbd>+<kbd>R</kbd> on Mac) and:
 
 - search for `duration-150` and replace with `duration-500`
+
+With that we are ready for the next stage.

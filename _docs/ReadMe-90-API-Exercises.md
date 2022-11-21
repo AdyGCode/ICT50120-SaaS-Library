@@ -7,21 +7,6 @@ references to parts 7 and 8 of this series. When we do, you will be, at
 first, expected to follow the section through then return to these
 exercises.
 
-## Tutorial Index
-
-- [Setting Up](ReadMe-00-Setting-Up.md)🔗
-- [Postman](ReadMe-02-Postman.md)🔗
-- [Introduction](ReadMe-10-API-introduction.md)🔗
-- [Index and Show](ReadMe-11-API-index-show.md)🔗
-- [Create](ReadMe-14-API-create.md)🔗
-- [Update](ReadMe-15-API-update.md)🔗
-- [Delete](ReadMe-16-API-delete.md)🔗
-- [Documenting API](ReadMe-17-API-documenting.md)🔗
-- [Exercises](ReadMe-90-API-exercises.md)🔗
-- [Pagination](ReadMe-18-API-pagination.md)🔗
-- [API Base Controller](ReadMe-19-API-Base-controller-II.md)🔗
-- [Fallback Route](ReadMe-20-API-fallback-route.md)🔗
-- [Authentication](ReadMe-21-API-authentication.md)🔗
 ---
 
 

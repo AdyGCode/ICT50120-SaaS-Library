@@ -14,7 +14,7 @@ and more
 
 |             Previous              |                Index                 |                  Next                  |
 |:---------------------------------:|:------------------------------------:|:--------------------------------------:|
-| [Delete](ReadMe-16-API-delete.md) | [Tutorial Index](ReadMe-00-Index.md) | [Pagination](ReadMe-18-API-pagination) | 
+| [Delete](ReadMe-16-API-Delete.md) | [Tutorial Index](ReadMe-00-Index.md) | [Pagination](ReadMe-18-API-Pagination) | 
 
 
 
@@ -231,6 +231,6 @@ Test the publication worked by visiting: `http://localhost/docs`
 
 # What's next?
 
-Next it's onto [Pagination](ReadMe-18-API-pagination.md).
+Next it's onto [Pagination](ReadMe-18-API-Pagination.md).
 
-Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).
+Before that though, remember to [complete the exercises](ReadMe-90-API-Exercises.md).

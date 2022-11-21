@@ -6,9 +6,9 @@ We do this with our Many-to-Many relationship that we have defined.
 
 ## Tutorial Index
 
-|                     Previous                      |                Index                 |              Next               |
-|:-------------------------------------------------:|:------------------------------------:|:-------------------------------:|
-| [Base Controller](ReadMe-12-API-Base-controller.md) | [Tutorial Index](ReadMe-00-Index.md) | [Create](ReadMe-14-API-create.md) |
+|                      Previous                       |                Index                 |               Next                |
+|:---------------------------------------------------:|:------------------------------------:|:---------------------------------:|
+| [Base Controller](ReadMe-12-API-Base-Controller.md) | [Tutorial Index](ReadMe-00-Index.md) | [Create](ReadMe-14-API-Create.md) |
 
 ## Relationships
 
@@ -118,7 +118,7 @@ Route::get("/authors/search", [AuthorAPIController::class, 'search']);
 
 Make sure you put this BEFORE any `/{id}` route.
 
-You can always check the example in the [`routes\api.php` file](..\routes\api.php).
+You can always check the example in the [`routes/api.php` file](routes/api.php).
 
 ## Aside
 

@@ -10,7 +10,7 @@ In this tutorial we will create a base controller and then use it in our Authors
 
 |           Previous           |                Index                 |                    Next                    |
 |:----------------------------:|:------------------------------------:|:------------------------------------------:|
-| [Index-Show](ReadMe-11-index-show.md) | [Tutorial Index](ReadMe-00-Index.md) | [Related Data](ReadMe-13-API-related-data.md) |
+| [Index-Show](ReadMe-11-index-show.md) | [Tutorial Index](ReadMe-00-Index.md) | [Related Data](ReadMe-13-API-Relationships-and-Models.md) |
 
 
 

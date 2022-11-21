@@ -122,4 +122,4 @@ More details may be found at:
 
 # What's next?
 
-Next it's onto [Retrieve - aka Index/Show](ReadMe-11-API-index-show.md).
+Next it's onto [Retrieve - aka Index/Show](ReadMe-11-API-Index-and-Show.md).

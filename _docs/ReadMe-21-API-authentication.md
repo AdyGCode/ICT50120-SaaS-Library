@@ -15,7 +15,7 @@ This tutorial is based on:
 
 |                      Previous                       |                Index                 |                        Next                         |
 |:---------------------------------------------------:|:------------------------------------:|:---------------------------------------------------:|
-| [Fallback Routes](ReadMe-20-API-fallback-routes.md) | [Tutorial Index](ReadMe-00-Index.md) | [Monitoring Health](ReadMe-80-monitoring-health.md) | 
+| [Fallback Routes](ReadMe-20-API-fallback-routes.md) | [Tutorial Index](ReadMe-00-Index.md) | [Monitoring Health](ReadMe-80-Monitoring-Health.md) | 
 
 ## Install Laravel Sanctum
 
@@ -393,10 +393,10 @@ the caller in a set manner, and thus also reducing the amount of code written.
 
 This is covered in [17 API Base Controller](ReadMe-19-API-Base-controller-II.md).
 
-Also, a part of this is also making sure you are sending JSON based requests and not 
+Also, a part of this is also making sure you are sending JSON based requests and not
 form based requests.
 
-This is covered in [17 API Base Controller](ReadMe-11-API-index-show.md).
+This is covered in [17 API Base Controller](ReadMe-11-API-Index-and-Show.md).
 
 ## Example testing
 
@@ -440,4 +440,4 @@ This is VERY new to Laravel's base code. Until now you would have to create a va
 
 Next it's onto [Authorization](ReadMe-22-API-authorisation.md).
 
-Before that though, remember to [complete the exercises](ReadMe-90-API-exercises.md).
+Before that though, remember to [complete the exercises](ReadMe-90-API-Exercises.md).
