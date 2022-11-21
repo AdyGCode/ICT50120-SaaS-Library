@@ -8,7 +8,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class UpdateAuthorAPIRequest extends FormRequest
 {
-    
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -45,7 +45,7 @@ class UpdateAuthorAPIRequest extends FormRequest
         throw new HttpResponseException(
             response()->json([
                 'success' => false,
-                'message' => _('Validation errors'),
+                'message' => __('Validation errors'),
                 'data' => $validator->errors(),
             ])
         );
