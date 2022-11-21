@@ -26,7 +26,7 @@ class BookSeeder extends Seeder
             'edition' => null,
             'isbn_10' => null,
             'isbn_13' => null,
-            'created_at' => "1970-01-01 00:00:01",
+            'created_at' => Carbon::now()->subYears(500),
         ];
 
         Book::create($unknownBook);
