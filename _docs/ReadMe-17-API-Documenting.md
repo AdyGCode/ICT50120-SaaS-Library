@@ -216,18 +216,27 @@ Here is the documentation for the show method, updated to suit Scribe.
 ## Alternative markup
 To BE completed
 
-
 ## Regenerating Documentation
 
 Regenerate the documentation:
+
 ```shell
 sail artisan scribe:generate
 ```
 
 Test the publication worked by visiting: `http://localhost/docs`
 
----
+## Publishing the Docs
 
+You will need to exclude the public/docs folder from being ignored.
+
+To do so, open your .gitignore in the root of the project, and add the line:
+
+```text
+!/public/docs
+```
+
+---
 
 # What's next?
 

@@ -96,6 +96,44 @@ sail npm install
 sail composer require laravel/breeze
 sail artisan breeze:install
 sail npm install
+```
+
+Next we need to tweak the `vite.config.js` file as it may not refresh correctly.
+
+Open the file and make sure the `export default defineConfig({` section reads:
+
+```js
+export default defineConfig({
+    server: {
+        hmr: {
+            host: 'localhost'
+        },
+    },
+
+    plugins: [
+        laravel({
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.js',
+            ],
+            refresh: true,
+        }),
+    ],
+});
+```
+
+If you find the refresh true fails, you may need to use the lines below in place of the `refresh: true,`:
+
+```js
+    refresh: [
+    'routes/**',
+    'resources/views/**',
+],
+```
+
+Now you can execute the following command to have vite watch the files used for web output:
+
+```shell
 sail npm run dev
 ```
 
