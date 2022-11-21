@@ -16,9 +16,9 @@ class AuthorPolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user)
+    public function viewAny(?User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -28,9 +28,9 @@ class AuthorPolicy
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Author $author)
+    public function view(?User $user, Author $author)
     {
-        //
+        return true;
     }
 
     /**

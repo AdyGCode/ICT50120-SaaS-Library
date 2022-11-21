@@ -15,7 +15,7 @@ class AuthorController extends Controller
      */
     function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware(['auth'], ['except' => ['index', 'show']]);
 
         // we use author- to represent the 'namespace' for the permission.
         $this->middleware(
