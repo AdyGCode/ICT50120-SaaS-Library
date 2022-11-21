@@ -14,6 +14,15 @@ class Genre extends Model
         'description',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
 //    public function books(){
 //        return $this->belongsToMany(Book::class);
