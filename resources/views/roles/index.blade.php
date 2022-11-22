@@ -1,8 +1,8 @@
-<x-guest-layout>
+<x-app-layout>
     <x-slot name="header">
         <div class="flex flex-row gap">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight flex-grow">
-            {{ __('Roles') }}
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight flex-grow">
+                {{ __('Roles') }}
         </h2>
 
         <a href="{{ route('roles.create') }}" class="rounded bg-sky-600 text-white shadow p-2">New Role</a>
@@ -63,4 +63,4 @@
             </div>
         </div>
     </div>
-</x-guest-layout>
+</x-app-layout>

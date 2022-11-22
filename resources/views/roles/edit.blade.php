@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <x-slot name="header">
         <div class="flex flex-row gap">
             <h2 class="font-semibold text-2xl text-gray-800 leading-tight flex-1">
@@ -74,4 +74,4 @@ X
             </div>
         </div>
     </div>
-</x-guest-layout>
+</x-app-layout>

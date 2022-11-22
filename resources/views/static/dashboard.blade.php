@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 grid grid-cols-3 gap-6">
 
-                    <a href="/"
+                    <a href="{{ route('books.index') }}"
                        class="rounded-lg
                               hover:bg-sky-600
                               transition duration-250 ease-in-out
@@ -46,7 +46,7 @@
                         </section>
                     </a>
 
-                    <a href="/"
+                    <a href="{{route('genres.index')}}"
                        class="rounded-lg
                               hover:bg-emerald-600
                               transition duration-250 ease-in-out
@@ -64,7 +64,7 @@
                         </section>
                     </a>
 
-                    <a href="/"
+                    <a href="{{route('admin.dashboard')}}"
                        class="rounded-lg
                               hover:bg-rose-600
                               transition duration-250 ease-in-out
@@ -82,7 +82,7 @@
                         </section>
                     </a>
 
-                    <a href="/"
+                    <a href="{{route('admin.dashboard')}}"
                        class="rounded-lg
                               hover:bg-pink-600
                               transition duration-250 ease-in-out
@@ -100,7 +100,7 @@
                         </section>
                     </a>
 
-                    <a href="/"
+                    <a href="{{route('admin.dashboard')}}"
                        class="rounded-lg
                               hover:bg-lime-600
                               transition duration-250 ease-in-out
@@ -118,7 +118,7 @@
                         </section>
                     </a>
 
-                    <a href="/"
+                    <a href="{{route('admin.dashboard')}}"
                        class="rounded-lg
                               hover:bg-stone-600
                               transition duration-250 ease-in-out
@@ -136,7 +136,7 @@
                         </section>
                     </a>
 
-                    <a href="/"
+                    <a href="{{route('admin.dashboard')}}"
                        class="rounded-lg
                               hover:bg-slate-600
                               transition duration-250 ease-in-out
@@ -154,7 +154,7 @@
                         </section>
                     </a>
 
-                    <a href="/"
+                    <a href="{{route('roles.index')}}"
                        class="rounded-lg
                               hover:bg-zinc-600
                               transition duration-250 ease-in-out
@@ -166,7 +166,24 @@
                                 <i class="fa-solid fa-person-circle-question text-8xl w-32"></i>
                             </div>
                             <div class="p-4 grow">
-                                <h5 class="text-2xl text-right mb-4">Roles &amp; Permissions</h5>
+                                <h5 class="text-2xl text-right mb-4">Roles</h5>
+                            </div>
+                        </section>
+                    </a>
+
+                    <a href="{{route('permissions.index')}}"
+                       class="rounded-lg
+                              hover:bg-zinc-600
+                              transition duration-250 ease-in-out
+                              text-neutral-900 hover:text-white
+                              shadow shadow-neutral-300 hover:shadow-none hover:shadow-neutral-400
+                              border border-neutral-200">
+                        <section class="flex flex-row">
+                            <div class="p-4 text-center">
+                                <i class="fa-solid fa-person-circle-question text-8xl w-32"></i>
+                            </div>
+                            <div class="p-4 grow">
+                                <h5 class="text-2xl text-right mb-4">Permissions</h5>
                             </div>
                         </section>
                     </a>
