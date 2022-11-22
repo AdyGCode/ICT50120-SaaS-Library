@@ -12,21 +12,22 @@ class RoleController extends Controller
 
     function __construct()
     {
+        // TODO: Need to create a suitable "not authorised" JSON response.
         $this->middleware(
-            'permission:role-browse|role-read|role-edit|role-add|role-delete',
-            ['only' => ['index', 'show', 'store',]]
+            'role:guest|member|staff|admin',
+            ['only' => ['index', 'show',]]
         );
         $this->middleware(
-            'permission:role-create',
+            'role:staff|admin',
             ['only' => ['create', 'store',]]
         );
         $this->middleware(
-            'permission:role-edit',
+            'role:staff|admin',
             ['only' => ['edit', 'update',]]
         );
         $this->middleware(
-            'permission:role-delete',
-            ['only' => ['destroy',]]
+            'role:staff|admin',
+            ['only' => ['destroy', 'delete',]]
         );
     }
 

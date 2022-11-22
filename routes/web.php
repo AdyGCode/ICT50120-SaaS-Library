@@ -21,51 +21,73 @@ use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 |
 */
 
+/**
+ * Static links and pages (non-authenticated)
+ */
 Route::get('/', [StaticPageController::class, 'home'])
     ->name('home');
-
 Route::get('/about', [StaticPageController::class, 'about'])
     ->name('about');
+Route::get('/contact', [StaticPageController::class, 'contact'])
+    ->name('contact');
+Route::get('/support', [StaticPageController::class, 'support'])
+    ->name('support');
+Route::get('/privacy', [StaticPageController::class, 'privacy'])
+    ->name('privacy');
 
-// Routes not needing authentication
-Route::get("/authors", [AuthorController::class, 'index']);
-//Route::get("/authors/search", [AuthorController::class, 'search']);
-Route::get("/authors/create", [AuthorController::class, 'create'])->name('authors.create');
-Route::get("/authors/{author}", [AuthorController::class, 'show'])->name('authors.show');
-Route::get("/authors/{author}", [AuthorController::class, 'edit'])->name('authors.edit');
-
-Route::resource('authors', AuthorController::class);
-Route::get('/{author}/delete', [AuthorController::class, 'delete'])->name("authors.delete");
-
-Route::group([], function () {
-    Route::get("/author", [AuthorController::class, 'index'])->name('authors.index');
-    Route::get("/authors/{author}", [AuthorController::class, 'show'])->name('authors.show');
-});
 
 // Routes requiring authentication
-Route::group(['middleware' => ['auth:sanctum']], function () {
 
-    Route::prefix('authors')->group(function () {
-
-    });
-
-});
-
-
-Route::get('/dashboard', [StaticPageController::class, 'dashboard'])
+Route::get('/admin/dashboard', [StaticPageController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+    ->name('admin.dashboard');
 
 Route::group(['middleware' => ['auth']], function () {
     // Add the (resourceful) routes as needed...
-    Route::resource('users', UserController::class);
+    Route::prefix('admin')->group(function () {
+        Route::resource('users', UserController::class);
 
-    Route::resource('books', BookController::class);
-});
+        Route::resource('books', BookController::class);
 
-Route::group(['middleware' => ['auth']], function() {
-    Route::resource('roles', RoleController::class);
-    Route::resource('permissions', PermissionController::class);
+        Route::resource('roles', RoleController::class);
+
+        Route::resource('permissions', PermissionController::class);
+
+        //Route::get("/authors/search", [AuthorController::class, 'search']);
+        Route::get('/{author}/delete', [AuthorController::class, 'delete'])
+            ->name("authors.delete");
+        Route::resource('authors', AuthorController::class);
+
+
+        /* These are placeholder routes to indicate the admin pages are not implemented */
+        Route::get('/publishers', function () {
+            if (auth()) {
+                return redirect('admin/dashboard')->with('error', 'Publishers not implemented');
+            }
+            return redirect('/')->with('error', 'Publishers not implemented');
+        })->name("publishers.index");
+        Route::get('/books', function () {
+            if (auth()) {
+                return redirect('admin/dashboard')->with('error', 'Books not implemented');
+            }
+            return redirect('/')->with('error', 'Books not implemented');
+        })->name("books.index");
+        Route::get('/genres', function () {
+            if (auth()) {
+                return redirect('admin/dashboard')->with('error', 'Genres not implemented');
+            }
+            return redirect('/')->with('error', 'Genres not implemented');
+        })->name("genres.index");
+        Route::get('/countries', function () {
+            if (auth()) {
+                return redirect('admin/dashboard')->with('error', 'Countries not implemented');
+            }
+            return redirect('/')->with('error', 'Countries not implemented');
+        })->name("countries.index");
+
+
+    });
+
 
     /* Logout a logged-in user */
     Route::post('/logout', [AuthController::class, 'logout']);

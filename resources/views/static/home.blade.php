@@ -22,20 +22,26 @@
                             </h4>
                             @foreach($random_books as $book)
                                 <div class="border border-zinc-300 p-2 col-span-1 rounded">
-                                    <p>{{ $book->title }} {{ $book->subtitle??false ? "(<i>$book->subtitle</i>)" :""}}</p>
-                                    <p class="pl-2 text-stone-700">
-                                        @foreach($book->authors as $author)
-                                            {{ $author->fullName() }},
+                                    <p>{{ $book->title }}{{ $book->subtitle??false ? "(<i>$book->subtitle</i>)" :""}}</p>
+                                    <p class="pl-2 text-neutral-600">
+                                        @foreach($book->authors as $index=>$author)
+                                            {{ $author->fullName() }}@if($book->authors->count()!==0 && $book->authors->count()-1>$index)
+                                                ,
+                                            @endif
                                         @endforeach
                                     </p>
                                     <p>
-                                        {{--  @foreach($book->genres as $genre)--}}
-                                        {{--      <span class="text-xm rounded bg-stone-500 text-white p-2">--}}
-                                        {{--          {{ $author->fullName()}}--}}
-                                        {{--      </span>--}}
-                                        {{--  @endforeach--}}
+                                        @if($book->genres)
+                                            @foreach($book->genres as $genre)
+                                                <span class="text-xm rounded bg-neutral-500 text-white p-2">
+                                                  {{ $genre->name()}}
+                                              </span>
+                                            @endforeach
+                                        @endif
                                     </p>
-                                    <p class="text-xs pl-2 text-stone-500">{{ $book->publisher->name ?? ""  }}</p>
+                                    <p class="text-xs pl-2 text-neutral-500">
+                                        {{ $book->publisher->name ?? ""  }}
+                                    </p>
                                 </div>
                             @endforeach
                         </div>
@@ -44,24 +50,26 @@
                     <div class="col-span-3 p-4 border border-zinc-500 rounded">
                         <div class="w-full grid grid-cols-3 gap-2 text-sm">
                             <h4 class="text-xl text-bold col-span-3">
-                                {{__("Latest Three Books")}}
+                                {{__("Latest Books")}}
                             </h4>
                             @foreach($latest_books as $book)
                                 <div class="border border-zinc-300 p-2 col-span-1 rounded text-sm">
                                     <p>{{ $book->title }} {{ $book->subtitle??false ? "(<i> $book->subtitle</i>)" : ""}}</p>
-                                    <p class="pl-2 text-stone-700">
-                                        @foreach($book->authors as $author)
-                                            {{ $author->fullName() }},
+                                    <p class="pl-2 text-neutral-600">
+                                        @foreach($book->authors as $index=>$author)
+                                            {{ $author->fullName() }}@if($book->authors->count()!==0 && $book->authors->count()-1>$index)
+                                                ,
+                                            @endif
                                         @endforeach
                                     </p>
                                     <p>
                                         {{-- @foreach($book->genres as $genre)--}}
-                                        {{--     <span class="text-xm rounded bg-stone-500 text-white p-2">--}}
-                                        {{--         {{ $author->fullName()}}--}}
+                                        {{--     <span class="text-xm rounded bg-neutral-500 text-white p-2">--}}
+                                        {{--         {{ $genre->name }}--}}
                                         {{--     </span>--}}
                                         {{-- @endforeach--}}
                                     </p>
-                                    <p class="text-xs pl-2 text-stone-500">{{ $book->publisher->name ?? ""  }}</p>
+                                    <p class="text-xs pl-2 text-neutral-500">{{ $book->publisher->name ?? ""  }}</p>
                                 </div>
                             @endforeach
                         </div>

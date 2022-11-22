@@ -1,4 +1,5 @@
-<nav x-data="{ open: false }" class="bg-slate-700 text-slate-300 border-b border-slate-100">
+<nav x-data="{ open: false }"
+     class="@if(auth()) text-neutral-500 bg-neutral-900 @else text-slate-500 bg-slate-900 @endif border-b border-neutral-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,10 +13,18 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="text-stone-300">
+                    <x-nav-link :href="route('home')"
+                                :active="request()->routeIs('home')"
+                                class="text-neutral-300">
                         {{ __('Home') }}
                     </x-nav-link>
-
+                    @auth()
+                        <x-nav-link :href="route('admin.dashboard')"
+                                    :active="request()->routeIs('admin.dashboard')"
+                                    class="text-neutral-300">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                    @endauth
                 </div>
             </div>
 
@@ -26,8 +35,9 @@
                         <button
                             class="flex items-center
                             text-sm font-medium text-stone-400
-                            hover:text-stone-700 hover:border-stone-100
-                            focus:outline-none focus:text-stone-100 focus:border-stone-300
+                            @if(auth()) hover:text-neutral-200 @else hover:text-slate-200 @endif
+                            hover:border-neutral-100
+                            focus:outline-none focus:text-neutral-100 focus:border-neutral-300
                             transition duration-150 ease-in-out">
                             <div class="ml-1>">{{ __('Account') }}</div>
                         </button>
@@ -71,21 +81,16 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+            <x-responsive-nav-link :href="route('home')"
+                                   :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                {{ __('Authors') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                {{ __('Books') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                {{ __('Publishers') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
-                {{ __('Users') }}
-            </x-responsive-nav-link>
+            @auth()
+                <x-responsive-nav-link :href="route('admin.dashboard')"
+                                       :active="request()->routeIs('admin.dashboard')">
+                    {{ __('Dashboard') }}
+                </x-responsive-nav-link>
+            @endauth
         </div>
 
         <!-- Responsive Settings Options -->

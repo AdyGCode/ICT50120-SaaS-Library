@@ -20,17 +20,17 @@ class StaticPageController extends Controller
         // Search area here
 
         $random_books = Book::inRandomOrder()
-            ->limit(2)
+            ->limit(6)
             ->get();
 
-        $latest_books = Book::latest()->take(3)->get();
+        $latest_books = Book::latest()->take(6)->get();
 
         $random_authors = Author::inRandomOrder()
             ->limit(6)
             ->get();
 
         $random_genres = Genre::inRandomOrder()
-            ->take(4)
+            ->take(6)
             ->get();
 
 
@@ -41,6 +41,21 @@ class StaticPageController extends Controller
     public function about()
     {
         return view('static.about');
+    }
+
+    public function contact()
+    {
+        return view('static.contact');
+    }
+
+    public function support()
+    {
+        return view('static.support');
+    }
+
+    public function privacy()
+    {
+        return view('static.privacy');
     }
 
     public function dashboard()

@@ -15,24 +15,22 @@ class AuthorController extends Controller
      */
     function __construct()
     {
-        $this->middleware(['auth'], ['except' => ['index', 'show']]);
-
-        // we use author- to represent the 'namespace' for the permission.
+        // TODO: Need to create a suitable "not authorised" JSON response.
         $this->middleware(
-            'permission:author-browse|author-read|author-edit|author-add|author-delete',
-            ['only' => ['index', 'show', 'store',]]
+            'role:guest|member|staff|admin',
+            ['only' => ['index', 'show',]]
         );
         $this->middleware(
-            'permission:author-add',
+            'role:staff|admin',
             ['only' => ['create', 'store',]]
         );
         $this->middleware(
-            'permission:author-edit',
+            'role:staff|admin',
             ['only' => ['edit', 'update',]]
         );
         $this->middleware(
-            'permission:author-delete',
-            ['only' => ['destroy',]]
+            'role:staff|admin',
+            ['only' => ['destroy', 'delete',]]
         );
     }
 

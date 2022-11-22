@@ -14,18 +14,23 @@ class UserController extends Controller
 
     function __construct()
     {
+        // TODO: Need to create a suitable "not authorised" JSON response.
         $this->middleware(
-            'permission:user-browse|user-read|user-add|user-edit|user-delete',
-            ['only' => ['index', 'show',]]);
+            'role:guest|member|staff|admin',
+            ['only' => ['index', 'show',]]
+        );
         $this->middleware(
-            'permission:user-add',
-            ['only' => ['create', 'store',]]);
+            'role:staff|admin',
+            ['only' => ['create', 'store',]]
+        );
         $this->middleware(
-            'permission:user-edit',
-            ['only' => ['edit', 'update',]]);
+            'role:staff|admin',
+            ['only' => ['edit', 'update',]]
+        );
         $this->middleware(
-            'permission:user-delete',
-            ['only' => ['destroy',]]);
+            'role:staff|admin',
+            ['only' => ['destroy', 'delete',]]
+        );
     }
 
 

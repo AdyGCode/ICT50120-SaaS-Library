@@ -8,6 +8,29 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
+
+    function __construct()
+    {
+        // TODO: Need to create a suitable "not authorised" JSON response.
+        $this->middleware(
+            'role:guest|member|staff|admin',
+            ['only' => ['index', 'show',]]
+        );
+        $this->middleware(
+            'role:staff|admin',
+            ['only' => ['create', 'store',]]
+        );
+        $this->middleware(
+            'role:staff|admin',
+            ['only' => ['edit', 'update',]]
+        );
+        $this->middleware(
+            'role:staff|admin',
+            ['only' => ['destroy', 'delete',]]
+        );
+    }
+
+
     /**
      * Display a listing of the resource.
      *

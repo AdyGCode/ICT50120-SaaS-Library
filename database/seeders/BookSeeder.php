@@ -33,22 +33,7 @@ class BookSeeder extends Seeder
 
 
         $seedBooks = [
-            [
-                "title" => "Fifty Quick Ideas to Improve your Tests",
-                "authors" => [
-                    "Adzic, Gojko",
-                    "Evans, David",
-                    "Roden, Tom"
-                ],
-                "genres" => [
-                    "technology",
-                    "programming",
-                    "testing",
-                    "non-fiction",
-                ],
-                "height" => 291,
-                "publisher" => "Leanpub",
-            ],
+
             [
                 "title" => "Fundamentals of Wavelets",
                 "authors" => [
@@ -2611,6 +2596,22 @@ class BookSeeder extends Seeder
                 "isbn_10" => "0994346980",
                 "isbn_13" => "9780994346988",
             ],
+            [
+                "title" => "Fifty Quick Ideas to Improve your Tests",
+                "authors" => [
+                    "Adzic, Gojko",
+                    "Evans, David",
+                    "Roden, Tom"
+                ],
+                "genres" => [
+                    "technology",
+                    "programming",
+                    "testing",
+                    "non-fiction",
+                ],
+                "height" => 291,
+                "publisher" => "Leanpub",
+            ],
         ];
 
 
@@ -2621,7 +2622,7 @@ class BookSeeder extends Seeder
 
         $this->command->getOutput()->writeln("<info>Seeding with {$countItems} Books.");
 
-        foreach ($seedBooks as $book) {
+        foreach ($seedBooks as $index => $book) {
 
             $authors = $book['authors'];    // Get the list of authors for the book
             $authors_list = [];  // create an empty list of authors
@@ -2681,7 +2682,7 @@ class BookSeeder extends Seeder
                    similar process to the Authors.  */
                 'genre' => $genre ?? null,
                 'sub_genre' => $sub_genre ?? null,
-                'created_at' => Carbon::now()->addHours(random_int(-10000, -100)),
+                'created_at' => Carbon::now()->subHours(100)->addHours($index),
             ];
             $theBook = Book::create($newBook);
 
