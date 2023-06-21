@@ -25,16 +25,14 @@
                                     <p>{{ $book->title }}{{ $book->subtitle??false ? "(<i>$book->subtitle</i>)" :""}}</p>
                                     <p class="pl-2 text-neutral-600">
                                         @foreach($book->authors as $index=>$author)
-                                            {{ $author->fullName() }}@if($book->authors->count()!==0 && $book->authors->count()-1>$index)
-                                                ,
-                                            @endif
+                                            {{ $author->fullName() }}@if($book->authors->count()!==0 && $book->authors->count()-1>$index), @endif
                                         @endforeach
                                     </p>
-                                    <p>
+                                    <p class="flex flex-column flex-wrap pl-2 gap-2">
                                         @if($book->genres)
                                             @foreach($book->genres as $genre)
-                                                <span class="text-xm rounded bg-neutral-500 text-white p-2">
-                                                  {{ $genre->name()}}
+                                                <span class="text-xs rounded bg-neutral-500 text-white px-1">
+                                                  {{ $genre->name}}
                                               </span>
                                             @endforeach
                                         @endif
@@ -57,9 +55,7 @@
                                     <p>{{ $book->title }} {{ $book->subtitle??false ? "(<i> $book->subtitle</i>)" : ""}}</p>
                                     <p class="pl-2 text-neutral-600">
                                         @foreach($book->authors as $index=>$author)
-                                            {{ $author->fullName() }}@if($book->authors->count()!==0 && $book->authors->count()-1>$index)
-                                                ,
-                                            @endif
+                                            {{ $author->fullName() }}@if($book->authors->count()!==0 && $book->authors->count()-1>$index), @endif
                                         @endforeach
                                     </p>
                                     <p>

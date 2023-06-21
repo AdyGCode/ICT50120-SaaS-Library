@@ -75,8 +75,8 @@ $RECYCLE.BIN/
 ### Laravel template
 /vendor/
 node_modules/
-storage/sessions
-storage/framework/sessions
+storage/sessions/*
+storage/framework/sessions/*
 
 # Laravel 4 specific
 bootstrap/compiled.php

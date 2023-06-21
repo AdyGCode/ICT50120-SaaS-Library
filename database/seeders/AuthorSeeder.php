@@ -29,6 +29,8 @@ class AuthorSeeder extends Seeder
             ['given_name' => null, 'family_name' => 'Oracle', 'is_company' => True,],
             ['given_name' => 'Mark', 'family_name' => 'Boulton', 'is_company' => False,],
             ['given_name' => 'Kevin', 'family_name' => 'Potts', 'is_company' => False,],
+            ['given_name' => 'Fyodor', 'family_name' => 'Dostoevsky', 'is_company' => False,'notes'=>'Russian: Fyódor Mikháylovich Dostoyévskiy'],
+
         ];
 
         foreach ($seedAuthors as $seedAuthor) {
@@ -36,6 +38,10 @@ class AuthorSeeder extends Seeder
                 $seedAuthor['given_name'] = $seedAuthor['family_name'];
                 $seedAuthor['family_name'] = null;
             }
+            if (!isset($seedAuthor['notes']) || is_null($seedAuthor['notes'])) {
+                $seedAuthor['notes'] = null;
+            }
+
             Author::create($seedAuthor);
         }
 
