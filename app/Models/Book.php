@@ -41,4 +41,14 @@ class Book extends Model
         return $this->belongsToMany(Author::class);
     }
 
+    /**
+     * Return the Genres of a book (Many-to-many)
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class);
+    }
+
 }

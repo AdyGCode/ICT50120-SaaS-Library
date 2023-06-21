@@ -24,8 +24,8 @@ class Genre extends Model
         'updated_at' => 'datetime',
     ];
 
-//    public function books(){
-//        return $this->belongsToMany(Book::class);
-//    }
+    public function books(){
+        return $this->belongsToMany(Book::class);
+    }
 
 }

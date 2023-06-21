@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\Genre;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Symfony\Component\Console\Helper\ProgressBar;
@@ -2625,7 +2626,7 @@ class BookSeeder extends Seeder
         foreach ($seedBooks as $index => $book) {
 
             $authors = $book['authors'];    // Get the list of authors for the book
-            $authors_list = [];  // create an empty list of authors
+            $authorsList = [];  // create an empty list of authors
 
             // Go through the authors one by one
             foreach ($authors as $author) {
@@ -2650,23 +2651,28 @@ class BookSeeder extends Seeder
                     $author = Author::create($newAuthor);
                 }
                 // add the existing, or new author's id to the author list
-                $authors_list[] = $author->id;
+                $authorsList[] = $author->id;
             }
 
             // ------ Genre Processing --------
             $genres = $book['genres'];
-            $genres_list = [];
+            $genresList = [];
 
             // Go through the genres one by one
             foreach ($genres as $genre) {
-                $genres_list[] = $genre;
+
+                $theGenre = Genre::whereName($genre)->first();
+                if (is_null($theGenre)) {
+                    $newGenre = [
+                        "name" => $genre,
+                        "description" => null,
+                    ];
+                    // The author wasn't found so we create them
+                    $theGenre = Genre::create($newGenre);
+                }
+                // add the existing, or new author's id to the author list
+                $genresList[] = $theGenre->id;
             }
-
-            // This is getting the genre and sub-genre until
-            // proper processing of the genres is completed
-            $genre = $genres_list[0] ?? null;
-            $sub_genre = $genres_list[1] ?? null;
-
 
             # Create book record
             $newBook = [
@@ -2677,20 +2683,16 @@ class BookSeeder extends Seeder
                 'isbn_10' => $book['isbn_10'] ?? null,
                 'isbn_13' => $book['isbn_13'] ?? null,
                 'height' => $book['height'] ?? null,
-                /* ----- Genres and Sub-Genres -----
-                   You will need to remove these two lines and use a
-                   similar process to the Authors.  */
-                'genre' => $genre ?? null,
-                'sub_genre' => $sub_genre ?? null,
                 'created_at' => Carbon::now()->subHours(100)->addHours($index),
             ];
             $theBook = Book::create($newBook);
 
             # Link the authors to the book
-            $theBook->authors()->attach($authors_list);
+            $theBook->authors()->attach($authorsList);
 
             # Link the genres with the book
             # This is part of the exercises / portfolio
+            $theBook->genres()->attach($genresList);
 
             $progressBar->advance();
         }
