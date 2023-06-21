@@ -19,12 +19,14 @@
                         <p class="p-2 font-bold text-stone-600 col-span-3">
                             {{ $author->is_company ? "Yes" : "No"}}
                         </p>
+                        <p class="">{{ __("Notes") }}</p>
+                        <p class="p-2 font-bold text-stone-600 col-span-3">
+                            {{ $author->notes }}
+                        </p>
                         <p class="">{{ __("Written") }}</p>
                         <div class="flex flex-col p-2 col-span-3">
                             <p class="">
-                                {{ $author->books()->count() }}@if ($author->books()->count()>0)
-                                    , {{ __("including") }}...
-                                @endif
+                                {{ $author->books()->count() }}@if ($author->books()->count()>0), {{ __("including") }}...@endif
                             </p>
                             <ul class="list-circle list-inside pl-4">
                                 @foreach($author->books as $book)
